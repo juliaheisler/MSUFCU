@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+            <point key="canvasLocation" x="-1586" y="54"/>
         </scene>
         <!--QuizVC-->
         <scene sceneID="cEm-5C-4LN">
@@ -93,7 +93,31 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNO-7i-2yx" userLabel="QuestionView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="396"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KcL-rI-mnE">
+                                                <rect key="frame" x="15" y="7.5" width="384" height="373.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brand_logo.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1e8-k5-BXJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="187"/>
+                                                    </imageView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="MoS-v7-FhX">
+                                                        <rect key="frame" x="0.0" y="187" width="384" height="186.5"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">MSUFCU currently offers robust online banking and mobile apps for members to connect with their accounts to check their balances, transfer funds, move money, and more.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="KcL-rI-mnE" firstAttribute="leading" secondItem="kNO-7i-2yx" secondAttribute="leading" constant="15" id="4Ll-dD-0QE"/>
+                                            <constraint firstAttribute="trailing" secondItem="KcL-rI-mnE" secondAttribute="trailing" constant="15" id="6dx-jo-TIY"/>
+                                            <constraint firstItem="KcL-rI-mnE" firstAttribute="top" secondItem="kNO-7i-2yx" secondAttribute="top" constant="7.5" id="ADo-tG-g9j"/>
+                                            <constraint firstAttribute="bottom" secondItem="KcL-rI-mnE" secondAttribute="bottom" constant="15" id="MIT-0L-R1L"/>
+                                            <constraint firstItem="KcL-rI-mnE" firstAttribute="centerX" secondItem="kNO-7i-2yx" secondAttribute="centerX" id="lew-cA-PKN"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYS-R6-eU9" userLabel="AnswerView">
                                         <rect key="frame" x="0.0" y="396" width="414" height="396"/>
@@ -101,37 +125,56 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vMM-6j-zWO">
                                                 <rect key="frame" x="15" y="7.5" width="384" height="373.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-0R-jbn">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-0R-jbn">
                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="82"/>
                                                         <color key="backgroundColor" red="0.12501230839999999" green="0.3101058304" blue="0.2248015106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <state key="normal" title="Option 1">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="answerPressed:" destination="aye-s7-1Le" eventType="touchUpInside" id="cx9-pc-ePS"/>
+                                                            <segue destination="Fcs-wp-JE7" kind="show" id="Uez-dE-qE0"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T07-jJ-BIf">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T07-jJ-BIf">
                                                         <rect key="frame" x="0.0" y="97" width="384" height="82.5"/>
                                                         <color key="backgroundColor" red="0.12501230839999999" green="0.3101058304" blue="0.2248015106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <state key="normal" title="Option 2">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="answerPressed:" destination="aye-s7-1Le" eventType="touchUpInside" id="TFM-GL-asF"/>
+                                                            <segue destination="Fcs-wp-JE7" kind="show" id="Frb-tF-N2P"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aae-Qj-LPm">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aae-Qj-LPm">
                                                         <rect key="frame" x="0.0" y="194.5" width="384" height="82"/>
                                                         <color key="backgroundColor" red="0.12501230839999999" green="0.3101058304" blue="0.2248015106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <state key="normal" title="Option 3">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="answerPressed:" destination="aye-s7-1Le" eventType="touchUpInside" id="kIy-5L-rYH"/>
+                                                            <segue destination="Fcs-wp-JE7" kind="show" id="OmM-fp-i98"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e40-4W-OJz">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e40-4W-OJz">
                                                         <rect key="frame" x="0.0" y="291.5" width="384" height="82"/>
                                                         <color key="backgroundColor" red="0.12501230839999999" green="0.3101058304" blue="0.2248015106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="384" id="UPO-wi-hqx"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                         <state key="normal" title="Option 4">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="answerPressed:" destination="aye-s7-1Le" eventType="touchUpInside" id="gdm-mw-5WJ"/>
+                                                            <segue destination="Fcs-wp-JE7" kind="show" id="gQL-Rm-Vv7"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -163,13 +206,94 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hjd-Xv-mup"/>
                     </view>
+                    <connections>
+                        <outlet property="imageShown" destination="1e8-k5-BXJ" id="daR-aN-GAH"/>
+                        <outlet property="option1" destination="pWg-0R-jbn" id="ywq-7z-2h1"/>
+                        <outlet property="option2" destination="T07-jJ-BIf" id="e3E-eZ-geD"/>
+                        <outlet property="option3" destination="Aae-Qj-LPm" id="yl3-0j-G35"/>
+                        <outlet property="option4" destination="e40-4W-OJz" id="0Z0-dF-N82"/>
+                        <outlet property="question" destination="MoS-v7-FhX" id="lJn-cV-Oyt"/>
+                        <outlet property="questionCounter" destination="hpR-s9-mXb" id="hdZ-CU-kEV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPV-n4-sYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808.69565217391312" y="23.4375"/>
+            <point key="canvasLocation" x="-641" y="54"/>
+        </scene>
+        <!--AnalyzingVC-->
+        <scene sceneID="BV8-K5-LhA">
+            <objects>
+                <viewController id="Fcs-wp-JE7" customClass="AnalyzingVC" customModule="HelloWorld2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aIF-fw-zsw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Analyzing Spending Habits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kt5-xy-zDm">
+                                <rect key="frame" x="34" y="430" width="346.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nMZ-et-bNR">
+                                <rect key="frame" x="157" y="481" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0eA-Yf-Db5"/>
+                                    <constraint firstAttribute="width" constant="100" id="c7R-88-ap3"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kt5-xy-zDm" firstAttribute="centerY" secondItem="aIF-fw-zsw" secondAttribute="centerY" id="BnN-Yt-nmG"/>
+                            <constraint firstItem="nMZ-et-bNR" firstAttribute="top" secondItem="kt5-xy-zDm" secondAttribute="bottom" constant="15" id="oyc-ML-xJ2"/>
+                            <constraint firstItem="kt5-xy-zDm" firstAttribute="centerX" secondItem="aIF-fw-zsw" secondAttribute="centerX" id="roL-fD-RzI"/>
+                            <constraint firstItem="nMZ-et-bNR" firstAttribute="centerX" secondItem="aIF-fw-zsw" secondAttribute="centerX" id="ypZ-JC-V3G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wSD-aI-uaB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4P-31-pUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="54"/>
+        </scene>
+        <!--ResultsVC-->
+        <scene sceneID="mGV-C5-ttM">
+            <objects>
+                <viewController storyboardIdentifier="ResultsVC" id="mkN-3d-hfq" customClass="ResultsVC" customModule="HelloWorld2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="54i-r4-zzp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeV-w6-uYT">
+                                <rect key="frame" x="145" y="433" width="124.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acy-6G-CqA">
+                                <rect key="frame" x="174.5" y="471" width="65" height="30"/>
+                                <state key="normal" title="RESTART"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OeV-w6-uYT" firstAttribute="centerY" secondItem="54i-r4-zzp" secondAttribute="centerY" id="4F4-QB-WVs"/>
+                            <constraint firstItem="OeV-w6-uYT" firstAttribute="centerX" secondItem="54i-r4-zzp" secondAttribute="centerX" id="5pc-IP-tGa"/>
+                            <constraint firstItem="Acy-6G-CqA" firstAttribute="centerX" secondItem="54i-r4-zzp" secondAttribute="centerX" id="99S-sn-O71"/>
+                            <constraint firstItem="Acy-6G-CqA" firstAttribute="top" secondItem="OeV-w6-uYT" secondAttribute="bottom" constant="8" id="Qia-br-Yer"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wAZ-mD-6wy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycb-IT-i0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="54"/>
         </scene>
     </scenes>
     <resources>
         <image name="brand_logo.png" width="203" height="89"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gQL-Rm-Vv7"/>
+    </inferredMetricsTieBreakers>
 </document>

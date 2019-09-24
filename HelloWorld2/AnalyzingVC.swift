@@ -18,6 +18,15 @@ class AnalyzingVC: UIViewController {
     
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
+        let ResultsVC = storyBoardHome.instantiateViewController(withIdentifier: "ResultsVC")
+        self.navigationController?.pushViewController(ResultsVC, animated: true)
+    }
+   
+    
     
     
     

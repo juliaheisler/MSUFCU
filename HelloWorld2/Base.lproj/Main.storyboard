@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--QuizVC-->
         <scene sceneID="s1a-ef-dtc">
             <objects>
-                <viewController id="VWy-i4-jYN" sceneMemberID="viewController">
+                <viewController id="VWy-i4-jYN" customClass="QuizVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mjq-CJ-OXQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cnV-cB-QLW">
                                         <rect key="frame" x="0.0" y="93" width="345" height="285"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOj-OD-5Pq">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOj-OD-5Pq">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="0.43455693493150682" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -38,8 +38,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Option 1"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="VWy-i4-jYN" eventType="touchUpInside" id="3Lu-bo-DhJ"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5R-BO-78A">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5R-BO-78A">
                                                 <rect key="frame" x="0.0" y="75" width="345" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="0.43455693490000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -47,8 +50,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Option 2"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="VWy-i4-jYN" eventType="touchUpInside" id="s8F-8g-l1K"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrE-RD-OXD">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrE-RD-OXD">
                                                 <rect key="frame" x="0.0" y="150" width="345" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="0.43455693490000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -56,8 +62,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Option 3"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="VWy-i4-jYN" eventType="touchUpInside" id="azq-Yw-MJo"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-wQ-DtF">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-wQ-DtF">
                                                 <rect key="frame" x="0.0" y="225" width="345" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="0.43455693490000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -65,6 +74,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Option 3"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="VWy-i4-jYN" eventType="touchUpInside" id="IQZ-zq-dIl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -100,6 +112,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="do2-hl-l6F"/>
                     </view>
+                    <connections>
+                        <outlet property="option1" destination="NOj-OD-5Pq" id="ENN-ND-1om"/>
+                        <outlet property="option2" destination="v5R-BO-78A" id="WS2-8c-9HG"/>
+                        <outlet property="option3" destination="PrE-RD-OXD" id="tuX-37-WFU"/>
+                        <outlet property="option4" destination="NzC-wQ-DtF" id="SZ0-JK-8lx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgT-yK-6JY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +126,7 @@
         <!--AnalyzingVC-->
         <scene sceneID="BV8-K5-LhA">
             <objects>
-                <viewController id="Fcs-wp-JE7" customClass="AnalyzingVC" customModule="HelloWorld2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fcs-wp-JE7" customClass="AnalyzingVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIF-fw-zsw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,7 +305,7 @@
         <!--DashboardVC-->
         <scene sceneID="GU3-At-zfu">
             <objects>
-                <viewController storyboardIdentifier="DashboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LHM-Yn-mZm" customClass="DashboardVC" customModule="HelloWorld2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LHM-Yn-mZm" customClass="DashboardVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6R8-M1-RNf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,6 +352,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="bSO-eZ-xk3"/>
         <segue reference="BJK-kH-smh"/>
     </inferredMetricsTieBreakers>
 </document>

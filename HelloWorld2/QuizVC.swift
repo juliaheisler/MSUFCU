@@ -11,6 +11,11 @@ import UIKit
 class QuizVC: UIViewController {
     
 
+    @IBOutlet weak var option1: UIButton!
+    @IBOutlet weak var option2: UIButton!
+    @IBOutlet weak var option3: UIButton!
+    @IBOutlet weak var option4: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,20 @@ class QuizVC: UIViewController {
 
     @IBAction func answerPressed(_ sender: UIButton) {
         
+        if sender.tag == 1{
+            
+            option1.alpha = 0.5
+        }else if sender.tag == 2{
+                option2.alpha = 0.5
+            
+        }else if sender.tag == 3{
+            option3.alpha = 0.5
+            
+        }else if sender.tag == 4{
+            option4.alpha = 0.5
+            
+        }
+            
         
         
         func NextQuestion()

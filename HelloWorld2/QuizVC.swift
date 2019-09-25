@@ -10,16 +10,7 @@ import UIKit
 
 class QuizVC: UIViewController {
     
-    @IBOutlet weak var questionCounter: UILabel!
-    @IBOutlet weak var imageShown: UIImageView!
-    @IBOutlet weak var question: UITextView!
-    @IBOutlet weak var option1: UIButton!
-    @IBOutlet weak var option2: UIButton!
-    @IBOutlet weak var option3: UIButton!
-    @IBOutlet weak var option4: UIButton!
-    
-    var answerSelected = 0
-    var questionNumber = 1
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,22 +22,6 @@ class QuizVC: UIViewController {
 
     @IBAction func answerPressed(_ sender: UIButton) {
         
-//        if sender.tag == 1 {
-//            print("option 1 pressed")
-//        }
-//        if sender.tag == 2 {
-//            print("option 2 pressed")
-//        }
-//        if sender.tag == 3 {
-//            print("option 3 pressed")
-//        }
-//        if sender.tag == 4 {
-//            print("option 4 pressed")
-//        }
-        
-        //eventually -- append to question/answer list
-        //
-       // answerSelected = sender.tag
         
         
         func NextQuestion()

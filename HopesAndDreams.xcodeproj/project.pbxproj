@@ -17,9 +17,9 @@
 		07D3E8D123312AA600890271 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E8D023312AA500890271 /* QuizVC.swift */; };
 		84DE1A4C2339ACA0006A0D73 /* msufcu_logo_white-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DE1A4B2339ACA0006A0D73 /* msufcu_logo_white-01.png */; };
 		84DE1A502339B565006A0D73 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */; };
+		84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE1A51233B041C006A0D73 /* DashboardVC.swift */; };
 		84E015A22331D2AC00C97572 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A12331D2AC00C97572 /* Question.swift */; };
 		84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A52331DFA700C97572 /* AnalyzingVC.swift */; };
-		84E015AA2331E15600C97572 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A92331E15600C97572 /* ResultsVC.swift */; };
 		84E015AE2331ED9100C97572 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015AD2331ED9100C97572 /* Test.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,16 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07A660912326D524004F2AD1 /* HelloWorld2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A660912326D524004F2AD1 /* HopesAndDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopesAndDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A660942326D524004F2AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07A660962326D524004F2AD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07A660992326D524004F2AD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07A6609B2326D527004F2AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07A660A02326D527004F2AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07A660A52326D527004F2AD1 /* HelloWorld2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorld2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A660A52326D527004F2AD1 /* HopesAndDreamsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopesAndDreamsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A660A92326D527004F2AD1 /* HelloWorld2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld2Tests.swift; sourceTree = "<group>"; };
 		07A660AB2326D527004F2AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07A660B02326D527004F2AD1 /* HelloWorld2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorld2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A660B02326D527004F2AD1 /* HopesAndDreamsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopesAndDreamsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A660B42326D527004F2AD1 /* HelloWorld2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld2UITests.swift; sourceTree = "<group>"; };
 		07A660B62326D528004F2AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A660C2232713F1004F2AD1 /* brand_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brand_logo.png; path = ../../Desktop/brand_logo.png; sourceTree = "<group>"; };
@@ -58,9 +58,9 @@
 		07D3E8D023312AA500890271 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		84DE1A4B2339ACA0006A0D73 /* msufcu_logo_white-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "msufcu_logo_white-01.png"; path = "../../Downloads/msufcu_logo_white-01.png"; sourceTree = "<group>"; };
 		84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		84DE1A51233B041C006A0D73 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		84E015A12331D2AC00C97572 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		84E015A52331DFA700C97572 /* AnalyzingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzingVC.swift; sourceTree = "<group>"; };
-		84E015A92331E15600C97572 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultsVC.swift; path = ../ResultsVC.swift; sourceTree = "<group>"; };
 		84E015AD2331ED9100C97572 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,9 +104,9 @@
 		07A660922326D524004F2AD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07A660912326D524004F2AD1 /* HelloWorld2.app */,
-				07A660A52326D527004F2AD1 /* HelloWorld2Tests.xctest */,
-				07A660B02326D527004F2AD1 /* HelloWorld2UITests.xctest */,
+				07A660912326D524004F2AD1 /* HopesAndDreams.app */,
+				07A660A52326D527004F2AD1 /* HopesAndDreamsTests.xctest */,
+				07A660B02326D527004F2AD1 /* HopesAndDreamsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 				07D3E8D023312AA500890271 /* QuizVC.swift */,
 				84E015A52331DFA700C97572 /* AnalyzingVC.swift */,
 				84E015AD2331ED9100C97572 /* Test.swift */,
-				84E015A92331E15600C97572 /* ResultsVC.swift */,
+				84DE1A51233B041C006A0D73 /* DashboardVC.swift */,
 				07A660942326D524004F2AD1 /* AppDelegate.swift */,
 				07A660982326D524004F2AD1 /* Main.storyboard */,
 				07A6609B2326D527004F2AD1 /* Assets.xcassets */,
@@ -151,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		07A660902326D524004F2AD1 /* HelloWorld2 */ = {
+		07A660902326D524004F2AD1 /* HopesAndDreams */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07A660B92326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HelloWorld2" */;
+			buildConfigurationList = 07A660B92326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HopesAndDreams" */;
 			buildPhases = (
 				07A6608D2326D524004F2AD1 /* Sources */,
 				07A6608E2326D524004F2AD1 /* Frameworks */,
@@ -163,14 +163,14 @@
 			);
 			dependencies = (
 			);
-			name = HelloWorld2;
+			name = HopesAndDreams;
 			productName = HelloWorld2;
-			productReference = 07A660912326D524004F2AD1 /* HelloWorld2.app */;
+			productReference = 07A660912326D524004F2AD1 /* HopesAndDreams.app */;
 			productType = "com.apple.product-type.application";
 		};
-		07A660A42326D527004F2AD1 /* HelloWorld2Tests */ = {
+		07A660A42326D527004F2AD1 /* HopesAndDreamsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07A660BC2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HelloWorld2Tests" */;
+			buildConfigurationList = 07A660BC2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HopesAndDreamsTests" */;
 			buildPhases = (
 				07A660A12326D527004F2AD1 /* Sources */,
 				07A660A22326D527004F2AD1 /* Frameworks */,
@@ -181,14 +181,14 @@
 			dependencies = (
 				07A660A72326D527004F2AD1 /* PBXTargetDependency */,
 			);
-			name = HelloWorld2Tests;
+			name = HopesAndDreamsTests;
 			productName = HelloWorld2Tests;
-			productReference = 07A660A52326D527004F2AD1 /* HelloWorld2Tests.xctest */;
+			productReference = 07A660A52326D527004F2AD1 /* HopesAndDreamsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		07A660AF2326D527004F2AD1 /* HelloWorld2UITests */ = {
+		07A660AF2326D527004F2AD1 /* HopesAndDreamsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07A660BF2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HelloWorld2UITests" */;
+			buildConfigurationList = 07A660BF2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HopesAndDreamsUITests" */;
 			buildPhases = (
 				07A660AC2326D527004F2AD1 /* Sources */,
 				07A660AD2326D527004F2AD1 /* Frameworks */,
@@ -199,9 +199,9 @@
 			dependencies = (
 				07A660B22326D527004F2AD1 /* PBXTargetDependency */,
 			);
-			name = HelloWorld2UITests;
+			name = HopesAndDreamsUITests;
 			productName = HelloWorld2UITests;
-			productReference = 07A660B02326D527004F2AD1 /* HelloWorld2UITests.xctest */;
+			productReference = 07A660B02326D527004F2AD1 /* HopesAndDreamsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +227,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 07A6608C2326D524004F2AD1 /* Build configuration list for PBXProject "HelloWorld2" */;
+			buildConfigurationList = 07A6608C2326D524004F2AD1 /* Build configuration list for PBXProject "HopesAndDreams" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -240,9 +240,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07A660902326D524004F2AD1 /* HelloWorld2 */,
-				07A660A42326D527004F2AD1 /* HelloWorld2Tests */,
-				07A660AF2326D527004F2AD1 /* HelloWorld2UITests */,
+				07A660902326D524004F2AD1 /* HopesAndDreams */,
+				07A660A42326D527004F2AD1 /* HopesAndDreamsTests */,
+				07A660AF2326D527004F2AD1 /* HopesAndDreamsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,10 +282,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A660972326D524004F2AD1 /* ViewController.swift in Sources */,
-				84E015AA2331E15600C97572 /* ResultsVC.swift in Sources */,
 				84E015A22331D2AC00C97572 /* Question.swift in Sources */,
 				84E015AE2331ED9100C97572 /* Test.swift in Sources */,
 				84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */,
+				84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */,
 				07D3E8D123312AA600890271 /* QuizVC.swift in Sources */,
 				07A660952326D524004F2AD1 /* AppDelegate.swift in Sources */,
 			);
@@ -312,12 +312,12 @@
 /* Begin PBXTargetDependency section */
 		07A660A72326D527004F2AD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07A660902326D524004F2AD1 /* HelloWorld2 */;
+			target = 07A660902326D524004F2AD1 /* HopesAndDreams */;
 			targetProxy = 07A660A62326D527004F2AD1 /* PBXContainerItemProxy */;
 		};
 		07A660B22326D527004F2AD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07A660902326D524004F2AD1 /* HelloWorld2 */;
+			target = 07A660902326D524004F2AD1 /* HopesAndDreams */;
 			targetProxy = 07A660B12326D527004F2AD1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -502,7 +502,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloWorld2.app/HelloWorld2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopesAndDreams.app/HopesAndDreams";
 			};
 			name = Debug;
 		};
@@ -522,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloWorld2.app/HelloWorld2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopesAndDreams.app/HopesAndDreams";
 			};
 			name = Release;
 		};
@@ -567,7 +567,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		07A6608C2326D524004F2AD1 /* Build configuration list for PBXProject "HelloWorld2" */ = {
+		07A6608C2326D524004F2AD1 /* Build configuration list for PBXProject "HopesAndDreams" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07A660B72326D528004F2AD1 /* Debug */,
@@ -576,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07A660B92326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HelloWorld2" */ = {
+		07A660B92326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HopesAndDreams" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07A660BA2326D528004F2AD1 /* Debug */,
@@ -585,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07A660BC2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HelloWorld2Tests" */ = {
+		07A660BC2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HopesAndDreamsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07A660BD2326D528004F2AD1 /* Debug */,
@@ -594,7 +594,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07A660BF2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HelloWorld2UITests" */ = {
+		07A660BF2326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HopesAndDreamsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07A660C02326D528004F2AD1 /* Debug */,

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msufcu_logo_white-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Fd-a9-7Rw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="msufcu_logo_white-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Fd-a9-7Rw">
                                 <rect key="frame" x="65" y="334" width="284" height="228"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="284" id="7ng-iv-bmf"/>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="msufcu_logo_white-01.png" width="454.55999755859375" height="300"/>
+        <image name="msufcu_logo_white-1" width="1894" height="1250"/>
     </resources>
 </document>

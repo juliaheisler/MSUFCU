@@ -13,7 +13,6 @@
 		07A6609C2326D527004F2AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A6609B2326D527004F2AD1 /* Assets.xcassets */; };
 		07A660AA2326D527004F2AD1 /* HelloWorld2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A660A92326D527004F2AD1 /* HelloWorld2Tests.swift */; };
 		07A660B52326D527004F2AD1 /* HelloWorld2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A660B42326D527004F2AD1 /* HelloWorld2UITests.swift */; };
-		07A660C3232713F2004F2AD1 /* brand_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A660C2232713F1004F2AD1 /* brand_logo.png */; };
 		07D3E8D123312AA600890271 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E8D023312AA500890271 /* QuizVC.swift */; };
 		84DE1A4C2339ACA0006A0D73 /* msufcu_logo_white-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DE1A4B2339ACA0006A0D73 /* msufcu_logo_white-01.png */; };
 		84DE1A502339B565006A0D73 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */; };
@@ -53,7 +52,6 @@
 		07A660B02326D527004F2AD1 /* HopesAndDreamsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopesAndDreamsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A660B42326D527004F2AD1 /* HelloWorld2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld2UITests.swift; sourceTree = "<group>"; };
 		07A660B62326D528004F2AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07A660C2232713F1004F2AD1 /* brand_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brand_logo.png; path = ../../Desktop/brand_logo.png; sourceTree = "<group>"; };
 		07A660C4232713F7004F2AD1 /* brand_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brand_logo.png; sourceTree = "<group>"; };
 		07D3E8D023312AA500890271 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		84DE1A4B2339ACA0006A0D73 /* msufcu_logo_white-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "msufcu_logo_white-01.png"; path = "../../Downloads/msufcu_logo_white-01.png"; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				84DE1A4B2339ACA0006A0D73 /* msufcu_logo_white-01.png */,
-				07A660C2232713F1004F2AD1 /* brand_logo.png */,
 				07A660932326D524004F2AD1 /* HelloWorld2 */,
 				07A660A82326D527004F2AD1 /* HelloWorld2Tests */,
 				07A660B32326D527004F2AD1 /* HelloWorld2UITests */,
@@ -253,7 +250,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DE1A4C2339ACA0006A0D73 /* msufcu_logo_white-01.png in Resources */,
-				07A660C3232713F2004F2AD1 /* brand_logo.png in Resources */,
 				07A6609C2326D527004F2AD1 /* Assets.xcassets in Resources */,
 				84DE1A502339B565006A0D73 /* Launch Screen.storyboard in Resources */,
 				07A6609A2326D524004F2AD1 /* Main.storyboard in Resources */,

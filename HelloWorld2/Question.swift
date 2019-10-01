@@ -11,19 +11,16 @@ import Foundation
 class Question{
     
     let question: String
-    let option1: String
-    let option2: String
-    let option3: String
-    let option4: String
+    let options: Array<String>
+    let questionType: String
   
     
-    init(questionText: String, answer1: String, answer2: String, answer3: String, answer4: String){
+    init(questionText: String, answers: Array<String>, Qtype: String){
         
         question = questionText
-        option1 = answer1
-        option2 = answer2
-        option3 = answer3
-        option4 = answer4
+        options = answers
+        questionType = Qtype
+        
     }
     
 }

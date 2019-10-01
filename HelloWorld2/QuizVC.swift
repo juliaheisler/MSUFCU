@@ -43,18 +43,6 @@ class QuizVC: UIViewController {
             
         
         
-        func NextQuestion()
-        {
-            // write this
-            
-        }
-        
-        func UpdateUI()
-        {
-            //write this
-            
-        }
-        
         
         
     }

@@ -10,17 +10,24 @@ import UIKit
 
 class QuizVC: UIViewController {
     
-
+    
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var option1: UIButton!
     @IBOutlet weak var option2: UIButton!
     @IBOutlet weak var option3: UIButton!
     @IBOutlet weak var option4: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var textIn: UITextField!
+    @IBOutlet weak var slideIn: UISlider!
     
+    let allQuestions = Quiz()
+    var currentQuestion: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        updateQuestion()
     }
 
     
@@ -44,6 +51,31 @@ class QuizVC: UIViewController {
         
         
         
+        
+    }
+    
+    func updateQuestion() {
+        if currentQuestion <= allQuestions.questions.count-1{
+            if allQuestions.questions[currentQuestion].questionType == "multiple choice"{
+                // Display correct elements
+                option1.isHidden = false
+                option2.isHidden = false
+                option3.isHidden = false
+                option4.isHidden = false
+                textIn.isHidden = true
+                slideIn.isHidden = true
+                
+                questionLabel.text = allQuestions.questions[currentQuestion].question
+                option1.setTitle(allQuestions.questions[currentQuestion].options[0], for: UIControl.State.normal)
+                option2.setTitle(allQuestions.questions[currentQuestion].options[1], for: UIControl.State.normal)
+                option3.setTitle(allQuestions.questions[currentQuestion].options[2], for: UIControl.State.normal)
+                option4.setTitle(allQuestions.questions[currentQuestion].options[3], for: UIControl.State.normal)
+            }
+            updateUI()
+        }
+    }
+    
+    func updateUI(){
         
     }
     

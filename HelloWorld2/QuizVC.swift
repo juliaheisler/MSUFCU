@@ -27,7 +27,14 @@ class QuizVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        updateQuestion()
+        //updateQuestion()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(true)
+        
+        //updateQuestion()
+        
     }
 
     

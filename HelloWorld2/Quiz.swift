@@ -14,11 +14,11 @@ class Quiz{
     
     init(){
         
-        questions.append(Question(questionText: "Do you consider yourself a spender or a saver?", answers: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], Qtype: "slider"))
+        questions.append(Question(questionText: "Do you consider yourself a spender or a saver?", answers: ["Saver", "Spender"], Qtype: "slider"))
         
-        questions.append(Question(questionText: "Do you consider yourself an early adopter with technology?", answers: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], Qtype: "slider"))
+        questions.append(Question(questionText: "Do you consider yourself an early adopter with technology?", answers: ["No", "Yes"], Qtype: "slider"))
         
-        questions.append(Question(questionText: "On a scale of 1-10 how important is the service you receive from your financial institution?", answers: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], Qtype: "slider"))
+        questions.append(Question(questionText: "On a scale of 1-10 how important is the service you receive from your financial institution?", answers: ["1", "10"], Qtype: "slider"))
         
         questions.append(Question(questionText: "Are you a homeowner? Do you intend to be a homeowner?", answers: ["Current homeowner","I’d like to be a homeowner soon","Maybe someday","Why buy a house when you can travel the world"], Qtype: "multiple choice"))
         

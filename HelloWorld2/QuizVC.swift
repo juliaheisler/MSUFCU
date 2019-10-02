@@ -33,7 +33,7 @@ class QuizVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
            super.viewDidAppear(true)
         
-        //updateQuestion()
+        updateQuestion()
         
     }
 
@@ -71,6 +71,21 @@ class QuizVC: UIViewController {
                 option4.isHidden = false
                 textIn.isHidden = true
                 slideIn.isHidden = true
+                
+                questionLabel.text = allQuestions.questions[currentQuestion].question
+                option1.setTitle(allQuestions.questions[currentQuestion].options[0], for: UIControl.State.normal)
+                option2.setTitle(allQuestions.questions[currentQuestion].options[1], for: UIControl.State.normal)
+                option3.setTitle(allQuestions.questions[currentQuestion].options[2], for: UIControl.State.normal)
+                option4.setTitle(allQuestions.questions[currentQuestion].options[3], for: UIControl.State.normal)
+            }
+            else if allQuestions.questions[currentQuestion].questionType == "slider"{
+                // Display correct elements
+                option1.isHidden = true
+                option2.isHidden = true
+                option3.isHidden = true
+                option4.isHidden = true
+                textIn.isHidden = true
+                slideIn.isHidden = false
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
                 option1.setTitle(allQuestions.questions[currentQuestion].options[0], for: UIControl.State.normal)

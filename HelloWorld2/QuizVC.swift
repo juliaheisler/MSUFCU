@@ -25,6 +25,7 @@ class QuizVC: UIViewController {
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
     var selectedAnswer: Int = 0
+    var tempStorage = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +77,8 @@ class QuizVC: UIViewController {
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
+        //append to array before calling new question
+        
         currentQuestion += 1
         updateQuestion()
     }
@@ -143,7 +146,9 @@ class QuizVC: UIViewController {
         }
         else {
             // Quiz end
-            //NextQuestion.setTitle("Finish", for: .normal)
+            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
+            let Analyzing = storyBoardHome.instantiateViewController(withIdentifier: "AnalyzingVC")
+            self.navigationController?.pushViewController(Analyzing, animated: true)
             
         }
     }

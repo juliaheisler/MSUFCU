@@ -19,15 +19,18 @@ class QuizVC: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var textIn: UITextField!
     @IBOutlet weak var slideIn: UISlider!
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var endLabel: UILabel!
     
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
+    var selectedAnswer: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //updateQuestion()
+        updateQuestion()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,36 +44,62 @@ class QuizVC: UIViewController {
 
     @IBAction func answerPressed(_ sender: UIButton) {
         
-        if sender.tag == 1{
-            
+        selectedAnswer = sender.tag
+        
+        if selectedAnswer == 1{
             option1.alpha = 0.5
-        }else if sender.tag == 2{
-                option2.alpha = 0.5
+            option2.alpha = 1
+            option3.alpha = 1
+            option4.alpha = 1
+        }else if selectedAnswer == 2{
+            option1.alpha = 1
+            option2.alpha = 0.5
+            option3.alpha = 1
+            option4.alpha = 1
             
-        }else if sender.tag == 3{
+        }else if selectedAnswer == 3{
+            option1.alpha = 1
+            option2.alpha = 1
             option3.alpha = 0.5
+            option4.alpha = 1
             
-        }else if sender.tag == 4{
+        }else if selectedAnswer == 4{
+            option1.alpha = 1
+            option2.alpha = 1
+            option3.alpha = 1
             option4.alpha = 0.5
             
         }
-            
-        
-        
-        
         
     }
     
+    @IBAction func sliderChange(_ sender: UISlider) {
+        selectedAnswer = Int(sender.value)
+    }
+    
+    @IBAction func nextPressed(_ sender: UIButton) {
+        currentQuestion += 1
+        updateQuestion()
+    }
+    
+    
     func updateQuestion() {
         if currentQuestion <= allQuestions.questions.count-1{
+            selectedAnswer = 0
             if allQuestions.questions[currentQuestion].questionType == "multiple choice"{
                 // Display correct elements
                 option1.isHidden = false
                 option2.isHidden = false
                 option3.isHidden = false
                 option4.isHidden = false
+                option1.alpha = 1
+                option2.alpha = 1
+                option3.alpha = 1
+                option4.alpha = 1
                 textIn.isHidden = true
                 slideIn.isHidden = true
+                startLabel.isHidden = true
+                endLabel.isHidden = true
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
                 option1.setTitle(allQuestions.questions[currentQuestion].options[0], for: UIControl.State.normal)
@@ -86,20 +115,35 @@ class QuizVC: UIViewController {
                 option4.isHidden = true
                 textIn.isHidden = true
                 slideIn.isHidden = false
+                slideIn.value = 1
+                startLabel.isHidden = false
+                endLabel.isHidden = false
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
-                option1.setTitle(allQuestions.questions[currentQuestion].options[0], for: UIControl.State.normal)
-                option2.setTitle(allQuestions.questions[currentQuestion].options[1], for: UIControl.State.normal)
-                option3.setTitle(allQuestions.questions[currentQuestion].options[2], for: UIControl.State.normal)
-                option4.setTitle(allQuestions.questions[currentQuestion].options[3], for: UIControl.State.normal)
+                startLabel.text = allQuestions.questions[currentQuestion].options[0]
+                endLabel.text = allQuestions.questions[currentQuestion].options[1]
             }
-            updateUI()
+            else if allQuestions.questions[currentQuestion].questionType == "text"{
+                // Display correct elements
+                option1.isHidden = true
+                option2.isHidden = true
+                option3.isHidden = true
+                option4.isHidden = true
+                textIn.isHidden = false
+                slideIn.isHidden = true
+                startLabel.isHidden = true
+                endLabel.isHidden = true
+                
+                questionLabel.text = allQuestions.questions[currentQuestion].question
+            }
+        }
+        else {
+            // Quiz end
+            
         }
     }
     
-    func updateUI(){
-        
-    }
+   
     
     
     /*

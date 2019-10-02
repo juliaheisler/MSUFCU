@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="sDH-9j-9Gs">
-                                <rect key="frame" x="15" y="144" width="345" height="451.5"/>
+                                <rect key="frame" x="15" y="144" width="345" height="487"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjY-oM-Zu4">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="20.5"/>
@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cnV-cB-QLW">
-                                        <rect key="frame" x="0.0" y="72.5" width="345" height="379"/>
+                                        <rect key="frame" x="0.0" y="72.5" width="345" height="414.5"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOj-OD-5Pq">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="60"/>
@@ -81,9 +81,30 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FLI-QV-vEp">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="FLI-QV-vEp">
                                                 <rect key="frame" x="-2" y="349" width="349" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderChange:" destination="VWy-i4-jYN" eventType="valueChanged" id="GZ3-vl-G2S"/>
+                                                </connections>
                                             </slider>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dct-Kl-aNk">
+                                                <rect key="frame" x="0.0" y="394" width="345" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slideStart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a2D-fO-lia">
+                                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="20.5"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slideEnd" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzn-jz-Z6O">
+                                                        <rect key="frame" x="73.5" y="0.0" width="271.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="v5R-BO-78A" firstAttribute="width" secondItem="NOj-OD-5Pq" secondAttribute="width" id="CVf-os-PVm"/>
@@ -98,12 +119,12 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOR-d4-G39">
-                                <rect key="frame" x="243" y="635.5" width="115" height="30"/>
+                                <rect key="frame" x="243" y="671" width="115" height="30"/>
                                 <state key="normal" title="Next Question →">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Fcs-wp-JE7" kind="show" id="FsC-xV-I2k"/>
+                                    <action selector="nextPressed:" destination="VWy-i4-jYN" eventType="touchUpInside" id="rdt-Ye-5v2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -120,6 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wem-6C-OwK"/>
                     <connections>
+                        <outlet property="endLabel" destination="rzn-jz-Z6O" id="iZR-f2-ecs"/>
                         <outlet property="nextButton" destination="OOR-d4-G39" id="gNF-wE-kog"/>
                         <outlet property="option1" destination="NOj-OD-5Pq" id="ENN-ND-1om"/>
                         <outlet property="option2" destination="v5R-BO-78A" id="WS2-8c-9HG"/>
@@ -127,6 +149,7 @@
                         <outlet property="option4" destination="NzC-wQ-DtF" id="SZ0-JK-8lx"/>
                         <outlet property="questionLabel" destination="rjY-oM-Zu4" id="5w5-gr-1bQ"/>
                         <outlet property="slideIn" destination="FLI-QV-vEp" id="rwC-Si-SxF"/>
+                        <outlet property="startLabel" destination="a2D-fO-lia" id="iN3-YH-HZi"/>
                         <outlet property="textIn" destination="8nE-0x-wy5" id="APA-5x-I65"/>
                     </connections>
                 </viewController>

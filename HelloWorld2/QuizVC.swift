@@ -21,7 +21,7 @@ class QuizVC: UIViewController {
     @IBOutlet weak var slideIn: UISlider!
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
-    
+    @IBOutlet weak var NextQuestion: UIButton!
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
     var selectedAnswer: Int = 0
@@ -35,8 +35,6 @@ class QuizVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
            super.viewDidAppear(true)
-        
-        updateQuestion()
         
     }
 
@@ -84,7 +82,13 @@ class QuizVC: UIViewController {
     
     
     func updateQuestion() {
-        if currentQuestion <= allQuestions.questions.count-1{
+        if currentQuestion == allQuestions.questions.count-1
+        {
+            NextQuestion.setTitle("Finish Quiz →", for: .normal)
+            
+        }
+        
+        if currentQuestion < allQuestions.questions.count{
             selectedAnswer = 0
             if allQuestions.questions[currentQuestion].questionType == "multiple choice"{
                 // Display correct elements
@@ -139,6 +143,7 @@ class QuizVC: UIViewController {
         }
         else {
             // Quiz end
+            //NextQuestion.setTitle("Finish", for: .normal)
             
         }
     }

@@ -54,15 +54,17 @@ class CircularProgressBar: UIView {
         
         foregroundLayer.strokeEnd = CGFloat(progress)
         
-        if withAnimation {
-            let animation = CABasicAnimation(keyPath: "strokeEnd")
-            animation.fromValue = 0
-            animation.toValue = progress
-            animation.duration = 2
-            foregroundLayer.add(animation, forKey: "foregroundAnimation")
-            
-        }
+        setupView()
         
+//        if withAnimation {
+//            let animation = CABasicAnimation(keyPath: "strokeEnd")
+//            animation.fromValue = 0
+//            animation.toValue = progress
+//            animation.duration = 2
+//            foregroundLayer.add(animation, forKey: "foregroundAnimation")
+//
+//        }
+//
 //        var currentTime:Double = 0
 //        let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
 //            if currentTime >= 2{
@@ -106,6 +108,7 @@ class CircularProgressBar: UIView {
         self.backgroundLayer.strokeColor = UIColor.lightGray.cgColor
         self.backgroundLayer.lineWidth = lineWidth - (lineWidth * 20/100)
         self.backgroundLayer.fillColor = UIColor.clear.cgColor
+        self.backgroundLayer.strokeColor = UIColor.gray.cgColor
         self.layer.addSublayer(backgroundLayer)
         
     }
@@ -121,8 +124,8 @@ class CircularProgressBar: UIView {
         foregroundLayer.path = path.cgPath
         foregroundLayer.lineWidth = lineWidth
         foregroundLayer.fillColor = UIColor.clear.cgColor
-        foregroundLayer.strokeColor = UIColor.red.cgColor
-        foregroundLayer.strokeEnd = 0
+        foregroundLayer.strokeColor = UIColor.green.cgColor
+        
         
         self.layer.addSublayer(foregroundLayer)
         

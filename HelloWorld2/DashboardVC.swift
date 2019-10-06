@@ -11,12 +11,17 @@ import UIKit
 class DashboardVC: UIViewController {
     
     
+    @IBOutlet weak var goalProgress: CircularProgressBar!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        goalProgress.lineWidth = 10
+        goalProgress.safePercent = 100
+        goalProgress.setProgress(to: 20, withAnimation: true)
+        
     }
     
     

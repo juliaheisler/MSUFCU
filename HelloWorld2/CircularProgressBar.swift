@@ -63,19 +63,19 @@ class CircularProgressBar: UIView {
             
         }
         
-        var currentTime:Double = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
-            if currentTime >= 2{
-                timer.invalidate()
-            } else {
-                currentTime += 0.05
-                let percent = currentTime/2 * 100
-                self.label.text = "\(Int(progress * percent))"
-                self.setForegroundLayerColorForSafePercent()
-                self.configLabel()
-            }
-        }
-        timer.fire()
+//        var currentTime:Double = 0
+//        let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
+//            if currentTime >= 2{
+//                timer.invalidate()
+//            } else {
+//                currentTime += 0.05
+//                let percent = currentTime/2 * 100
+//                self.label.text = "\(Int(progress * percent))"
+//                self.setForegroundLayerColorForSafePercent()
+//                self.configLabel()
+//            }
+//        }
+//        timer.fire()
         
     }
     

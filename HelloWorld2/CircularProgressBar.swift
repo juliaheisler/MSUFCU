@@ -53,6 +53,8 @@ class CircularProgressBar: UIView {
         }
         
         foregroundLayer.strokeEnd = CGFloat(progress)
+        self.label.text = "Trip to Paris"
+        self.configLabel()
         
         setupView()
         

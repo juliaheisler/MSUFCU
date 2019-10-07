@@ -515,7 +515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Taj-YZ-lL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384.80000000000001" y="816.34182908545733"/>
+            <point key="canvasLocation" x="316" y="1000"/>
         </scene>
         <!--Wallet-->
         <scene sceneID="x9w-bP-t9T">
@@ -528,8 +528,8 @@
                         <viewLayoutGuide key="safeArea" id="7nL-yr-7Zb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Wallet" image="icons8-money-box-50" id="kjT-bB-XXW">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="6"/>
+                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="2"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -544,12 +544,19 @@
                     <view key="view" contentMode="scaleToFill" id="26R-r0-aCi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tsw-jW-plg">
+                                <rect key="frame" x="132" y="233" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="q9Z-yh-CvO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="icons8-home-50" id="Gr5-6B-TQj">
+                        <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="2"/>
                         <color key="badgeColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="6"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -565,6 +572,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="bjN-zM-BXg" kind="relationship" relationship="viewControllers" id="QfJ-4N-bC6"/>
@@ -588,8 +596,8 @@
                         <viewLayoutGuide key="safeArea" id="11e-Rh-GAM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Offers" image="icons8-star-50" id="Ebh-ig-IXT">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="6"/>
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="2"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -608,8 +616,8 @@
                         <viewLayoutGuide key="safeArea" id="LHe-Q6-zJ9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="icons8-account-50" id="3sR-5t-lMS">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="6"/>
+                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="2"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>

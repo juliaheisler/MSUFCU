@@ -19,6 +19,7 @@ class DashboardVC: UIViewController {
         
         // Do any additional setup after loading the view.
         goalProgress.lineWidth = 10
+        goalProgress.labelSize = 27
         goalProgress.safePercent = 100
         goalProgress.setProgress(to: 0.5, withAnimation: true)
         

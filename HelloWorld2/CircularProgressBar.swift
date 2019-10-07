@@ -28,9 +28,9 @@ class CircularProgressBar: UIView {
         }
     }
     
-    public var labelSize: CGFloat = 20 {
+    public var labelSize: CGFloat = 25 {
         didSet {
-            label.font = UIFont.systemFont(ofSize: labelSize)
+            label.font = UIFont.boldSystemFont(ofSize: labelSize)
             label.sizeToFit()
             configLabel()
         }
@@ -53,7 +53,8 @@ class CircularProgressBar: UIView {
         }
         
         foregroundLayer.strokeEnd = CGFloat(progress)
-        self.label.text = "Trip to Paris"
+        self.label.text = "Trip to Paris: $651.51"
+        self.label1.text = "saved out of $1303.00"
         self.configLabel()
         
         setupView()
@@ -88,6 +89,7 @@ class CircularProgressBar: UIView {
     
     //MARK: Private
     private var label = UILabel()
+    private var label1 = UILabel()
     private let foregroundLayer = CAShapeLayer()
     private let backgroundLayer = CAShapeLayer()
     private var radius: CGFloat {
@@ -105,7 +107,7 @@ class CircularProgressBar: UIView {
     }
     
     private func drawBackgroundLayer(){
-        let path = UIBezierPath(arcCenter: pathCenter, radius: self.radius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
+        let path = UIBezierPath(arcCenter: CGPoint(x:pathCenter.x-15, y:pathCenter.y), radius: self.radius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
         self.backgroundLayer.path = path.cgPath
         self.backgroundLayer.strokeColor = UIColor.lightGray.cgColor
         self.backgroundLayer.lineWidth = lineWidth - (lineWidth * 20/100)
@@ -120,7 +122,7 @@ class CircularProgressBar: UIView {
         let startAngle = (-CGFloat.pi/2)
         let endAngle = 2 * CGFloat.pi + startAngle
         
-        let path = UIBezierPath(arcCenter: pathCenter, radius: self.radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        let path = UIBezierPath(arcCenter: CGPoint(x:pathCenter.x-15, y:pathCenter.y), radius: self.radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
         foregroundLayer.lineCap = CAShapeLayerLineCap.round
         foregroundLayer.path = path.cgPath
@@ -137,14 +139,30 @@ class CircularProgressBar: UIView {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         label.text = text
         label.font = UIFont.systemFont(ofSize: labelSize)
+        label.textColor = UIColor.systemGreen
+        label.textAlignment = NSTextAlignment.center
         label.sizeToFit()
-        label.center = pathCenter
+        label.center = CGPoint(x:pathCenter.x, y:pathCenter.y)
         return label
+    }
+    
+    private func makeLabel1(withText text: String) -> UILabel {
+        let label1 = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        label1.text = text
+        label1.font = UIFont.systemFont(ofSize: labelSize)
+        label1.textColor = UIColor.gray
+        label1.sizeToFit()
+        label1.textAlignment = NSTextAlignment.center
+        label1.center = CGPoint(x:pathCenter.x, y:pathCenter.y+25)
+        return label1
     }
     
     private func configLabel(){
         label.sizeToFit()
-        label.center = pathCenter
+        label.center = CGPoint(x:pathCenter.x, y:pathCenter.y)
+        label1.sizeToFit()
+        label1.center = CGPoint(x:pathCenter.x, y:pathCenter.y+25)
+        
     }
     
     private func setForegroundLayerColorForSafePercent(){
@@ -158,6 +176,7 @@ class CircularProgressBar: UIView {
     private func setupView() {
         makeBar()
         self.addSubview(label)
+        self.addSubview(label1)
     }
     
     

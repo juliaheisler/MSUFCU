@@ -107,7 +107,7 @@ class CircularProgressBar: UIView {
     }
     
     private func drawBackgroundLayer(){
-        let path = UIBezierPath(arcCenter: CGPoint(x:pathCenter.x-15, y:pathCenter.y), radius: self.radius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
+        let path = UIBezierPath(arcCenter: CGPoint(x:pathCenter.x, y:pathCenter.y), radius: self.radius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
         self.backgroundLayer.path = path.cgPath
         self.backgroundLayer.strokeColor = UIColor.lightGray.cgColor
         self.backgroundLayer.lineWidth = lineWidth - (lineWidth * 20/100)
@@ -122,13 +122,13 @@ class CircularProgressBar: UIView {
         let startAngle = (-CGFloat.pi/2)
         let endAngle = 2 * CGFloat.pi + startAngle
         
-        let path = UIBezierPath(arcCenter: CGPoint(x:pathCenter.x-15, y:pathCenter.y), radius: self.radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        let path = UIBezierPath(arcCenter: CGPoint(x:pathCenter.x, y:pathCenter.y), radius: self.radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
         foregroundLayer.lineCap = CAShapeLayerLineCap.round
         foregroundLayer.path = path.cgPath
         foregroundLayer.lineWidth = lineWidth
         foregroundLayer.fillColor = UIColor.clear.cgColor
-        foregroundLayer.strokeColor = UIColor.green.cgColor
+        foregroundLayer.strokeColor = #colorLiteral(red: 0.4835554361, green: 0.7841576934, blue: 0.06046832353, alpha: 1)
         
         
         self.layer.addSublayer(foregroundLayer)
@@ -139,10 +139,10 @@ class CircularProgressBar: UIView {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         label.text = text
         label.font = UIFont.systemFont(ofSize: labelSize)
-        label.textColor = UIColor.systemGreen
+        label.textColor = UIColor.green
         label.textAlignment = NSTextAlignment.center
         label.sizeToFit()
-        label.center = CGPoint(x:pathCenter.x, y:pathCenter.y)
+        label.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y)
         return label
     }
     
@@ -153,15 +153,17 @@ class CircularProgressBar: UIView {
         label1.textColor = UIColor.gray
         label1.sizeToFit()
         label1.textAlignment = NSTextAlignment.center
-        label1.center = CGPoint(x:pathCenter.x, y:pathCenter.y+25)
+        label1.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y+25)
         return label1
     }
     
     private func configLabel(){
         label.sizeToFit()
-        label.center = CGPoint(x:pathCenter.x, y:pathCenter.y)
+        label.textColor = #colorLiteral(red: 0, green: 0.2714106441, blue: 0, alpha: 1)
+        label.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y)
+        label1.textColor = UIColor.gray
         label1.sizeToFit()
-        label1.center = CGPoint(x:pathCenter.x, y:pathCenter.y+25)
+        label1.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y+25)
         
     }
     

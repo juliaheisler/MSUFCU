@@ -10,9 +10,10 @@ import UIKit
 
 class StockCell: NSObject {
     
-    var id: String?
-    var user: String?
-    var password: String?
+    var trans_date: String?
+    var trans_balance: String?
+    var trans_amount: String?
+    var trans_desc: String?
     
     
     
@@ -25,11 +26,12 @@ class StockCell: NSObject {
     
     //construct with @name and @price parameters
     
-    init(id: String, user: String, password: String) {
+    init(trans_date: String, trans_amount: String, trans_balance: String, trans_desc: String) {
         
-        self.id = id
-        self.user = user
-        self.password = password
+        self.trans_date = trans_date
+        self.trans_amount = trans_amount
+        self.trans_balance = trans_balance
+        self.trans_desc = trans_desc
         
         
     }
@@ -38,7 +40,7 @@ class StockCell: NSObject {
     //prints a stock's name and price
     
     override var description: String {
-        return "ID: \(String(describing: id)), User: \(String(describing: user)), Password: \(String(describing: password))"
+        return "ID: \(String(describing: trans_date)),ID: \(String(describing: trans_balance)), User: \(String(describing: trans_amount)), Password: \(String(describing: trans_desc))"
         
     }
 

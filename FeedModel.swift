@@ -16,7 +16,9 @@ class FeedModel: NSObject, URLSessionDataDelegate{
     
     weak var delegate: FeedModelProtocol!
     
-    let urlPath = "http://webdev.cse.msu.edu/~yangti18/cse476/step6/test.php" //Change to the web address of your stock_service.php file
+    var transactions: Array<Array<String>> = Array()
+    
+    let urlPath = "http://35.9.22.109/get_trans.php" //Change to the web address of your stock_service.php file
     
     func downloadItems() {
         
@@ -51,6 +53,8 @@ class FeedModel: NSObject, URLSessionDataDelegate{
         
         var jsonElement = NSDictionary()
         let stocks = NSMutableArray()
+        //var transactions: Array<Array<String>> = Array()
+        var temp: [String] = []
         
         for i in 0 ..< jsonResult.count
         {
@@ -61,25 +65,35 @@ class FeedModel: NSObject, URLSessionDataDelegate{
             
             //the following insures none of the JsonElement values are nil through optional binding
             //the following insures none of the JsonElement values are nil through optional binding
-            if let id = jsonElement["id"] as? String,
-                let user = jsonElement["user"] as? String,
-                let password = jsonElement["password"] as? String
+            if let trans_date = jsonElement["trans_date"] as? String,
+                let trans_amount = jsonElement["trans_amount"] as? String,
+                let trans_balance = jsonElement["trans_balance"] as? String,
+                let trans_desc = jsonElement["trans_desc"] as? String
                 
             {
-                print(id)
-                print(user)
-                print(password)
-                stock.id = id
-                stock.user = user
-                stock.password = password
+                //var temp: [String] = []
+                temp.append(trans_date)
+                temp.append(trans_amount)
+                temp.append(trans_balance)
+                temp.append(trans_desc)
+                //print(temp)
+                stock.trans_date = trans_date
+                stock.trans_balance = trans_balance
+                stock.trans_amount = trans_amount
+                
+                stock.trans_desc = trans_desc
                 
                 
             }
             
+            
             stocks.add(stock)
+            transactions.append(temp)
+            
+            temp = []
             
         }
-        
+        print(transactions)
         DispatchQueue.main.async(execute: { () -> Void in
             
             self.delegate.itemsDownloaded(items: stocks)

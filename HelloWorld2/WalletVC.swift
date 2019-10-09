@@ -14,6 +14,7 @@ class WalletVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Fe
     //Properties
     
     var feedItems: NSArray = NSArray()
+   // var items = FeedModel.transactions 
     var selectedStock : StockCell = StockCell()
     @IBOutlet weak var stockResultsFeed: UITableView!
     //@IBOutlet weak var tempCell: UITableViewCell!
@@ -52,7 +53,8 @@ class WalletVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Fe
         // Get the stock to be shown
         let item: StockCell = feedItems[indexPath.row] as! StockCell
         // Configure our cell title made up of name and price
-        let titleStr: String = item.id! + ": " + item.user!
+        
+        let titleStr: String = "Date: " + item.trans_date! + " Amount: " + item.trans_amount! + "Balance: " + item.trans_balance!
         print(titleStr)
         // Get references to labels of cell
         myCell.textLabel!.text = titleStr

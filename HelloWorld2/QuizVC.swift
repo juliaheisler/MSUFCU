@@ -45,7 +45,11 @@ class QuizVC: UIViewController {
 
     @IBAction func answerPressed(_ sender: UIButton) {
         
+        nextButton.isEnabled = true
+        
         selectedAnswer = sender.tag
+        
+        
         
         if selectedAnswer == 1{
             option1.alpha = 0.5
@@ -71,6 +75,7 @@ class QuizVC: UIViewController {
             option4.alpha = 0.5
             
         }
+        
         
     }
     
@@ -109,6 +114,9 @@ class QuizVC: UIViewController {
                 slideIn.isHidden = true
                 startLabel.isHidden = true
                 endLabel.isHidden = true
+                
+                selectedAnswer = 0
+                nextButton.isEnabled = false
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
                 option1.setTitle(allQuestions.questions[currentQuestion].options[0], for: UIControl.State.normal)

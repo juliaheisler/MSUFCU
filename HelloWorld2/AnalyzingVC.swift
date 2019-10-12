@@ -22,7 +22,7 @@ class AnalyzingVC: UIViewController {
         super.viewDidAppear(true)
         
         let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-        let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "Home")
+        let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
         self.navigationController?.pushViewController(Dashboard, animated: true)
     }
    

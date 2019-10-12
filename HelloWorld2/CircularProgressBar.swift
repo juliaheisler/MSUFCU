@@ -10,13 +10,18 @@ import UIKit
 
 class CircularProgressBar: UIView {
     
+    var goalName = UILabel()
+    var goalProg = UILabel()
+    var label1 = UILabel()
+    
     //MARK: awakeFromNib
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
-        label.text = "0"
+        goalName.text = "0"
     }
+    
     
     
     //MARK: Public
@@ -30,10 +35,11 @@ class CircularProgressBar: UIView {
     
     public var labelSize: CGFloat = 25 {
         didSet {
-            label.font = UIFont.boldSystemFont(ofSize: labelSize)
-            label.sizeToFit()
+            goalName.font = UIFont.boldSystemFont(ofSize: labelSize)
+            goalName.sizeToFit()
             configLabel()
         }
+    
     }
     
     public var safePercent: Int = 100 {
@@ -53,34 +59,14 @@ class CircularProgressBar: UIView {
         }
         
         foregroundLayer.strokeEnd = CGFloat(progress)
-        self.label.text = "Trip to Paris: $651.51"
+        
+        // temporary will get from quiz
+        self.goalName.text = "Trip to Paris"
+        self.goalProg.text = "$651.50"
         self.label1.text = "saved out of $1303.00"
         self.configLabel()
         
         setupView()
-        
-//        if withAnimation {
-//            let animation = CABasicAnimation(keyPath: "strokeEnd")
-//            animation.fromValue = 0
-//            animation.toValue = progress
-//            animation.duration = 2
-//            foregroundLayer.add(animation, forKey: "foregroundAnimation")
-//
-//        }
-//
-//        var currentTime:Double = 0
-//        let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { (timer) in
-//            if currentTime >= 2{
-//                timer.invalidate()
-//            } else {
-//                currentTime += 0.05
-//                let percent = currentTime/2 * 100
-//                self.label.text = "\(Int(progress * percent))"
-//                self.setForegroundLayerColorForSafePercent()
-//                self.configLabel()
-//            }
-//        }
-//        timer.fire()
         
     }
     
@@ -88,8 +74,6 @@ class CircularProgressBar: UIView {
     
     
     //MARK: Private
-    private var label = UILabel()
-    private var label1 = UILabel()
     private let foregroundLayer = CAShapeLayer()
     private let backgroundLayer = CAShapeLayer()
     private var radius: CGFloat {
@@ -135,40 +119,24 @@ class CircularProgressBar: UIView {
         
     }
     
-    private func makeLabel(withText text: String) -> UILabel {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        label.text = text
-        label.font = UIFont.systemFont(ofSize: labelSize)
-        label.textColor = UIColor.green
-        label.textAlignment = NSTextAlignment.center
-        label.sizeToFit()
-        label.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y)
-        return label
-    }
-    
-    private func makeLabel1(withText text: String) -> UILabel {
-        let label1 = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        label1.text = text
-        label1.font = UIFont.systemFont(ofSize: labelSize)
-        label1.textColor = UIColor.gray
-        label1.sizeToFit()
-        label1.textAlignment = NSTextAlignment.center
-        label1.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y+25)
-        return label1
-    }
-    
     private func configLabel(){
-        label.sizeToFit()
-        label.textColor = #colorLiteral(red: 0, green: 0.2714106441, blue: 0, alpha: 1)
-        label.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y)
+        goalName.sizeToFit()
+        goalName.textColor = #colorLiteral(red: 0, green: 0.3768543005, blue: 0.2880578637, alpha: 1)
+        goalName.center = CGPoint(x:pathCenter.x, y:pathCenter.y-40)
+        
+        goalProg.sizeToFit()
+        goalProg.textColor = #colorLiteral(red: 0.4835554361, green: 0.7841576934, blue: 0.06046832353, alpha: 1)
+        goalProg.font = UIFont.boldSystemFont(ofSize: 22)
+        goalProg.center = CGPoint(x:pathCenter.x, y:pathCenter.y-15)
+        
         label1.textColor = UIColor.gray
         label1.sizeToFit()
-        label1.center = CGPoint(x:pathCenter.x+20, y:pathCenter.y+25)
+        label1.center = CGPoint(x:pathCenter.x, y:pathCenter.y+5)
         
     }
     
     private func setForegroundLayerColorForSafePercent(){
-        if Int(label.text!)! >= self.safePercent {
+        if Int(goalName.text!)! >= self.safePercent {
             self.foregroundLayer.strokeColor = UIColor.green.cgColor
         } else {
             self.foregroundLayer.strokeColor = UIColor.red.cgColor
@@ -177,7 +145,8 @@ class CircularProgressBar: UIView {
     
     private func setupView() {
         makeBar()
-        self.addSubview(label)
+        self.addSubview(goalName)
+        self.addSubview(goalProg)
         self.addSubview(label1)
     }
     
@@ -187,9 +156,11 @@ class CircularProgressBar: UIView {
     private var layoutDone = false
     override func layoutSublayers(of layer: CALayer) {
         if !layoutDone {
-            let tempText = label.text
+           // let tempText = goalName.text
+            //let temp2 = goalProg.text
             setupView()
-            label.text = tempText
+            //goalName.text = tempText
+            //goalProg.text = temp2
             layoutDone = true
         }
     }

@@ -25,7 +25,7 @@ class QuizVC: UIViewController {
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
     var selectedAnswer: Int = 0
-    var tempStorage = [String]()
+    var tempStorage: [String: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,8 +84,28 @@ class QuizVC: UIViewController {
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
-        //append to array before calling new question
+        //append to dictionary before going to next question
         
+        if allQuestions.questions[currentQuestion].questionType == "multiple choice"
+        {
+            tempStorage[allQuestions.questions[currentQuestion].question] = allQuestions.questions[currentQuestion].options[selectedAnswer-1]
+            
+        }
+        
+        else if allQuestions.questions[currentQuestion].questionType == "slider"
+        {
+            tempStorage[allQuestions.questions[currentQuestion].question] = String(slideIn.value)
+        }
+        
+        else if allQuestions.questions[currentQuestion].questionType == "text"
+        {
+            
+            tempStorage[allQuestions.questions[currentQuestion].question] = textIn.text
+            
+        }
+        
+        
+    
         currentQuestion += 1
         updateQuestion()
     }
@@ -95,6 +115,7 @@ class QuizVC: UIViewController {
         if currentQuestion == allQuestions.questions.count-1
         {
             NextQuestion.setTitle("Finish Quiz →", for: .normal)
+            print(tempStorage)
             
         }
         

@@ -12,7 +12,12 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var goalProgress: CircularProgressBar!
     
-   
+    //set variable for progress bar here
+    //var progress = 0.0
+    
+    //var goalName = CircularProgressBar().goalName
+    
+    
     
     
     override func viewDidLoad() {

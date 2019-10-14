@@ -20,9 +20,9 @@ class WalletVC: UIViewController{//, UITableViewDataSource, UITableViewDelegate 
         
         //set delegates and initialize FeedModel
         let hash = UserDefaults.standard.string(forKey: "hashID") ?? ""
-        APIClient.getTransactions(acct: "11134090", rows: "20", hash: hash)
         
-        let result = UserDefaults.standard.object(forKey: "hashID")
+        let result = APIClient.getTransactions(acct: "11134090", rows: "20", hash: hash)
+
         for item in result{
             let stock = StockCell()
             stock.trans_date = item["trans_date"]
@@ -30,37 +30,37 @@ class WalletVC: UIViewController{//, UITableViewDataSource, UITableViewDelegate 
             stock.trans_amount = item["trans_amount"]
             stock.trans_desc = item["trans_desc"]
             feedItems.append(stock)
-            
+
         }
         
     }
     
     
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // Return the number of feed items
-//        return feedItems.count
-//
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//
-//        // Retrieve cell
-//
-//        let myCell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
-//
-//        // Get the stock to be shown
-//        let item: StockCell = feedItems[indexPath.item]
-//        // Configure our cell title made up of name and price
-//
-//        let titleStr: String = "Date: " + item.trans_date! + " Amount: " + item.trans_amount! + "Balance: " + item.trans_balance!
-//        print(titleStr)
-//        // Get references to labels of cell
-//        myCell.textLabel!.text = titleStr
-//
-//
-//        return myCell
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of feed items
+        return feedItems.count
+
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+
+        // Retrieve cell
+
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "stockCell", for: indexPath)
+
+        // Get the stock to be shown
+        let item: StockCell = feedItems[indexPath.item]
+        // Configure our cell title made up of name and price
+
+        let titleStr: String = "Date: " + item.trans_date! + " Amount: " + item.trans_amount! + "Balance: " + item.trans_balance!
+        print(titleStr)
+        // Get references to labels of cell
+        myCell.textLabel!.text = titleStr
+
+
+        return myCell
+    }
     
 }

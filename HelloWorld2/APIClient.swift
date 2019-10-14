@@ -32,38 +32,38 @@ class APIClient
             //if let hash_val = json["hash"]{
               //  print("Hash is : \(hash_val)")
             //}
-        }
+    }
     
     
-    static func getTransactions( acct: String, rows: String, hash: String)
+    static func getTransactions( acct: String, rows: String, hash: String) -> [[String : String]]
     {
+        var transactions = [[String:String]]()
         let parameters: Parameters = ["accnum": acct, "getrecent": rows, "hash": hash]
         Alamofire.request("http://msufcu.meowtap.com:5000/getdata", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
-            if let json = response.result.value as? [[String : String]]
+            if let json0 = response.result.value as? [[String : String]]
             {
-               // UserDefaults.standard.set(transactions, forKey: "data")
-                //debugPrint(json)
-                var transactions = [[String:String]]()
-                
-                for i in json
+
+                for i in json0
                 {
                     transactions.append(i)
                     print(i)
                 }
-                
-                UserDefaults.standard.set(transactions, forKey: "data")
+
                 
             }
             
             
         }
-        
-        
-        
         //if let hash_val = json["hash"]{
         //  print("Hash is : \(hash_val)")
         //}
+        return transactions
     }
+    
+
+    
+    
+    
     
     
     

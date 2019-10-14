@@ -14,6 +14,7 @@ class CircularProgressBar: UIView {
     var goalProg = UILabel()
     var label1 = UILabel()
     
+    
     //MARK: awakeFromNib
     
     override func awakeFromNib() {

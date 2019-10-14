@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,15 +17,17 @@
 		8410808C2343E05B00799AEA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410808B2343E05B00799AEA /* Quiz.swift */; };
 		84108092234D572800799AEA /* WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84108091234D572800799AEA /* WalletVC.swift */; };
 		84108098234D696000799AEA /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84108097234D696000799AEA /* StockCell.swift */; };
-		8410809A234D699000799AEA /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84108099234D699000799AEA /* FeedModel.swift */; };
 		8410809C235246AA00799AEA /* NewUser2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410809B235246AA00799AEA /* NewUser2VC.swift */; };
 		8410809E235251F300799AEA /* NewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410809D235251F300799AEA /* NewUserVC.swift */; };
 		841080A02352561F00799AEA /* tabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410809F2352561F00799AEA /* tabBarVC.swift */; };
 		843DFB36234AA9D800957F99 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DFB35234AA9D800957F99 /* CircularProgressBar.swift */; };
+		84602ED723539C2C00FB413C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84602ED623539C2C00FB413C /* APIClient.swift */; };
+		84A95A0D2353C6BB00E0BB21 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A95A0C2353C6BB00E0BB21 /* TransactionCell.swift */; };
 		84DE1A502339B565006A0D73 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */; };
 		84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE1A51233B041C006A0D73 /* DashboardVC.swift */; };
 		84E015A22331D2AC00C97572 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A12331D2AC00C97572 /* Question.swift */; };
 		84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A52331DFA700C97572 /* AnalyzingVC.swift */; };
+		94CABA1FEFE69BFB112E74CD /* Pods_HopesAndDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,18 +61,22 @@
 		07A660B42326D527004F2AD1 /* HelloWorld2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld2UITests.swift; sourceTree = "<group>"; };
 		07A660B62326D528004F2AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07D3E8D023312AA500890271 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HopesAndDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7598E38A7B1F1D4A8F62F7 /* Pods-HopesAndDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.debug.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.debug.xcconfig"; sourceTree = "<group>"; };
 		8410808B2343E05B00799AEA /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		84108091234D572800799AEA /* WalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletVC.swift; sourceTree = "<group>"; };
 		84108097234D696000799AEA /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
-		84108099234D699000799AEA /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedModel.swift; path = ../FeedModel.swift; sourceTree = "<group>"; };
 		8410809B235246AA00799AEA /* NewUser2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser2VC.swift; sourceTree = "<group>"; };
 		8410809D235251F300799AEA /* NewUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserVC.swift; sourceTree = "<group>"; };
 		8410809F2352561F00799AEA /* tabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarVC.swift; sourceTree = "<group>"; };
 		843DFB35234AA9D800957F99 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		84602ED623539C2C00FB413C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		84A95A0C2353C6BB00E0BB21 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		84DE1A51233B041C006A0D73 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		84E015A12331D2AC00C97572 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		84E015A52331DFA700C97572 /* AnalyzingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzingVC.swift; sourceTree = "<group>"; };
+		EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.release.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CABA1FEFE69BFB112E74CD /* Pods_HopesAndDreams.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +112,8 @@
 				07A660A82326D527004F2AD1 /* HelloWorld2Tests */,
 				07A660B32326D527004F2AD1 /* HelloWorld2UITests */,
 				07A660922326D524004F2AD1 /* Products */,
+				1CECEA00392A45D3F3D535C5 /* Pods */,
+				DC6B1F4081B0917461A7CF31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				843DFB35234AA9D800957F99 /* CircularProgressBar.swift */,
-				84108099234D699000799AEA /* FeedModel.swift */,
 				07A660962326D524004F2AD1 /* ViewController.swift */,
 				84108097234D696000799AEA /* StockCell.swift */,
 				84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */,
@@ -133,10 +141,12 @@
 				84DE1A51233B041C006A0D73 /* DashboardVC.swift */,
 				07A660942326D524004F2AD1 /* AppDelegate.swift */,
 				07A660982326D524004F2AD1 /* Main.storyboard */,
+				84A95A0C2353C6BB00E0BB21 /* TransactionCell.swift */,
 				8410809F2352561F00799AEA /* tabBarVC.swift */,
 				84108091234D572800799AEA /* WalletVC.swift */,
 				07A6609B2326D527004F2AD1 /* Assets.xcassets */,
 				07A660A02326D527004F2AD1 /* Info.plist */,
+				84602ED623539C2C00FB413C /* APIClient.swift */,
 				84E015A12331D2AC00C97572 /* Question.swift */,
 				8410808B2343E05B00799AEA /* Quiz.swift */,
 			);
@@ -161,6 +171,23 @@
 			path = HelloWorld2UITests;
 			sourceTree = "<group>";
 		};
+		1CECEA00392A45D3F3D535C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F7598E38A7B1F1D4A8F62F7 /* Pods-HopesAndDreams.debug.xcconfig */,
+				EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC6B1F4081B0917461A7CF31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07A660B92326D528004F2AD1 /* Build configuration list for PBXNativeTarget "HopesAndDreams" */;
 			buildPhases = (
+				FADCB1C4E20E18D1472C2F7B /* [CP] Check Pods Manifest.lock */,
 				07A6608D2326D524004F2AD1 /* Sources */,
 				07A6608E2326D524004F2AD1 /* Frameworks */,
 				07A6608F2326D524004F2AD1 /* Resources */,
+				0EDF4A891423D7A882CB62B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,6 +316,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EDF4A891423D7A882CB62B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FADCB1C4E20E18D1472C2F7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HopesAndDreams-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		07A6608D2326D524004F2AD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -298,10 +369,11 @@
 				84E015A22331D2AC00C97572 /* Question.swift in Sources */,
 				84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */,
 				84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */,
+				84A95A0D2353C6BB00E0BB21 /* TransactionCell.swift in Sources */,
 				07D3E8D123312AA600890271 /* QuizVC.swift in Sources */,
 				07A660952326D524004F2AD1 /* AppDelegate.swift in Sources */,
+				84602ED723539C2C00FB413C /* APIClient.swift in Sources */,
 				841080A02352561F00799AEA /* tabBarVC.swift in Sources */,
-				8410809A234D699000799AEA /* FeedModel.swift in Sources */,
 				8410809E235251F300799AEA /* NewUserVC.swift in Sources */,
 				843DFB36234AA9D800957F99 /* CircularProgressBar.swift in Sources */,
 				8410809C235246AA00799AEA /* NewUser2VC.swift in Sources */,
@@ -470,6 +542,7 @@
 		};
 		07A660BA2326D528004F2AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F7598E38A7B1F1D4A8F62F7 /* Pods-HopesAndDreams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +561,7 @@
 		};
 		07A660BB2326D528004F2AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

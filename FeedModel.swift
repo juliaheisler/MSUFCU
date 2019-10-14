@@ -16,27 +16,11 @@ class FeedModel: NSObject, URLSessionDataDelegate{
     
     weak var delegate: FeedModelProtocol!
     
-    var transactions: Array<Array<String>> = Array()
+ 
     
-    let urlPath = "http://35.9.22.109/get_trans.php" //Change to the web address of your stock_service.php file
     
-    func downloadItems() {
-        
-        let url: URL = URL(string: urlPath)!
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-        
-        let task = defaultSession.dataTask(with: url) { (data, response, error) in
-            
-            if error != nil {
-                print("Error")
-            }else {
-                print("stocks downloaded")
-                self.parseJSON(data!)
-            }
-            
-        }
-        
-        task.resume()
+    
+    
 }
     
     func parseJSON(_ data:Data) {

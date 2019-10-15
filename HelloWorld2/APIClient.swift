@@ -38,7 +38,7 @@ class APIClient
     static func sendAnswers( account: String, d0: String, d1: String, d2: String, d3: String, d4: String, d5: String, d6: String)
     {
         
-        let parameters: Parameters = ["account": "11134090", "data": [d0,d1,d2,d3,d4,d5,d6] ]
+        let parameters: Parameters = ["account": "11134027", "data": [d0,d1,d2,d3,d4,d5,d6] ]
         Alamofire.request("http://msufcu.meowtap.com:5000/setQuiz", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             if let json = response.result.value as? String{
                 
@@ -74,7 +74,7 @@ class APIClient
     static func getQuiz(account: String)
     {
         
-        let parameters: Parameters = ["account": "11134090"]
+        let parameters: Parameters = ["account": "11134027"]
         Alamofire.request("http://msufcu.meowtap.com:5000/getQuiz", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             if let json = response.result.value as? [String : String]{
                 

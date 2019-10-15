@@ -26,7 +26,7 @@ class DashboardVC: UIViewController {
         super.viewDidLoad()
         
         
-        APIClient.getGoalValues(account: "11134090"){result in
+        APIClient.getGoalValues(account: "11134027"){result in
             switch result {
             case .failure(let error):
                 print(error)

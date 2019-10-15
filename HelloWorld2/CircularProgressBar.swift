@@ -85,6 +85,7 @@ class CircularProgressBar: UIView {
     }
     
     private var pathCenter: CGPoint{ get{ return self.convert(self.center, from:self.superview) } }
+    
     private func makeBar(){
         self.layer.sublayers = nil
         drawBackgroundLayer()
@@ -132,7 +133,9 @@ class CircularProgressBar: UIView {
         
         label1.textColor = UIColor.gray
         label1.sizeToFit()
+        //label1.textAlignment = .center
         label1.center = CGPoint(x:pathCenter.x, y:pathCenter.y+5)
+         //label1.textAlignment = .center
         
     }
     

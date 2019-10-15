@@ -8,20 +8,53 @@
 
 import UIKit
 
-class QuizVC: UIViewController {
-    
+class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var option1: UIButton!
-    @IBOutlet weak var option2: UIButton!
-    @IBOutlet weak var option3: UIButton!
-    @IBOutlet weak var option4: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var textIn: UITextField!
-    @IBOutlet weak var slideIn: UISlider!
-    @IBOutlet weak var startLabel: UILabel!
-    @IBOutlet weak var endLabel: UILabel!
-    @IBOutlet weak var NextQuestion: UIButton!
+       @IBOutlet weak var option1: UIButton!
+       @IBOutlet weak var option2: UIButton!
+       @IBOutlet weak var option3: UIButton!
+       @IBOutlet weak var option4: UIButton!
+       @IBOutlet weak var nextButton: UIButton!
+       @IBOutlet weak var textIn: UITextField!
+       @IBOutlet weak var slideIn: UISlider!
+       @IBOutlet weak var startLabel: UILabel!
+       @IBOutlet weak var endLabel: UILabel!
+       @IBOutlet weak var NextQuestion: UIButton!
+       @IBOutlet weak var category: UITextField!
+    
+    let myPickerData = ["Travel", "Education", "Event", "Home", "Automotive", "Family", "Other"]
+    
+    var thePicker = UIPickerView()
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        myPickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return myPickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        category.text = myPickerData[row]
+        self.view.endEditing(false)
+    }
+
+  
+    
+    
+    
+
+    
+    
+
+    
+    
+    
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
     var selectedAnswer: Int = 0
@@ -30,7 +63,16 @@ class QuizVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        thePicker.delegate = self
+        thePicker.dataSource = self
+        
+        category.inputView = thePicker
+    
+        
         self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        
 
         // Do any additional setup after loading the view.
         updateQuestion()
@@ -135,6 +177,7 @@ class QuizVC: UIViewController {
                 slideIn.isHidden = true
                 startLabel.isHidden = true
                 endLabel.isHidden = true
+                category.isHidden = true
                 
                 selectedAnswer = 0
                 nextButton.isEnabled = false
@@ -156,6 +199,7 @@ class QuizVC: UIViewController {
                 slideIn.value = 1
                 startLabel.isHidden = false
                 endLabel.isHidden = false
+                category.isHidden = true
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
                 startLabel.text = allQuestions.questions[currentQuestion].options[0]
@@ -171,6 +215,7 @@ class QuizVC: UIViewController {
                 slideIn.isHidden = true
                 startLabel.isHidden = true
                 endLabel.isHidden = true
+                category.isHidden = false
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
             }

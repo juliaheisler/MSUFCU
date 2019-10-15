@@ -784,21 +784,22 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="offerCell" rowHeight="75" id="fKD-Mw-9eb" customClass="OfferCell" customModule="HopesAndDreams" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OfferCell" rowHeight="75" id="fKD-Mw-9eb" customClass="OfferCell" customModule="HopesAndDreams" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKD-Mw-9eb" id="yQ3-gU-6lV">
                                             <rect key="frame" x="0.0" y="0.0" width="348.5" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahn-Y3-kdO">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ahn-Y3-kdO">
                                                     <rect key="frame" x="4" y="2" width="110" height="68"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" id="34i-9L-Ieg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIg-NG-F8r">
-                                                    <rect key="frame" x="116" y="13" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIg-NG-F8r">
+                                                    <rect key="frame" x="170" y="27" width="348.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -812,12 +813,18 @@
                                                 <constraint firstItem="ahn-Y3-kdO" firstAttribute="leading" secondItem="yQ3-gU-6lV" secondAttribute="leadingMargin" constant="-11" id="UZK-Tp-NWc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
                                         <connections>
-                                            <outlet property="img" destination="ahn-Y3-kdO" id="eet-7e-UGc"/>
-                                            <outlet property="title" destination="jIg-NG-F8r" id="ZUq-K7-lIg"/>
+                                            <outlet property="offerImageView" destination="ahn-Y3-kdO" id="guA-Gl-YvO"/>
+                                            <outlet property="offerTitle" destination="jIg-NG-F8r" id="OnS-49-mgy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="b2t-oG-URy" id="Fqb-MG-7UD"/>
+                                    <outlet property="delegate" destination="b2t-oG-URy" id="nEe-4k-uDB"/>
+                                    <outlet property="prefetchDataSource" destination="b2t-oG-URy" id="KOc-OJ-fsK"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwO-Fh-VXe">
                                 <rect key="frame" x="16" y="20" width="99" height="46"/>
@@ -841,6 +848,9 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="yf7-dS-8ug" id="Abs-R1-BSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHB-7k-l9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

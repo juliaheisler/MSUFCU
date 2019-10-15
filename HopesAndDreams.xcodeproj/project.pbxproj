@@ -15,7 +15,7 @@
 		07A660B52326D527004F2AD1 /* HelloWorld2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A660B42326D527004F2AD1 /* HelloWorld2UITests.swift */; };
 		07B2189C23562A30009240C0 /* OfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189B23562A2F009240C0 /* OfferVC.swift */; };
 		07B2189E23562BD3009240C0 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189D23562BD3009240C0 /* OfferCell.swift */; };
-		07B218A023562D3D009240C0 /* offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189F23562D3D009240C0 /* offer.swift */; };
+		07B218A023562D3D009240C0 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189F23562D3D009240C0 /* Offer.swift */; };
 		07D3E8D123312AA600890271 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E8D023312AA500890271 /* QuizVC.swift */; };
 		8410808C2343E05B00799AEA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410808B2343E05B00799AEA /* Quiz.swift */; };
 		84108092234D572800799AEA /* WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84108091234D572800799AEA /* WalletVC.swift */; };
@@ -107,7 +107,7 @@
 		07A660B62326D528004F2AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07B2189B23562A2F009240C0 /* OfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferVC.swift; sourceTree = "<group>"; };
 		07B2189D23562BD3009240C0 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
-		07B2189F23562D3D009240C0 /* offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offer.swift; sourceTree = "<group>"; };
+		07B2189F23562D3D009240C0 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		07D3E8D023312AA500890271 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HopesAndDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7598E38A7B1F1D4A8F62F7 /* Pods-HopesAndDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.debug.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,11 +195,11 @@
 				84144394235575F200C8118A /* transData.swift */,
 				84108091234D572800799AEA /* WalletVC.swift */,
 				8410809F2352561F00799AEA /* tabBarVC.swift */,
-				07A6609B2326D527004F2AD1 /* Assets.xcassets */,
 				07B2189B23562A2F009240C0 /* OfferVC.swift */,
 				07B2189D23562BD3009240C0 /* OfferCell.swift */,
-				07B2189F23562D3D009240C0 /* offer.swift */,
+				07B2189F23562D3D009240C0 /* Offer.swift */,
 				07A660A02326D527004F2AD1 /* Info.plist */,
+				07A6609B2326D527004F2AD1 /* Assets.xcassets */,
 				84602ED623539C2C00FB413C /* APIClient.swift */,
 				84E015A12331D2AC00C97572 /* Question.swift */,
 				8410808B2343E05B00799AEA /* Quiz.swift */,
@@ -512,7 +512,7 @@
 				07B2189C23562A30009240C0 /* OfferVC.swift in Sources */,
 				84E015A22331D2AC00C97572 /* Question.swift in Sources */,
 				84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */,
-				07B218A023562D3D009240C0 /* offer.swift in Sources */,
+				07B218A023562D3D009240C0 /* Offer.swift in Sources */,
 				84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */,
 				07D3E8D123312AA600890271 /* QuizVC.swift in Sources */,
 				07A660952326D524004F2AD1 /* AppDelegate.swift in Sources */,

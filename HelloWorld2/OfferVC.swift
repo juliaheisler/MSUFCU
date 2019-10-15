@@ -10,27 +10,56 @@ import UIKit
 
 class OfferVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+
+    var offerarray: [Offer] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        offerarray = createArray()
+        
     }
     
-//    func createArray() -> [Offer]
-//    {
-////        var temp: [Offer] = []
-////        let offer1 = Offer(img: imagenamed hungrtg, title: <#T##String#>)
-//        
-//    }
+    func createArray() -> [Offer]
+   {
+        var tempOffer: [Offer] = []
+    
+        let offer1 = Offer(image: UIImage(named: "hungryhowies")!, title: "Hungry Howies Offer")
+        let offer2 = Offer(image: UIImage(named: "eyecare")!, title: "Eye Care Offer")
+        let offer3 = Offer(image: UIImage(named: "davenport")!, title: "Devenport Offer")
+        let offer4 = Offer(image: UIImage(named: "moosejaw")!, title: "Moosejaw Offer")
 
-    /*
-    // MARK: - Navigation
+        tempOffer.append(offer1)
+        tempOffer.append(offer2)
+        tempOffer.append(offer3)
+        tempOffer.append(offer4)
+    
+        return tempOffer
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
+
+
+
+extension OfferVC: UITableViewDataSource, UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->Int{
+        return offerarray.count
+    }
+ 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let offer = offerarray[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OfferCell") as! OfferCell
+        
+        
+        cell.setCell(offer: offer)
+        
+        return cell
+    }
+    
+}
+

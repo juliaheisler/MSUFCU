@@ -24,11 +24,14 @@ class WalletVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         resultsFeed.delegate = self
         resultsFeed.dataSource = self
-        APIClient.performReq(acct: "11134090", rows: "20"){result in
+        
+        // call gettrans from apiclient
+        APIClient.getTransactions(acct: "11134090", rows: "20"){result in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let value):
+                //value is full array of dict from json
                 let transactions = value
                 for item in transactions{
                     let stock = StockCell()

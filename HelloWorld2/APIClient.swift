@@ -36,13 +36,16 @@ class APIClient
             //}
     }
     
-    static func performReq(acct: String, rows: String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
+    
+    // call perform req, smthn about closures
+    // StackOverflow: How to return value from Alamofire
+    static func getTransactions(acct: String, rows: String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
     {
-        getTransactions(acct: acct, rows: rows, completion: completionHandler)
+        performReq(acct: acct, rows: rows, completion: completionHandler)
     }
     
     
-    static func getTransactions( acct: String, rows: String, completion: @escaping (Result<[[String:String]]>) -> Void)
+    static func performReq( acct: String, rows: String, completion: @escaping (Result<[[String:String]]>) -> Void)
     {
         let parameters: Parameters = ["accnum": acct, "getrecent": rows]
         Alamofire.request("http://msufcu.meowtap.com:5000/getdata", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
@@ -60,11 +63,6 @@ class APIClient
             
             
         }
-        //if let hash_val = json["hash"]{
-        //  print("Hash is : \(hash_val)")
-        //}
-        //print(transactions)
-        //return transactions
     }
     
     

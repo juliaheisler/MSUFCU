@@ -27,7 +27,7 @@ class OfferVC: UIViewController {
     
         let offer1 = Offer(image: UIImage(named: "hungryhowies")!, title: "Hungry Howies Offer")
         let offer2 = Offer(image: UIImage(named: "eyecare")!, title: "Eye Care Offer")
-        let offer3 = Offer(image: UIImage(named: "davenport")!, title: "Devenport Offer")
+        let offer3 = Offer(image: UIImage(named: "davenport")!, title: "Davenport Offer")
         let offer4 = Offer(image: UIImage(named: "moosejaw")!, title: "Moosejaw Offer")
 
         tempOffer.append(offer1)

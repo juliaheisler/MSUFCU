@@ -228,7 +228,6 @@
 		1CECEA00392A45D3F3D535C5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				841443892355524900C8118A /* Pods.xcodeproj */,
 				5F7598E38A7B1F1D4A8F62F7 /* Pods-HopesAndDreams.debug.xcconfig */,
 				EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */,
 			);
@@ -267,6 +266,7 @@
 			children = (
 				841443772355523A00C8118A /* Pods.xcodeproj */,
 				841443802355524400C8118A /* Pods.xcodeproj */,
+				841443892355524900C8118A /* Pods.xcodeproj */,
 				10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */,
 			);
 			name = Frameworks;

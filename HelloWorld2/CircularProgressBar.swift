@@ -62,9 +62,9 @@ class CircularProgressBar: UIView {
         foregroundLayer.strokeEnd = CGFloat(progress)
         
         // temporary will get from quiz
-        self.goalName.text = "Trip to Paris"
-        self.goalProg.text = "$651.50"
-        self.label1.text = "saved out of $1303.00"
+//        self.goalName.text = "Trip to Paris"
+//        self.goalProg.text = "$651.50"
+//        self.label1.text = "saved out of $1303.00"
         self.configLabel()
         
         setupView()

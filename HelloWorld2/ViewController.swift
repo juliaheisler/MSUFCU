@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,11 +25,14 @@ class ViewController: UIViewController {
             
         }
         APIClient.getHashValue(username: email.text!, password: password.text! )
+        let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
+        let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
+        self.navigationController?.pushViewController(Dashboard, animated: true)
         if (UserDefaults.standard.object(forKey: "hashID") != nil )
         {
-            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-            let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
-            self.navigationController?.pushViewController(Dashboard, animated: true)
+//            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
+//            let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
+//            self.navigationController?.pushViewController(Dashboard, animated: true)
             
         }
     }

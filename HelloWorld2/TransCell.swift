@@ -11,10 +11,25 @@ import UIKit
 class TransCell: UITableViewCell {
 
  
+    @IBOutlet weak var pluButton: UIButton!
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var amount: UILabel!
+    
+    var amountAdded = "0"
+    
+    @IBAction func addTrans(_ sender: Any)
+    {
+        amountAdded = amount.text!
+        
+        APIClient.sendAnswers(account: "11134090", amount: amountAdded)
+        print(amountAdded)
+        
+        pluButton.isHidden = true
+        
+        
+    }
     
     func setTrans(transaction: TransData)
     {

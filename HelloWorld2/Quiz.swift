@@ -30,7 +30,11 @@ class Quiz{
         
         questions.append(Question(questionText: "Which product are you most interested in?", answers: ["Auto loan","Mortgage","Credit card","Checking and savings"],Qtype: "multiple choice"))
         
-        questions.append(Question(questionText: "What is your financial dream?", answers: [],Qtype: "text"))
+        questions.append(Question(questionText: "What is your financial dream/goal?", answers: [],Qtype: "text"))
+        
+        questions.append(Question(questionText: "What category best fits this dream?", answers: [],Qtype: "dropdown"))
+        
+        questions.append(Question(questionText: "How much would you be willing save towards this? ", answers: [], Qtype: "text"))
         
         
         

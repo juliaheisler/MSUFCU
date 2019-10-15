@@ -5,6 +5,7 @@ class WalletVC: UIViewController{
     
     @IBOutlet weak var stockResultsFeed: UITableView!
     
+    
     var transactions: [TransData] = []
     //var temp: [TransData] = []
     
@@ -20,6 +21,26 @@ class WalletVC: UIViewController{
 
     //@IBOutlet weak var tempCell: UITableViewCell!
     
+//    private func setupTableView() {
+//        stockResultsFeed.isHidden = true
+//        // Add Refresh Control to Table View
+//        if #available(iOS 10.0, *) {
+//            stockResultsFeed.refreshControl = refreshControl
+//        } else {
+//            stockResultsFeed.addSubview(refreshControl)
+//        }
+//    }
+    
+//    lazy var refreshControl: UIRefreshControl = {
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action:
+//            #selector(ViewController.handleRefresh(_:)),
+//                                 for: UIControlEvents.valueChanged)
+//        refreshControl.tintColor = UIColor.red
+//
+//        return refreshControl
+//    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +48,9 @@ class WalletVC: UIViewController{
         
         stockResultsFeed.delegate = self
         stockResultsFeed.dataSource = self
+        
+        
+        stockResultsFeed.rowHeight = 80
         
         APIClient.getTransactions(acct: "11134090", rows: "20"){result in
             switch result {

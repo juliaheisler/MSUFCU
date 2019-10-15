@@ -28,11 +28,11 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var thePicker = UIPickerView()
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+      return  1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        myPickerData.count
+        return myPickerData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -45,12 +45,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
   
-    
-    
-    
 
-    
-    
 
     
     
@@ -58,7 +53,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
     var selectedAnswer: Int = 0
-    var tempStorage: [String: String] = [:]
+    var tempStorage = [Int: String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,22 +125,29 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         if allQuestions.questions[currentQuestion].questionType == "multiple choice"
         {
-            tempStorage[allQuestions.questions[currentQuestion].question] = allQuestions.questions[currentQuestion].options[selectedAnswer-1]
+            tempStorage[currentQuestion] = allQuestions.questions[currentQuestion].options[selectedAnswer-1]
             
         }
         
         else if allQuestions.questions[currentQuestion].questionType == "slider"
         {
-            tempStorage[allQuestions.questions[currentQuestion].question] = String(slideIn.value)
+            tempStorage[currentQuestion] = String(slideIn.value)
         }
         
         else if allQuestions.questions[currentQuestion].questionType == "text"
         {
             
-            tempStorage[allQuestions.questions[currentQuestion].question] = textIn.text
+            tempStorage[currentQuestion] = textIn.text
+            textIn.text = ""
             
         }
+        else if allQuestions.questions[currentQuestion].questionType == "dropdown"
+        {
+            
+            tempStorage[currentQuestion] = category.text
         
+            
+        }
         
     
         currentQuestion += 1
@@ -157,7 +159,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         if currentQuestion == allQuestions.questions.count-1
         {
             NextQuestion.setTitle("Finish Quiz →", for: .normal)
-            print(tempStorage)
+            
             
         }
         
@@ -215,6 +217,21 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                 slideIn.isHidden = true
                 startLabel.isHidden = true
                 endLabel.isHidden = true
+                category.isHidden = true
+                
+                questionLabel.text = allQuestions.questions[currentQuestion].question
+            }
+            
+            else if allQuestions.questions[currentQuestion].questionType == "dropdown"{
+                // Display correct elements
+                option1.isHidden = true
+                option2.isHidden = true
+                option3.isHidden = true
+                option4.isHidden = true
+                textIn.isHidden = true
+                slideIn.isHidden = true
+                startLabel.isHidden = true
+                endLabel.isHidden = true
                 category.isHidden = false
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
@@ -222,6 +239,8 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         }
         else {
             // Quiz end
+            print(tempStorage)
+            APIClient.sendAnswers(account: "random", d0: "0", d1: "0", d2: "0", d3: "0", d4: tempStorage[8] as! String, d5: "0", d6: tempStorage[10] as! String)
             let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
             let Analyzing = storyBoardHome.instantiateViewController(withIdentifier: "AnalyzingVC")
             self.navigationController?.pushViewController(Analyzing, animated: true)

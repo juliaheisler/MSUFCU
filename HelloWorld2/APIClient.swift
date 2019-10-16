@@ -55,7 +55,7 @@ class APIClient
     static func sendAnswers( account: String, amount: String)
     {
         
-        let parameters: Parameters = ["account": "11134090", "amount": amount]
+        let parameters: Parameters = ["account": "11134027", "amount": amount]
         Alamofire.request("http://msufcu.meowtap.com:5000/addGoal", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             if let json = response.result.value as? String{
                 
@@ -131,6 +131,34 @@ class APIClient
             switch response.result
             {
             case .success(let value as [[String:String]]):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            default:
+                fatalError("received non dict json response")
+                
+                
+            }
+            
+            
+        }
+    }
+    
+    // call perform req, smthn about closures
+    // StackOverflow: How to return value from Alamofire
+    static func getNotifications(account:String, completionHandler: @escaping (Result<[String]>) -> Void)
+    {
+        performingNoti(acct: account, completion: completionHandler)
+    }
+    
+    
+    static func performingNoti( acct: String, completion: @escaping (Result<[String]>) -> Void)
+    {
+        let parameters: Parameters = ["account": acct]
+        Alamofire.request("http://msufcu.meowtap.com:5000/notify", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            switch response.result
+            {
+            case .success(let value as [String]):
                 completion(.success(value))
             case .failure(let error):
                 completion(.failure(error))

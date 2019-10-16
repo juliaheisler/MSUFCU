@@ -7,39 +7,7 @@ class WalletVC: UIViewController{
     
     
     var transactions: [TransData] = []
-    //var temp: [TransData] = []
-    
-    
-    
-    //Properties
-  
-    
-    
-  
-    
-    
-
-    //@IBOutlet weak var tempCell: UITableViewCell!
-    
-//    private func setupTableView() {
-//        stockResultsFeed.isHidden = true
-//        // Add Refresh Control to Table View
-//        if #available(iOS 10.0, *) {
-//            stockResultsFeed.refreshControl = refreshControl
-//        } else {
-//            stockResultsFeed.addSubview(refreshControl)
-//        }
-//    }
-    
-//    lazy var refreshControl: UIRefreshControl = {
-//        let refreshControl = UIRefreshControl()
-//        refreshControl.addTarget(self, action:
-//            #selector(ViewController.handleRefresh(_:)),
-//                                 for: UIControlEvents.valueChanged)
-//        refreshControl.tintColor = UIColor.red
-//
-//        return refreshControl
-//    }()
+ 
     
     
     override func viewDidLoad() {
@@ -52,6 +20,22 @@ class WalletVC: UIViewController{
         
         stockResultsFeed.rowHeight = 80
         
+        fetch_data()
+        
+
+        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetch_data()
+        print("refresh")
+    }
+    
+    
+    func fetch_data()
+    {
+        self.transactions = []
+        
         APIClient.getTransactions(acct: "11134027", rows: "20"){result in
             switch result {
             case .failure(let error):
@@ -61,6 +45,11 @@ class WalletVC: UIViewController{
                 for item in value
                 {
                     self.transactions.append(TransData(trans_desc: item["trans_desc"]!, trans_amount: item["trans_amount"]!, trans_date: item["trans_date"]!, trans_balance: item["trans_balance"]!))
+                   
+                    
+                   
+                    print(item)
+                    
                     
                 }
                 self.stockResultsFeed.reloadData()
@@ -68,17 +57,8 @@ class WalletVC: UIViewController{
             
             
         }
-        
-        
-        
-        
-        
-        
-//        let result = APIClient.getTransactions(acct: "11134090", rows: "20")
-
-   
-
-        }
+    }
+    
         
     
         
@@ -90,6 +70,7 @@ extension WalletVC: UITableViewDataSource, UITableViewDelegate
 {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(transactions.count)
         return transactions.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

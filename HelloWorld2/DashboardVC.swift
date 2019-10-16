@@ -25,31 +25,12 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetch_data()
         
-        APIClient.getGoalValues(account: "11134027"){result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let value):
-                //value is full array of dict from json
-
-                self.goalProgress.goalName.text = value["4"]
-                let budget = value["6"] ?? ""
-                self.goalProgress.label1.text = "saved out of $" + budget
-                self.goalProgress.goalProg.text = value["5"]
-
-
-                let test = Double (budget)
-
-                let amount = value["5"] ?? ""
-                let test2 = Double(amount)
-                let res = test2!/test!
-                print(res)
-                self.goalProgress.setProgress(to: res, withAnimation: true)
-            }
-
-
-        }
+        
+      
+            
+        
 
         // Do any additional setup after loading the view.
         goalProgress.lineWidth = 10
@@ -57,6 +38,45 @@ class DashboardVC: UIViewController {
 
         goalProgress.safePercent = 100
         
+        
+    }
+    
+    
+    func fetch_data()
+    {
+        
+        APIClient.getGoalValues(account: "11134027"){result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                //value is full array of dict from json
+                
+                self.goalProgress.goalName.text = value["4"]
+                let budget = value["6"] ?? ""
+                self.goalProgress.label1.text = "saved out of $" + budget
+                self.goalProgress.goalProg.text = value["5"]
+                
+                
+                let test = Double (budget)
+                
+                let amount = value["5"] ?? ""
+                let test2 = Double(amount)
+                let res = test2!/test!
+                print(res)
+                self.goalProgress.setProgress(to: res, withAnimation: true)
+            }
+            
+        }
+        
+        
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+        fetch_data()
         
     }
 

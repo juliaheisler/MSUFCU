@@ -31,11 +31,28 @@ class TransCell: UITableViewCell {
         
     }
     
+    
+    
     func setTrans(transaction: TransData)
     {
         balance.text = transaction.balance
         date.text = transaction.date
         desc.text = transaction.desc
         amount.text = transaction.amount
+        
+        let temp: String = transaction.amount
+        
+        if temp[temp.startIndex] == "-"
+        {
+            pluButton.isHidden = true
+            
+            
+        }
+        else
+        {
+            pluButton.isHidden = false
+        }
+        
+        
     }
 }

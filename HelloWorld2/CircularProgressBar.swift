@@ -98,7 +98,7 @@ class CircularProgressBar: UIView {
         self.backgroundLayer.strokeColor = UIColor.lightGray.cgColor
         self.backgroundLayer.lineWidth = lineWidth - (lineWidth * 20/100)
         self.backgroundLayer.fillColor = UIColor.clear.cgColor
-        self.backgroundLayer.strokeColor = UIColor.gray.cgColor
+        self.backgroundLayer.strokeColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         self.layer.addSublayer(backgroundLayer)
         
     }

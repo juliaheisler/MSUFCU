@@ -20,7 +20,7 @@ class Quiz{
         
         questions.append(Question(questionText: "On a scale of 1-10 how important is the service you receive from your financial institution?", answers: ["1", "10"], Qtype: "slider"))
         
-        questions.append(Question(questionText: "Are you a homeowner? Do you intend to be a homeowner?", answers: ["Current homeowner","I’d like to be a homeowner soon","Maybe someday","Why buy a house when you can travel the world"], Qtype: "multiple choice"))
+        questions.append(Question(questionText: "Are you a homeowner? Do you intend to be a homeowner?", answers: ["Current homeowner","I’d like to be a homeowner soon","Maybe someday","Why buy a house when you can travel"], Qtype: "multiple choice"))
         
         questions.append(Question(questionText: "If you had an extra hundred dollars in your next paycheck what yould you do with it?", answers: ["Spend it","Save it","Split it between Savings and Spending","Invest it"], Qtype: "multiple choice"))
         

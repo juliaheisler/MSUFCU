@@ -38,11 +38,11 @@ class NotificationVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        fetch_data()
-//        print("refresh")
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetch_data()
+        print("refresh")
+    }
     
     func fetch_data()
     {

@@ -75,6 +75,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     override func viewDidAppear(_ animated: Bool) {
            super.viewDidAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         
     }
 

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "5E5C1C4B-1283-4A9E-8DB2-FD99605FDABB"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6B4F9144-F66F-4535-99C1-C49151603D7F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/ViewController.swift"
-            timestampString = "592893196.472466"
+            timestampString = "592872583.437219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -22,31 +24,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "43EEE10E-9192-4F7E-BBFD-35416BC76A58"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/WalletVC.swift"
-            timestampString = "592893196.4725111"
+            timestampString = "592872583.4372621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
+            startingLineNumber = "90"
+            endingLineNumber = "90">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "466A24B1-F22F-4E0B-9BEB-A58CDFAE9221"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/TransCell.swift"
-            timestampString = "592893196.472558"
+            timestampString = "592872583.4372981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "setTrans(transaction:)"
             landmarkType = "7">
          </BreakpointContent>

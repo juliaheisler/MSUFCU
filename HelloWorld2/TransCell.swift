@@ -35,7 +35,7 @@ class TransCell: UITableViewCell {
     
     func setTrans(transaction: TransData)
     {
-        balance.text = transaction.balance
+        balance.text = "balance: "+transaction.balance
         date.text = transaction.date
         desc.text = transaction.desc
         amount.text = transaction.amount

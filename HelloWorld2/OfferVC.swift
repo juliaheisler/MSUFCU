@@ -17,25 +17,50 @@ class OfferVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        offerarray = createArray()
+        createArray()
         
     }
     
-    func createArray() -> [Offer]
+    
+    func createArray()
    {
-        var tempOffer: [Offer] = []
+        //var tempOffer: [Offer] = []
     
-        let offer1 = Offer(image: UIImage(named: "hungryhowies")!, title: "Hungry Howies Offer")
-        let offer2 = Offer(image: UIImage(named: "eyecare")!, title: "Eye Care Offer")
-        let offer3 = Offer(image: UIImage(named: "davenport")!, title: "Davenport Offer")
-        let offer4 = Offer(image: UIImage(named: "moosejaw")!, title: "Moosejaw Offer")
-
-        tempOffer.append(offer1)
-        tempOffer.append(offer2)
-        tempOffer.append(offer3)
-        tempOffer.append(offer4)
+        APIClient.getOffers(hash: UserDefaults.standard.string(forKey: "hashID")! ){result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                //value is full array of dict from json
+                for item in value
+                {
+                    //print(item)
+                    self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
+                    print(self.offerarray)
+                    //tempOffer.append(offer)
+                    
+                }
+                self.tableView.reloadData()
+           
+            }
+        
+        
+        
+    }
     
-        return tempOffer
+    
+    
+//        let offer1 = Offer(image: UIImage(named: "hungryhowies")!, title: "Hungry Howies Offer")
+//        let offer3 = Offer(image: UIImage(named: "davenport")!, title: "Davenport Offer")
+//        let offer4 = Offer(image: UIImage(named: "Moosejaw_Discount")!, title: "Moosejaw Offer")
+//
+//        tempOffer.append(offer1)
+//        tempOffer.append(offer3)
+//        tempOffer.append(offer4)
+    
+   
+    
+        //return tempOffer
 
     }
 

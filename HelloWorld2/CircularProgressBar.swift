@@ -10,22 +10,23 @@ import UIKit
 
 class CircularProgressBar: UIView {
     
-    var goalName = UILabel()
-    var goalProg = UILabel()
-    var label1 = UILabel()
-    
-    
     //MARK: awakeFromNib
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
         goalName.text = "0"
+        goalProg.text = "0"
     }
     
     
     
     //MARK: Public
+    
+    public var goalName = UILabel()
+    public var goalProg = UILabel()
+    public var label1 = UILabel()
+    
     
     public var lineWidth:CGFloat = 50 {
         didSet{
@@ -45,7 +46,7 @@ class CircularProgressBar: UIView {
     
     public var safePercent: Int = 100 {
         didSet{
-            setForegroundLayerColorForSafePercent()
+           // setForegroundLayerColorForSafePercent()
         }
     }
     
@@ -61,13 +62,8 @@ class CircularProgressBar: UIView {
         
         foregroundLayer.strokeEnd = CGFloat(progress)
         
-        // temporary will get from quiz
-//        self.goalName.text = "Trip to Paris"
-//        self.goalProg.text = "$651.50"
-//        self.label1.text = "saved out of $1303.00"
         self.configLabel()
         
-        setupView()
         
     }
     
@@ -139,13 +135,13 @@ class CircularProgressBar: UIView {
         
     }
     
-    private func setForegroundLayerColorForSafePercent(){
-        if Int(goalName.text!)! >= self.safePercent {
-            self.foregroundLayer.strokeColor = UIColor.green.cgColor
-        } else {
-            self.foregroundLayer.strokeColor = UIColor.red.cgColor
-        }
-    }
+//    private func setForegroundLayerColorForSafePercent(){
+//        if Int(goalProg.text!)! >= self.safePercent {
+//            self.foregroundLayer.strokeColor = UIColor.green.cgColor
+//        } else {
+//            self.foregroundLayer.strokeColor = UIColor.red.cgColor
+//        }
+//    }
     
     private func setupView() {
         makeBar()
@@ -160,11 +156,12 @@ class CircularProgressBar: UIView {
     private var layoutDone = false
     override func layoutSublayers(of layer: CALayer) {
         if !layoutDone {
-           // let tempText = goalName.text
-            //let temp2 = goalProg.text
+            let tempText = goalName.text
+            let temp2 = goalProg.text
+           
             setupView()
-            //goalName.text = tempText
-            //goalProg.text = temp2
+            goalName.text = tempText
+            goalProg.text = temp2
             layoutDone = true
         }
     }

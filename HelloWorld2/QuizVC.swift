@@ -65,7 +65,6 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         category.inputView = thePicker
     
         
-        self.navigationItem.setHidesBackButton(true, animated: false)
         
         
 
@@ -73,9 +72,9 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         updateQuestion()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-           super.viewDidAppear(true)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
     }
 
@@ -241,7 +240,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         else {
             // Quiz end
             print(tempStorage)
-            APIClient.sendAnswers(account: "random", d0: "0", d1: "0", d2: "0", d3: "0", d4: tempStorage[8] as! String, d5: "0", d6: tempStorage[10] as! String)
+            APIClient.sendAnswers(account: "random", d0: "0", d1: "0", d2: "0", d3: "0", d4: tempStorage[8]!, d5: "0", d6: tempStorage[10]!,d7: tempStorage[9]!)
             let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
             let Analyzing = storyBoardHome.instantiateViewController(withIdentifier: "AnalyzingVC")
             self.navigationController?.pushViewController(Analyzing, animated: true)

@@ -34,6 +34,7 @@ class WalletVC: UIViewController{
     func addRefreshControl()
            {
                refreshControl = UIRefreshControl()
+            refreshControl?.backgroundColor = UIColor.white
                refreshControl?.tintColor = UIColor.red
                refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
                stockResultsFeed.addSubview(refreshControl!)

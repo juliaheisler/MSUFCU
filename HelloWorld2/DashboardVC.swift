@@ -17,29 +17,30 @@ class DashboardVC: UIViewController {
     //set variable for progress bar here
     //var progress = 0.0
     
-    //var goalName = CircularProgressBar().goalName
+   // var goalName = CircularProgressBar().goalName
     
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        fetch_data()
-        
-        
-      
-            
-        
-
-        // Do any additional setup after loading the view.
-        goalProgress.lineWidth = 10
-        goalProgress.labelSize = 27
-
-        goalProgress.safePercent = 100
-        
-        
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//
+//        //fetch_data()
+//
+//
+//
+//
+//
+//
+//        // Do any additional setup after loading the view.
+////        goalProgress.lineWidth = 10
+////        goalProgress.labelSize = 27
+////
+////        goalProgress.safePercent = 100
+//
+//
+//    }
     
     
     func fetch_data()
@@ -65,7 +66,9 @@ class DashboardVC: UIViewController {
                 let res = test2!/test!
                 print(res)
                 self.goalProgress.setProgress(to: res, withAnimation: true)
+                
             }
+            print( UserDefaults.standard.string(forKey: "hashID")!)
             
         }
         
@@ -75,8 +78,16 @@ class DashboardVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        goalProgress.lineWidth = 10
+        goalProgress.labelSize = 27
+               //
+        goalProgress.safePercent = 100
+        
+        fetch_data()
          super.viewWillAppear(animated)
-         fetch_data()
+        
+        
         
     }
 

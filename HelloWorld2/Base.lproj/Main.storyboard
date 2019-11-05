@@ -561,7 +561,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-fH-6vh">
-                                                    <rect key="frame" x="315" y="7" width="30" height="30"/>
+                                                    <rect key="frame" x="285" y="-8.5" width="60" height="60.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="icons8-plus-31"/>
                                                     <connections>
@@ -592,7 +592,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAB-nV-H6D">
-                                                    <rect key="frame" x="170" y="28.5" width="144" height="15"/>
+                                                    <rect key="frame" x="140" y="28.5" width="144" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="QRp-gy-4nz"/>
                                                         <constraint firstAttribute="height" constant="15" id="ZzC-I1-3ow"/>
@@ -664,7 +664,7 @@
                         <color key="selectedImageTintColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BDJ-GM-AUY" kind="relationship" relationship="viewControllers" id="zsB-0f-1g7"/>
+                        <segue destination="E07-Cr-WHI" kind="relationship" relationship="viewControllers" id="pgB-bt-Dgf"/>
                         <segue destination="MBd-ih-Q4i" kind="relationship" relationship="viewControllers" id="QBo-wN-zIs"/>
                         <segue destination="b2t-oG-URy" kind="relationship" relationship="viewControllers" id="tcp-wi-jUK"/>
                         <segue destination="MpV-CY-qJM" kind="relationship" relationship="viewControllers" id="QCK-ct-VrQ"/>
@@ -982,7 +982,7 @@
         <!--Home-->
         <scene sceneID="58F-Va-QPD">
             <objects>
-                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BDJ-GM-AUY" customClass="DashboardVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BDJ-GM-AUY" customClass="DashboardVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QBj-Zg-Bym">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1009,33 +1009,24 @@
                                             <constraint firstAttribute="trailing" secondItem="si4-P7-GVd" secondAttribute="trailing" constant="5" id="iR1-TO-9db"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Your Goals" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2M-k5-wWt">
-                                        <rect key="frame" x="5" y="103" width="365" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ai5-aJ-ksQ"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dtS-Ic-JBK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <color key="textColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDF-AT-EmX" customClass="CircularProgressBar" customModule="HopesAndDreams" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="156" width="365" height="250"/>
+                                        <rect key="frame" x="5" y="103" width="365" height="365"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nud-F7-X1e">
+                                                <rect key="frame" x="-5" y="69" width="375" height="112"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="+ Add a New Goal"/>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="h7V-lW-FvM"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nud-F7-X1e">
-                                        <rect key="frame" x="0.0" y="409" width="375" height="59"/>
-                                        <state key="normal" title="+ Add a New Goal"/>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="drg-nZ-7hj" firstAttribute="leading" secondItem="kZe-qd-Qcp" secondAttribute="leading" id="TTp-r3-Rit"/>
                                     <constraint firstAttribute="trailing" secondItem="drg-nZ-7hj" secondAttribute="trailing" id="TsV-aA-CkU"/>
-                                    <constraint firstItem="nud-F7-X1e" firstAttribute="width" secondItem="drg-nZ-7hj" secondAttribute="width" id="VfZ-TQ-Jg8"/>
-                                    <constraint firstItem="V2M-k5-wWt" firstAttribute="leading" secondItem="kZe-qd-Qcp" secondAttribute="leading" constant="5" id="Ybz-XR-2Rm"/>
                                     <constraint firstAttribute="trailing" secondItem="DDF-AT-EmX" secondAttribute="trailing" constant="5" id="kf5-YX-Cb7"/>
                                     <constraint firstItem="DDF-AT-EmX" firstAttribute="leading" secondItem="kZe-qd-Qcp" secondAttribute="leading" constant="5" id="rZh-kk-XLp"/>
                                 </constraints>
@@ -1055,13 +1046,147 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="goalProgress" destination="DDF-AT-EmX" id="2iv-kp-pHu"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwX-oh-M7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="-198"/>
+            <point key="canvasLocation" x="1463" y="-409"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="bIZ-BF-5wA">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="E07-Cr-WHI" customClass="HomeScreenVCViewController" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XmJ-1q-h9h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JNV-eq-O2D">
+                                <rect key="frame" x="117" y="13" width="141" height="32"/>
+                                <segments>
+                                    <segment title="My Goal"/>
+                                    <segment title="Budgets"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchViews:" destination="E07-Cr-WHI" eventType="valueChanged" id="DiX-jl-e7W"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsA-Kg-M4A">
+                                <rect key="frame" x="0.0" y="57" width="375" height="561"/>
+                                <connections>
+                                    <segue destination="F9b-wu-OjG" kind="embed" id="Pfi-iJ-rx7"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Glz-qb-osO">
+                                <rect key="frame" x="0.0" y="57" width="375" height="561"/>
+                                <connections>
+                                    <segue destination="CWb-IU-YG0" kind="embed" id="Ekw-lf-X5k"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xg7-QB-3Sy" firstAttribute="bottom" secondItem="Glz-qb-osO" secondAttribute="bottom" id="1vU-hN-FNx"/>
+                            <constraint firstItem="JNV-eq-O2D" firstAttribute="top" secondItem="Xg7-QB-3Sy" secondAttribute="top" constant="13" id="9ew-ni-IGd"/>
+                            <constraint firstItem="JNV-eq-O2D" firstAttribute="centerX" secondItem="XmJ-1q-h9h" secondAttribute="centerX" id="CLG-Bz-BwO"/>
+                            <constraint firstItem="Xg7-QB-3Sy" firstAttribute="trailing" secondItem="Glz-qb-osO" secondAttribute="trailing" id="Fo7-Fh-rRN"/>
+                            <constraint firstItem="Xg7-QB-3Sy" firstAttribute="bottom" secondItem="SsA-Kg-M4A" secondAttribute="bottom" id="MNU-Pb-3jq"/>
+                            <constraint firstItem="Xg7-QB-3Sy" firstAttribute="trailing" secondItem="SsA-Kg-M4A" secondAttribute="trailing" id="NfS-UH-E8s"/>
+                            <constraint firstItem="Glz-qb-osO" firstAttribute="leading" secondItem="Xg7-QB-3Sy" secondAttribute="leading" id="Vez-78-wmz"/>
+                            <constraint firstItem="Glz-qb-osO" firstAttribute="top" secondItem="JNV-eq-O2D" secondAttribute="bottom" constant="13" id="h3d-i4-8gm"/>
+                            <constraint firstItem="SsA-Kg-M4A" firstAttribute="leading" secondItem="Xg7-QB-3Sy" secondAttribute="leading" id="uM6-cE-QQI"/>
+                            <constraint firstItem="SsA-Kg-M4A" firstAttribute="top" secondItem="JNV-eq-O2D" secondAttribute="bottom" constant="13" id="ugY-Fp-Usp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xg7-QB-3Sy"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-30" selectedImage="icons8-home-30" id="t1H-Fo-nUB"/>
+                    <connections>
+                        <outlet property="Budgets" destination="Glz-qb-osO" id="6Gt-MX-2d7"/>
+                        <outlet property="Goals" destination="SsA-Kg-M4A" id="6Ub-EC-Jp6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpf-q8-bYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3212" y="-475.41229385307349"/>
+        </scene>
+        <!--DashboardVC-->
+        <scene sceneID="w3g-uv-QQO">
+            <objects>
+                <viewController id="CWb-IU-YG0" customClass="DashboardVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p6o-TY-foW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-pN-UeB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byg-Gd-ggC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP OF THE DAY: Create a budget for each of your spending categories every month to help limit your spending." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAN-09-LX9">
+                                                <rect key="frame" x="5" y="19.5" width="365" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="oAN-09-LX9" firstAttribute="centerY" secondItem="Byg-Gd-ggC" secondAttribute="centerY" id="3MU-kF-tvr"/>
+                                            <constraint firstItem="oAN-09-LX9" firstAttribute="leading" secondItem="Byg-Gd-ggC" secondAttribute="leading" constant="5" id="UcT-B2-P8l"/>
+                                            <constraint firstAttribute="height" constant="100" id="mg3-4O-zy2"/>
+                                            <constraint firstItem="oAN-09-LX9" firstAttribute="centerX" secondItem="Byg-Gd-ggC" secondAttribute="centerX" id="tmv-sG-iqa"/>
+                                            <constraint firstAttribute="trailing" secondItem="oAN-09-LX9" secondAttribute="trailing" constant="5" id="vKL-E7-QSg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncA-SP-qcb" customClass="CircularProgressBar" customModule="HopesAndDreams" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="103" width="365" height="250"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="4SH-fi-kAv"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFo-28-dup">
+                                        <rect key="frame" x="0.0" y="356" width="375" height="205"/>
+                                        <state key="normal" title="+ Add a New Goal"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ncA-SP-qcb" secondAttribute="trailing" constant="5" id="6Ad-go-LyD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Byg-Gd-ggC" secondAttribute="trailing" id="OuN-Ym-l76"/>
+                                    <constraint firstItem="fFo-28-dup" firstAttribute="width" secondItem="Byg-Gd-ggC" secondAttribute="width" id="Rv7-My-sco"/>
+                                    <constraint firstItem="Byg-Gd-ggC" firstAttribute="leading" secondItem="i3d-pN-UeB" secondAttribute="leading" id="WLL-d8-P8x"/>
+                                    <constraint firstItem="ncA-SP-qcb" firstAttribute="leading" secondItem="i3d-pN-UeB" secondAttribute="leading" constant="5" id="hz0-sy-miA"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i3d-pN-UeB" firstAttribute="top" secondItem="p6o-TY-foW" secondAttribute="top" id="HnG-Gu-TRk"/>
+                            <constraint firstItem="i3d-pN-UeB" firstAttribute="leading" secondItem="p6o-TY-foW" secondAttribute="leading" id="abK-bj-Hqj"/>
+                            <constraint firstAttribute="bottom" secondItem="i3d-pN-UeB" secondAttribute="bottom" id="c26-vM-kZn"/>
+                            <constraint firstAttribute="trailing" secondItem="i3d-pN-UeB" secondAttribute="trailing" id="sbx-dg-V37"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goalProgress" destination="ncA-SP-qcb" id="2E9-zf-7DK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWX-VE-3fI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="281"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Eww-Cx-yTa">
+            <objects>
+                <viewController id="F9b-wu-OjG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E6w-ku-EmG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1C-Ch-IyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3852" y="273"/>
         </scene>
     </scenes>
     <resources>

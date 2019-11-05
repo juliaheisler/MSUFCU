@@ -12,59 +12,44 @@ class OfferVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-
-    var offerarray: [Offer] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        createArray()
-        
-    }
-    
-    
+   var offerarray: [Offer] = []
+     
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         
+         createArray()
+         
+     }
+     
+     
     func createArray()
-   {
-        //var tempOffer: [Offer] = []
-    
-        APIClient.getOffers(hash: UserDefaults.standard.string(forKey: "hashID")! ){result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let value):
-                //value is full array of dict from json
-                for item in value
-                {
-                    //print(item)
-                    self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
-                    print(self.offerarray)
-                    //tempOffer.append(offer)
-                    
-                }
-                self.tableView.reloadData()
-           
-            }
-        
-        
+    {
+         //var tempOffer: [Offer] = []
+     
+         APIClient.getOffers(hash: UserDefaults.standard.string(forKey: "hashID")! ){result in
+             switch result {
+             case .failure(let error):
+                 print(error)
+             case .success(let value):
+                 //value is full array of dict from json
+                 for item in value
+                 {
+                     //print(item)
+                     self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
+                     print(self.offerarray)
+                     //tempOffer.append(offer)
+                     
+                 }
+                 self.tableView.reloadData()
+            
+             }
+         
+         
+         
+     }
         
     }
     
-    
-    
-//        let offer1 = Offer(image: UIImage(named: "hungryhowies")!, title: "Hungry Howies Offer")
-//        let offer3 = Offer(image: UIImage(named: "davenport")!, title: "Davenport Offer")
-//        let offer4 = Offer(image: UIImage(named: "Moosejaw_Discount")!, title: "Moosejaw Offer")
-//
-//        tempOffer.append(offer1)
-//        tempOffer.append(offer3)
-//        tempOffer.append(offer4)
-    
-   
-    
-        //return tempOffer
-
-    }
-
 }
 
 
@@ -88,4 +73,3 @@ extension OfferVC: UITableViewDataSource, UITableViewDelegate{
     }
     
 }
-

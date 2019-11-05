@@ -11,10 +11,9 @@ import UIKit
 class DashboardVC: UIViewController {
     
    
+    
+    
     @IBOutlet weak var goalProgress: CircularProgressBar!
-    
-    
-    
     //set variable for progress bar here
     //var progress = 0.0
     
@@ -42,6 +41,7 @@ class DashboardVC: UIViewController {
 //
 //
 //    }
+    
     
     
     func fetch_data()

@@ -53,7 +53,8 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
     var selectedAnswer: Int = 0
-    var tempStorage = [Int: String]()
+    var tempStorage = [Int: [String]]()
+    var checkAnswers = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +65,6 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         category.inputView = thePicker
     
-        
-        
-        
-
         // Do any additional setup after loading the view.
         updateQuestion()
     }
@@ -88,28 +85,45 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         
         
-        if selectedAnswer == 1{
-            option1.alpha = 0.5
-            option2.alpha = 1
-            option3.alpha = 1
-            option4.alpha = 1
-        }else if selectedAnswer == 2{
-            option1.alpha = 1
-            option2.alpha = 0.5
-            option3.alpha = 1
-            option4.alpha = 1
+        
+        if allQuestions.questions[currentQuestion].questionType != "check"
+        {
+            if selectedAnswer == 1{
+                option1.alpha = 0.5
+                option2.alpha = 1
+                option3.alpha = 1
+                option4.alpha = 1
+            }else if selectedAnswer == 2{
+                option1.alpha = 1
+                option2.alpha = 0.5
+                option3.alpha = 1
+                option4.alpha = 1
+                
+            }else if selectedAnswer == 3{
+                option1.alpha = 1
+                option2.alpha = 1
+                option3.alpha = 0.5
+                option4.alpha = 1
+                
+            }else if selectedAnswer == 4{
+                option1.alpha = 1
+                option2.alpha = 1
+                option3.alpha = 1
+                option4.alpha = 0.5
+                
+            }
+        }
+        else {
             
-        }else if selectedAnswer == 3{
-            option1.alpha = 1
-            option2.alpha = 1
-            option3.alpha = 0.5
-            option4.alpha = 1
-            
-        }else if selectedAnswer == 4{
-            option1.alpha = 1
-            option2.alpha = 1
-            option3.alpha = 1
-            option4.alpha = 0.5
+            if sender.alpha==1{
+                sender.alpha = 0.5
+                checkAnswers.append(allQuestions.questions[currentQuestion].options[selectedAnswer-1])
+            }
+            else{
+                sender.alpha = 1
+                let i = checkAnswers.firstIndex(of: allQuestions.questions[currentQuestion].options[selectedAnswer-1])
+                checkAnswers.remove(at: i!)
+            }
             
         }
         
@@ -125,27 +139,33 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         if allQuestions.questions[currentQuestion].questionType == "multiple choice"
         {
-            tempStorage[currentQuestion] = allQuestions.questions[currentQuestion].options[selectedAnswer-1]
+            tempStorage[currentQuestion] = [allQuestions.questions[currentQuestion].options[selectedAnswer-1]]
             
         }
         
         else if allQuestions.questions[currentQuestion].questionType == "slider"
         {
-            tempStorage[currentQuestion] = String(slideIn.value)
+            
+            tempStorage[currentQuestion] = [String(slideIn.value)]
         }
         
         else if allQuestions.questions[currentQuestion].questionType == "text"
         {
-            
-            tempStorage[currentQuestion] = textIn.text
+            tempStorage[currentQuestion] = [textIn.text!]
             textIn.text = ""
             
         }
         else if allQuestions.questions[currentQuestion].questionType == "dropdown"
         {
             
-            tempStorage[currentQuestion] = category.text
+            tempStorage[currentQuestion] = [String(category.text!)]
         
+            
+        }
+        else if allQuestions.questions[currentQuestion].questionType == "check"
+        {
+            
+            tempStorage[currentQuestion] = checkAnswers
             
         }
         
@@ -236,11 +256,36 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                 
                 questionLabel.text = allQuestions.questions[currentQuestion].question
             }
+            else if allQuestions.questions[currentQuestion].questionType == "check"{
+                // Display correct elements
+                option1.isHidden = false
+                option2.isHidden = false
+                option3.isHidden = false
+                option4.isHidden = false
+                option1.alpha = 1
+                option2.alpha = 1
+                option3.alpha = 1
+                option4.alpha = 1
+                textIn.isHidden = true
+                slideIn.isHidden = true
+                startLabel.isHidden = true
+                endLabel.isHidden = true
+                category.isHidden = true
+                
+                selectedAnswer = 0
+                nextButton.isEnabled = false
+                
+                questionLabel.text = allQuestions.questions[currentQuestion].question
+                option1.setTitle(allQuestions.questions[currentQuestion].options[0], for: UIControl.State.normal)
+                option2.setTitle(allQuestions.questions[currentQuestion].options[1], for: UIControl.State.normal)
+                option3.setTitle(allQuestions.questions[currentQuestion].options[2], for: UIControl.State.normal)
+                option4.setTitle(allQuestions.questions[currentQuestion].options[3], for: UIControl.State.normal)
+            }
         }
         else {
             // Quiz end
             print(tempStorage)
-            APIClient.sendAnswers(account: "random", d0: "0", d1: "0", d2: "0", d3: "0", d4: tempStorage[8]!, d5: "0", d6: tempStorage[10]!,d7: tempStorage[9]!)
+            //APIClient.sendAnswers(account: "random", d0: "0", d1: "0", d2: "0", d3: "0", d4: tempStorage[8]!, d5: "0", d6: tempStorage[10]!,d7: tempStorage[9]!)
             let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
             let Analyzing = storyBoardHome.instantiateViewController(withIdentifier: "AnalyzingVC")
             self.navigationController?.pushViewController(Analyzing, animated: true)

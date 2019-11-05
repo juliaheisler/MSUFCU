@@ -544,7 +544,6 @@
                                 <rect key="frame" x="15" y="0.0" width="345" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Transactions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U6y-Nz-tVF">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="46"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -603,7 +602,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="mAB-nV-H6D" secondAttribute="bottom" id="0hA-3H-K6y"/>
                                                 <constraint firstItem="mAB-nV-H6D" firstAttribute="top" secondItem="ym5-Jm-Ygd" secondAttribute="bottom" constant="12" id="965-8H-feo"/>
@@ -654,102 +652,6 @@
             </objects>
             <point key="canvasLocation" x="1568.8" y="501.49925037481262"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="Pyr-8M-r5y">
-            <objects>
-                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bjN-zM-BXg" customClass="DashboardVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="26R-r0-aCi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="L2d-g8-n8R">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyi-K0-238">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP OF THE DAY: Create a budget for each of your spending categories every month to help limit your spending." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngU-B8-lUg">
-                                                <rect key="frame" x="0.0" y="10" width="375" height="80"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ngU-B8-lUg" secondAttribute="trailing" id="JKY-Xj-11K"/>
-                                            <constraint firstItem="ngU-B8-lUg" firstAttribute="leading" secondItem="Wyi-K0-238" secondAttribute="leading" id="UFi-bH-qG5"/>
-                                            <constraint firstAttribute="bottom" secondItem="ngU-B8-lUg" secondAttribute="bottom" constant="10" id="ZJh-gh-5Hb"/>
-                                            <constraint firstItem="ngU-B8-lUg" firstAttribute="top" secondItem="Wyi-K0-238" secondAttribute="top" constant="10" id="nmD-xe-7Wi"/>
-                                            <constraint firstAttribute="height" constant="100" id="vgG-mT-cGF"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zCu-fB-MRe">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="517"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Your Goals" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NT-h9-fNF">
-                                                <rect key="frame" x="0.0" y="10" width="375" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="FeX-XV-dI5"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                <color key="textColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62J-JY-jCf" customClass="CircularProgressBar" customModule="HopesAndDreams" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="68" width="375" height="299"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="299" id="YkQ-QL-dtt"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2h-YT-jjD">
-                                                <rect key="frame" x="0.0" y="375" width="375" height="30"/>
-                                                <state key="normal" title="+ Add a New Goal"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="q2h-YT-jjD" firstAttribute="centerX" secondItem="zCu-fB-MRe" secondAttribute="centerX" id="1Gj-yZ-TuC"/>
-                                            <constraint firstItem="62J-JY-jCf" firstAttribute="top" secondItem="8NT-h9-fNF" secondAttribute="bottom" constant="8" id="Bb0-D6-MQO"/>
-                                            <constraint firstItem="q2h-YT-jjD" firstAttribute="top" secondItem="62J-JY-jCf" secondAttribute="bottom" constant="8" id="JPB-EB-fjg"/>
-                                            <constraint firstItem="8NT-h9-fNF" firstAttribute="leading" secondItem="zCu-fB-MRe" secondAttribute="leading" id="R8j-7W-LxD"/>
-                                            <constraint firstItem="62J-JY-jCf" firstAttribute="centerX" secondItem="zCu-fB-MRe" secondAttribute="centerX" id="UUR-Ik-qTw"/>
-                                            <constraint firstItem="62J-JY-jCf" firstAttribute="width" secondItem="8NT-h9-fNF" secondAttribute="width" id="beb-JT-J8k"/>
-                                            <constraint firstItem="8NT-h9-fNF" firstAttribute="top" secondItem="zCu-fB-MRe" secondAttribute="top" constant="10" id="dAl-IJ-Qnr"/>
-                                            <constraint firstAttribute="trailing" secondItem="8NT-h9-fNF" secondAttribute="trailing" id="uR5-wA-stb"/>
-                                            <constraint firstItem="q2h-YT-jjD" firstAttribute="width" secondItem="62J-JY-jCf" secondAttribute="width" id="xdw-Ug-Ly7"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="L2d-g8-n8R" firstAttribute="centerX" secondItem="efH-dT-7k2" secondAttribute="centerX" id="0V4-aq-nMy"/>
-                            <constraint firstItem="L2d-g8-n8R" firstAttribute="trailing" secondItem="efH-dT-7k2" secondAttribute="trailing" id="8eH-HZ-VtI"/>
-                            <constraint firstItem="efH-dT-7k2" firstAttribute="trailing" secondItem="L2d-g8-n8R" secondAttribute="trailing" id="8jZ-aF-xj2"/>
-                            <constraint firstItem="L2d-g8-n8R" firstAttribute="leading" secondItem="efH-dT-7k2" secondAttribute="leading" id="Ah7-lr-lKF"/>
-                            <constraint firstItem="efH-dT-7k2" firstAttribute="bottom" secondItem="L2d-g8-n8R" secondAttribute="bottom" constant="1" id="IIa-2D-7Sy"/>
-                            <constraint firstItem="L2d-g8-n8R" firstAttribute="trailing" secondItem="efH-dT-7k2" secondAttribute="trailing" id="MHD-Ln-1nE"/>
-                            <constraint firstItem="L2d-g8-n8R" firstAttribute="leading" secondItem="efH-dT-7k2" secondAttribute="leading" id="VcP-Tt-MOj"/>
-                            <constraint firstItem="L2d-g8-n8R" firstAttribute="top" secondItem="efH-dT-7k2" secondAttribute="top" id="l6T-Pe-Kby"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="efH-dT-7k2"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-30" id="Gr5-6B-TQj">
-                        <color key="badgeColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="goalProgress" destination="62J-JY-jCf" id="29A-RG-gjx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hvI-4G-6ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1584.8" y="-180.35982008995504"/>
-        </scene>
         <!--Tab BarVC-->
         <scene sceneID="pup-jH-qEv">
             <objects>
@@ -762,7 +664,7 @@
                         <color key="selectedImageTintColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bjN-zM-BXg" kind="relationship" relationship="viewControllers" id="QfJ-4N-bC6"/>
+                        <segue destination="BDJ-GM-AUY" kind="relationship" relationship="viewControllers" id="zsB-0f-1g7"/>
                         <segue destination="MBd-ih-Q4i" kind="relationship" relationship="viewControllers" id="QBo-wN-zIs"/>
                         <segue destination="b2t-oG-URy" kind="relationship" relationship="viewControllers" id="tcp-wi-jUK"/>
                         <segue destination="MpV-CY-qJM" kind="relationship" relationship="viewControllers" id="QCK-ct-VrQ"/>
@@ -878,7 +780,7 @@
                                         <rect key="frame" x="0.0" y="60.5" width="345" height="219"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user-60" translatesAutoresizingMaskIntoConstraints="NO" id="Vyb-13-bUh">
-                                                <rect key="frame" x="142.5" y="79.5" width="60" height="60"/>
+                                                <rect key="frame" x="112.5" y="49.5" width="120" height="120"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="0.16165453767123289" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1076,6 +978,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPZ-w3-ENX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="1324.5877061469266"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="58F-Va-QPD">
+            <objects>
+                <viewController storyboardIdentifier="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BDJ-GM-AUY" customClass="DashboardVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QBj-Zg-Bym">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-qd-Qcp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drg-nZ-7hj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIP OF THE DAY: Create a budget for each of your spending categories every month to help limit your spending." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="si4-P7-GVd">
+                                                <rect key="frame" x="5" y="19.5" width="365" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="si4-P7-GVd" firstAttribute="centerY" secondItem="drg-nZ-7hj" secondAttribute="centerY" id="2k2-VO-hlH"/>
+                                            <constraint firstItem="si4-P7-GVd" firstAttribute="leading" secondItem="drg-nZ-7hj" secondAttribute="leading" constant="5" id="XeY-Id-CyX"/>
+                                            <constraint firstAttribute="height" constant="100" id="bPU-Wo-MhM"/>
+                                            <constraint firstItem="si4-P7-GVd" firstAttribute="centerX" secondItem="drg-nZ-7hj" secondAttribute="centerX" id="eul-fn-uw3"/>
+                                            <constraint firstAttribute="trailing" secondItem="si4-P7-GVd" secondAttribute="trailing" constant="5" id="iR1-TO-9db"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Your Goals" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2M-k5-wWt">
+                                        <rect key="frame" x="5" y="103" width="365" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ai5-aJ-ksQ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dtS-Ic-JBK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDF-AT-EmX" customClass="CircularProgressBar" customModule="HopesAndDreams" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="156" width="365" height="250"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="h7V-lW-FvM"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nud-F7-X1e">
+                                        <rect key="frame" x="0.0" y="409" width="375" height="59"/>
+                                        <state key="normal" title="+ Add a New Goal"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="drg-nZ-7hj" firstAttribute="leading" secondItem="kZe-qd-Qcp" secondAttribute="leading" id="TTp-r3-Rit"/>
+                                    <constraint firstAttribute="trailing" secondItem="drg-nZ-7hj" secondAttribute="trailing" id="TsV-aA-CkU"/>
+                                    <constraint firstItem="nud-F7-X1e" firstAttribute="width" secondItem="drg-nZ-7hj" secondAttribute="width" id="VfZ-TQ-Jg8"/>
+                                    <constraint firstItem="V2M-k5-wWt" firstAttribute="leading" secondItem="kZe-qd-Qcp" secondAttribute="leading" constant="5" id="Ybz-XR-2Rm"/>
+                                    <constraint firstAttribute="trailing" secondItem="DDF-AT-EmX" secondAttribute="trailing" constant="5" id="kf5-YX-Cb7"/>
+                                    <constraint firstItem="DDF-AT-EmX" firstAttribute="leading" secondItem="kZe-qd-Qcp" secondAttribute="leading" constant="5" id="rZh-kk-XLp"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J40-O2-vMa" firstAttribute="bottom" secondItem="kZe-qd-Qcp" secondAttribute="bottom" constant="150" id="6mW-1U-hJM"/>
+                            <constraint firstItem="kZe-qd-Qcp" firstAttribute="leading" secondItem="J40-O2-vMa" secondAttribute="leading" id="AQO-qN-eWe"/>
+                            <constraint firstAttribute="trailing" secondItem="kZe-qd-Qcp" secondAttribute="trailing" id="Jqk-AN-JGS"/>
+                            <constraint firstItem="kZe-qd-Qcp" firstAttribute="top" secondItem="J40-O2-vMa" secondAttribute="top" id="MJG-33-rBt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J40-O2-vMa"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-30" id="mgq-te-LnX">
+                        <color key="badgeColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goalProgress" destination="DDF-AT-EmX" id="2iv-kp-pHu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwX-oh-M7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="-198"/>
         </scene>
     </scenes>
     <resources>

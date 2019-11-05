@@ -13,6 +13,7 @@ class WalletVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Spinner.start(style: .white, backColor: UIColor.white, baseColor: UIColor.darkGray)
         
         
         stockResultsFeed.delegate = self
@@ -24,6 +25,7 @@ class WalletVC: UIViewController{
         stockResultsFeed.rowHeight = 80
         
         fetch_data()
+       
         
         
        
@@ -99,6 +101,7 @@ class WalletVC: UIViewController{
                     
                     
                 }
+                Spinner.stop()
                 self.stockResultsFeed.reloadData()
             }
             

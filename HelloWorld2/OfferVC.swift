@@ -11,6 +11,7 @@ import UIKit
 class OfferVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
 
     var offerarray: [Offer] = []
     

@@ -24,6 +24,7 @@
 		841080A02352561F00799AEA /* tabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410809F2352561F00799AEA /* tabBarVC.swift */; };
 		841443932355727900C8118A /* TransCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841443922355727900C8118A /* TransCell.swift */; };
 		84144395235575F200C8118A /* transData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84144394235575F200C8118A /* transData.swift */; };
+		8437C8E623710A90008A3ACF /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437C8E523710A90008A3ACF /* Spinner.swift */; };
 		843DFB36234AA9D800957F99 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DFB35234AA9D800957F99 /* CircularProgressBar.swift */; };
 		84602ED723539C2C00FB413C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84602ED623539C2C00FB413C /* APIClient.swift */; };
 		84D029AD2357877E006873B4 /* msufcu_logo_white-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D029A62357877E006873B4 /* msufcu_logo_white-1.png */; };
@@ -124,6 +125,7 @@
 		841443892355524900C8118A /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = SOURCE_ROOT; };
 		841443922355727900C8118A /* TransCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransCell.swift; sourceTree = "<group>"; };
 		84144394235575F200C8118A /* transData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transData.swift; sourceTree = "<group>"; };
+		8437C8E523710A90008A3ACF /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		843DFB35234AA9D800957F99 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		84602ED623539C2C00FB413C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		84D029A62357877E006873B4 /* msufcu_logo_white-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "msufcu_logo_white-1.png"; path = "Assets.xcassets/msufcu_logo_white-1.imageset/msufcu_logo_white-1.png"; sourceTree = "<group>"; };
@@ -193,10 +195,11 @@
 				8410809D235251F300799AEA /* NewUserVC.swift */,
 				07D3E8D023312AA500890271 /* QuizVC.swift */,
 				84E015A52331DFA700C97572 /* AnalyzingVC.swift */,
+				07A660942326D524004F2AD1 /* AppDelegate.swift */,
 				84DE1A51233B041C006A0D73 /* DashboardVC.swift */,
 				8410809B235246AA00799AEA /* NewUser2VC.swift */,
-				07A660942326D524004F2AD1 /* AppDelegate.swift */,
 				07A660982326D524004F2AD1 /* Main.storyboard */,
+				8437C8E523710A90008A3ACF /* Spinner.swift */,
 				84D1FFEF2356AAAC0044BABD /* NotificationVC.swift */,
 				84D1FFF72356BBB50044BABD /* NotificationCell.swift */,
 				841443922355727900C8118A /* TransCell.swift */,
@@ -526,6 +529,7 @@
 				07B218A023562D3D009240C0 /* Offer.swift in Sources */,
 				84D1FFF82356BBB50044BABD /* NotificationCell.swift in Sources */,
 				84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */,
+				8437C8E623710A90008A3ACF /* Spinner.swift in Sources */,
 				07D3E8D123312AA600890271 /* QuizVC.swift in Sources */,
 				07A660952326D524004F2AD1 /* AppDelegate.swift in Sources */,
 				84602ED723539C2C00FB413C /* APIClient.swift in Sources */,

@@ -14,6 +14,8 @@ class Quiz{
     
     init(){
         
+        questions.append(Question(questionText: "What are the members of your family? ", answers: ["Spouse/partner","Children","Parents or other relatives", "Pets"], Qtype: "check"))
+        
         questions.append(Question(questionText: "Do you consider yourself a spender or a saver?", answers: ["Saver", "Spender"], Qtype: "slider"))
         
         questions.append(Question(questionText: "Do you consider yourself an early adopter with technology?", answers: ["No", "Yes"], Qtype: "slider"))
@@ -35,6 +37,7 @@ class Quiz{
         questions.append(Question(questionText: "What category best fits this dream?", answers: [],Qtype: "dropdown"))
         
         questions.append(Question(questionText: "How much would you be willing save towards this? ", answers: [], Qtype: "text"))
+        
         
         
         

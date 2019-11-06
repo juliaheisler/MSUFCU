@@ -23,7 +23,7 @@ class TransCell: UITableViewCell {
     {
         amountAdded = amount.text!
         
-        APIClient.sendAnswers(account: "11134027", amount: amountAdded)
+        APIClient.setProg(account: "11134027", amount: amountAdded)
         print(amountAdded)
         
         pluButton.isHidden = true

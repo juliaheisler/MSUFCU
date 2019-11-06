@@ -14,21 +14,17 @@ class Quiz{
     
     init(){
         
-        questions.append(Question(questionText: "What are the members of your family? ", answers: ["Spouse/partner","Children","Parents or other relatives", "Pets"], Qtype: "check"))
+        questions.append(Question(questionText: "Who are the members of you household? (click all that apply) ", answers: ["Spouse/partner","Children","Parents or other relatives", "Pets"], Qtype: "check"))
         
-        questions.append(Question(questionText: "Do you consider yourself a spender or a saver?", answers: ["Saver", "Spender"], Qtype: "slider"))
+        questions.append(Question(questionText: "What are some of your hobbies? (Click all that apply) ", answers: ["Shopping","Sports","Video Games", "Music/Art"], Qtype: "check"))
         
         questions.append(Question(questionText: "Do you consider yourself an early adopter with technology?", answers: ["No", "Yes"], Qtype: "slider"))
         
-        questions.append(Question(questionText: "On a scale of 1-10 how important is the service you receive from your financial institution?", answers: ["1", "10"], Qtype: "slider"))
-        
         questions.append(Question(questionText: "Are you a homeowner? Do you intend to be a homeowner?", answers: ["Current homeowner","I’d like to be a homeowner soon","Maybe someday","Why buy a house when you can travel"], Qtype: "multiple choice"))
         
-        questions.append(Question(questionText: "If you had an extra hundred dollars in your next paycheck what yould you do with it?", answers: ["Spend it","Save it","Split it between Savings and Spending","Invest it"], Qtype: "multiple choice"))
+        questions.append(Question(questionText: "What would be an ideal day off activity for you?", answers: ["Relaxing spa day","Going for a hike ","Exploring local restaurants","Attending a sporting event"], Qtype: "multiple choice"))
         
-        questions.append(Question(questionText: "Do you like being involved in your community?", answers: ["Yes, I volunteer my time","No, not currently","A little bit of both","I like to attend community events"], Qtype: "multiple choice"))
-        
-        questions.append(Question(questionText: "Describe yourself in one word:", answers: ["Loyal","Creative","Thoughtful","Analytical"],Qtype: "multiple choice"))
+        questions.append(Question(questionText: "On a scale of 1-10 how important is the service you receive from your financial institution?", answers: ["1", "10"], Qtype: "slider"))
         
         questions.append(Question(questionText: "Which product are you most interested in?", answers: ["Auto loan","Mortgage","Credit card","Checking and savings"],Qtype: "multiple choice"))
         

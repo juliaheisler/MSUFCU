@@ -92,10 +92,10 @@ class APIClient
          }
     
     
-    static func sendAnswers( account: String, d0: String, d1: String, d2: String, d3: String, d4: String, d5: String, d6: String, d7: String)
+    static func sendAnswers( account: String, d0: [String], d1: [String], d2: [String], d3: [String], d4: [String], d5: [String], d6: [String], d7: [String], d8: [String], d9:[String])
     {
         
-        let parameters: Parameters = ["account": "11134027", "data": [d0,d1,d2,d3,d4,d5,d6,d7] ]
+        let parameters: Parameters = ["account": "11134027", "data": [d0,d1,d2,d3,d4,d5,d6,d7,d8,d9] ]
         Alamofire.request("http://msufcu.meowtap.com:5000/setQuiz", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             if let json = response.result.value as? String{
                 
@@ -109,7 +109,7 @@ class APIClient
         //}
     }
     
-    static func sendAnswers( account: String, amount: String)
+    static func setProg( account: String, amount: String)
     {
         
         let parameters: Parameters = ["account": "11134027", "amount": amount]

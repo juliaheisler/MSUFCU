@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v47-1d-sdq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v47-1d-sdq">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -561,7 +561,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-fH-6vh">
-                                                    <rect key="frame" x="285" y="-8.5" width="60" height="60.5"/>
+                                                    <rect key="frame" x="315" y="7" width="30" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="icons8-plus-31"/>
                                                     <connections>
@@ -592,7 +592,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAB-nV-H6D">
-                                                    <rect key="frame" x="140" y="28.5" width="144" height="15"/>
+                                                    <rect key="frame" x="170" y="28.5" width="144" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="QRp-gy-4nz"/>
                                                         <constraint firstAttribute="height" constant="15" id="ZzC-I1-3ow"/>
@@ -691,7 +691,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKD-Mw-9eb" id="yQ3-gU-6lV">
-                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ahn-Y3-kdO">
@@ -777,10 +777,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auv-GW-tir">
-                                        <rect key="frame" x="0.0" y="60.5" width="345" height="219"/>
+                                        <rect key="frame" x="0.0" y="60.5" width="345" height="286"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user-60" translatesAutoresizingMaskIntoConstraints="NO" id="Vyb-13-bUh">
-                                                <rect key="frame" x="142.5" y="79.5" width="60" height="60"/>
+                                                <rect key="frame" x="142.5" y="113" width="60" height="60"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="0.16165453767123289" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -792,7 +792,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENERAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADE-CP-Ybf">
-                                        <rect key="frame" x="0.0" y="294.5" width="345" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="361.5" width="345" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="6hd-jE-40s"/>
                                             <constraint firstAttribute="width" constant="345" id="Tfp-7e-OZN"/>
@@ -802,7 +802,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oCn-XT-7S8">
-                                        <rect key="frame" x="0.0" y="330" width="345" height="258"/>
+                                        <rect key="frame" x="0.0" y="397" width="345" height="191"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iH7-ci-ce5">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="57"/>
@@ -831,39 +831,23 @@
                                                     <constraint firstAttribute="width" constant="345" id="3ZY-Yt-4JO"/>
                                                     <constraint firstAttribute="height" constant="57" id="afF-Ft-CbE"/>
                                                 </constraints>
-                                                <state key="normal" image="icons8-security-shield-green-30">
+                                                <state key="normal" image="icons8-amazon-alexa-logo-30.png">
                                                     <attributedString key="attributedTitle">
-                                                        <fragment content="  Privacy Settings">
+                                                        <fragment content="  Alexa Settings ">
                                                             <attributes>
-                                                                <color key="NSColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="NSColor" red="0.0" green="0.30980392156862746" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="18"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                 </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7J-NR-rMz">
-                                                <rect key="frame" x="0.0" y="134" width="345" height="57"/>
-                                                <color key="backgroundColor" red="0.61176470589999998" green="0.71764705880000002" blue="0.68627450980000004" alpha="0.50658176369999997" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="345" id="Sli-Gc-9vG"/>
-                                                    <constraint firstAttribute="height" constant="57" id="mBN-aQ-N0r"/>
-                                                </constraints>
-                                                <state key="normal" image="icons8-alarm-30">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="  Notifications">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
+                                                <connections>
+                                                    <segue destination="E56-aM-Bwh" kind="show" id="bVb-OC-A9g"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPp-kJ-aVV">
-                                                <rect key="frame" x="0.0" y="201" width="345" height="57"/>
+                                                <rect key="frame" x="0.0" y="134" width="345" height="57"/>
                                                 <color key="backgroundColor" red="0.61176470589999998" green="0.71764705880000002" blue="0.68627450980000004" alpha="0.50658176369999997" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="345" id="EkH-CN-aVS"/>
@@ -883,7 +867,6 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="G7J-NR-rMz" firstAttribute="height" secondItem="iH7-ci-ce5" secondAttribute="height" id="1ev-gA-O9R"/>
                                             <constraint firstItem="xPp-kJ-aVV" firstAttribute="height" secondItem="iH7-ci-ce5" secondAttribute="height" id="APu-9j-rmW"/>
                                             <constraint firstItem="hDJ-5r-pHA" firstAttribute="height" secondItem="iH7-ci-ce5" secondAttribute="height" id="J1h-XN-cLb"/>
                                         </constraints>
@@ -908,6 +891,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENS-wx-sgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2405.5999999999999" y="1156.3718140929536"/>
+        </scene>
+        <!--AlexaVC-->
+        <scene sceneID="VOb-uJ-YH1">
+            <objects>
+                <viewController id="E56-aM-Bwh" customClass="AlexaVC" customModule="HopesAndDreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uTY-Vg-zFv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="aSy-3y-cwK">
+                                <rect key="frame" x="10" y="0.0" width="355" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alexa Settings" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-GM-p2B">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Ll3-CH-aCf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <color key="textColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Mtf-am-ahK">
+                                        <rect key="frame" x="0.0" y="74" width="355" height="206"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ca-kM-9at">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6a-K6-E5d">
+                                                <rect key="frame" x="0.0" y="33" width="355" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="U3l-hB-wFp"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set PIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC2-Eu-dmX">
+                                                <rect key="frame" x="0.0" y="83" width="355" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIB-YP-FeY">
+                                                <rect key="frame" x="0.0" y="116" width="355" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="MXr-Sj-Una"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbM-GB-1uG">
+                                                <rect key="frame" x="0.0" y="166" width="355" height="40"/>
+                                                <color key="backgroundColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="sQC-uB-2xq"/>
+                                                </constraints>
+                                                <state key="normal" title="Link Alexa">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0h-rf-znY">
+                                        <rect key="frame" x="0.0" y="304" width="355" height="343"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aSy-3y-cwK" secondAttribute="trailing" constant="10" id="7f8-aj-cSa"/>
+                            <constraint firstItem="aSy-3y-cwK" firstAttribute="top" secondItem="dPJ-F9-twd" secondAttribute="top" id="EGf-pq-V2G"/>
+                            <constraint firstAttribute="bottom" secondItem="aSy-3y-cwK" secondAttribute="bottom" id="uH7-9p-0zF"/>
+                            <constraint firstItem="aSy-3y-cwK" firstAttribute="leading" secondItem="dPJ-F9-twd" secondAttribute="leading" constant="10" id="wdf-Sh-dZN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dPJ-F9-twd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MEc-j3-c2d"/>
+                    <connections>
+                        <outlet property="alexaEmail" destination="T6a-K6-E5d" id="r7a-bT-M4r"/>
+                        <outlet property="pin" destination="gIB-YP-FeY" id="WXw-QH-gEY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pi9-Ma-1Aa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3199" y="1156"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="seH-Td-Xin">
@@ -1165,6 +1238,7 @@
                             <constraint firstAttribute="bottom" secondItem="i3d-pN-UeB" secondAttribute="bottom" id="c26-vM-kZn"/>
                             <constraint firstAttribute="trailing" secondItem="i3d-pN-UeB" secondAttribute="trailing" id="sbx-dg-V37"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kAO-dq-nQJ"/>
                     </view>
                     <connections>
                         <outlet property="goalProgress" destination="ncA-SP-qcb" id="2E9-zf-7DK"/>
@@ -1182,6 +1256,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="pLZ-fx-7yb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T1C-Ch-IyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1192,12 +1267,11 @@
     <resources>
         <image name="Icon-Bell" width="29" height="29"/>
         <image name="icons8-account-30" width="29" height="29"/>
-        <image name="icons8-alarm-30" width="30" height="30"/>
+        <image name="icons8-amazon-alexa-logo-30.png" width="30" height="30"/>
         <image name="icons8-exit-30" width="30" height="30"/>
         <image name="icons8-home-30" width="29" height="29"/>
         <image name="icons8-money-box-30" width="29" height="29"/>
         <image name="icons8-plus-31" width="30" height="30"/>
-        <image name="icons8-security-shield-green-30" width="30" height="30"/>
         <image name="icons8-star-30" width="29" height="29"/>
         <image name="icons8-user-60" width="60" height="60"/>
         <image name="settings" width="29" height="29"/>

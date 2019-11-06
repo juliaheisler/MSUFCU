@@ -170,7 +170,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F68F985C-00AA-4BB7-AC6B-ED9D95DD7F39"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/DashboardVC.swift"

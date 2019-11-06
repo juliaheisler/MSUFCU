@@ -39,6 +39,8 @@
 		84E015A22331D2AC00C97572 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A12331D2AC00C97572 /* Question.swift */; };
 		84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A52331DFA700C97572 /* AnalyzingVC.swift */; };
 		84E7E301237151C500A38F4D /* HomeScreenVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E300237151C500A38F4D /* HomeScreenVCViewController.swift */; };
+		84E7E30923726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E7E30823726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png */; };
+		84E7E30B237286B800A38F4D /* AlexaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E30A237286B800A38F4D /* AlexaVC.swift */; };
 		94CABA1FEFE69BFB112E74CD /* Pods_HopesAndDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +147,8 @@
 		84E015A12331D2AC00C97572 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		84E015A52331DFA700C97572 /* AnalyzingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzingVC.swift; sourceTree = "<group>"; };
 		84E7E300237151C500A38F4D /* HomeScreenVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVCViewController.swift; sourceTree = "<group>"; };
+		84E7E30823726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-amazon-alexa-logo-30.png"; path = "../../../Downloads/icons8-amazon-alexa-logo-30.png"; sourceTree = "<group>"; };
+		84E7E30A237286B800A38F4D /* AlexaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlexaVC.swift; sourceTree = "<group>"; };
 		EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.release.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,11 +229,13 @@
 				07B2189F23562D3D009240C0 /* Offer.swift */,
 				07A660A02326D527004F2AD1 /* Info.plist */,
 				84D029A62357877E006873B4 /* msufcu_logo_white-1.png */,
+				84E7E30823726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png */,
 				07A6609B2326D527004F2AD1 /* Assets.xcassets */,
 				84602ED623539C2C00FB413C /* APIClient.swift */,
 				84E015A12331D2AC00C97572 /* Question.swift */,
 				8402DBA7237277680080107C /* ProgCell.swift */,
 				8410808B2343E05B00799AEA /* Quiz.swift */,
+				84E7E30A237286B800A38F4D /* AlexaVC.swift */,
 			);
 			path = HelloWorld2;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 			files = (
 				07A6609C2326D527004F2AD1 /* Assets.xcassets in Resources */,
 				84DE1A502339B565006A0D73 /* Launch Screen.storyboard in Resources */,
+				84E7E30923726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png in Resources */,
 				07A6609A2326D524004F2AD1 /* Main.storyboard in Resources */,
 				84D029AD2357877E006873B4 /* msufcu_logo_white-1.png in Resources */,
 			);
@@ -549,6 +556,7 @@
 				8437C8E623710A90008A3ACF /* Spinner.swift in Sources */,
 				07D3E8D123312AA600890271 /* QuizVC.swift in Sources */,
 				84E7E301237151C500A38F4D /* HomeScreenVCViewController.swift in Sources */,
+				84E7E30B237286B800A38F4D /* AlexaVC.swift in Sources */,
 				07A660952326D524004F2AD1 /* AppDelegate.swift in Sources */,
 				84602ED723539C2C00FB413C /* APIClient.swift in Sources */,
 				841080A02352561F00799AEA /* tabBarVC.swift in Sources */,

@@ -22,14 +22,15 @@ class HomeScreenVCViewController: UIViewController {
         
         if sender.selectedSegmentIndex == 0
         {
-            Goals.alpha = 1
-            Budgets.alpha = 0
-        }
-        
-        if sender.selectedSegmentIndex == 1
-        {
             Goals.alpha = 0
             Budgets.alpha = 1
+        }
+        else
+        {
+            
+            Goals.alpha = 1
+            Budgets.alpha = 0
+            
         }
     }
     

@@ -18,4 +18,6 @@ class OfferCell: UITableViewCell {
         offerImageView.image = offer.image
         offerTitle.text = offer.title
     }
+    
+    
 }

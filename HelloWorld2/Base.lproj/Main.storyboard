@@ -1232,7 +1232,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="progBar" destination="Dvv-hd-HUo" id="QOx-Lh-1J1"/>
+                                            <outlet property="progBar" destination="Dvv-hd-HUo" id="tf7-9D-5DO"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ecX-zk-MGK" customClass="DailyTipCell" customModule="HopesAndDreams" customModuleProvider="target">

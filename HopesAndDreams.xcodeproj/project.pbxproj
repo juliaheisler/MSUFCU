@@ -18,7 +18,6 @@
 		07B218A023562D3D009240C0 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189F23562D3D009240C0 /* Offer.swift */; };
 		07D3E8D123312AA600890271 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E8D023312AA500890271 /* QuizVC.swift */; };
 		8402DB9C237265F10080107C /* BudgetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DB9B237265F10080107C /* BudgetsVC.swift */; };
-		8402DBA6237277670080107C /* ProgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DBA5237277660080107C /* ProgCell.swift */; };
 		8402DBAA23728FC90080107C /* DailyTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DBA923728FC90080107C /* DailyTipCell.swift */; };
 		8410808C2343E05B00799AEA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410808B2343E05B00799AEA /* Quiz.swift */; };
 		84108092234D572800799AEA /* WalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84108091234D572800799AEA /* WalletVC.swift */; };
@@ -39,7 +38,6 @@
 		84E015A22331D2AC00C97572 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A12331D2AC00C97572 /* Question.swift */; };
 		84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A52331DFA700C97572 /* AnalyzingVC.swift */; };
 		84E7E301237151C500A38F4D /* HomeScreenVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E300237151C500A38F4D /* HomeScreenVCViewController.swift */; };
-		84E7E30923726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E7E30823726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png */; };
 		84E7E30B237286B800A38F4D /* AlexaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E30A237286B800A38F4D /* AlexaVC.swift */; };
 		94CABA1FEFE69BFB112E74CD /* Pods_HopesAndDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */; };
 /* End PBXBuildFile section */
@@ -525,7 +523,6 @@
 			files = (
 				07A6609C2326D527004F2AD1 /* Assets.xcassets in Resources */,
 				84DE1A502339B565006A0D73 /* Launch Screen.storyboard in Resources */,
-				84E7E30923726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png in Resources */,
 				07A6609A2326D524004F2AD1 /* Main.storyboard in Resources */,
 				84D029AD2357877E006873B4 /* msufcu_logo_white-1.png in Resources */,
 			);
@@ -595,7 +592,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8410808C2343E05B00799AEA /* Quiz.swift in Sources */,
-				8402DBA6237277670080107C /* ProgCell.swift in Sources */,
 				841443932355727900C8118A /* TransCell.swift in Sources */,
 				07A660972326D524004F2AD1 /* ViewController.swift in Sources */,
 				07B2189C23562A30009240C0 /* OfferVC.swift in Sources */,

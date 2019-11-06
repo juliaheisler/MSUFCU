@@ -3,4 +3,5 @@
  
  target 'HopesAndDreams' do		
    pod 'Alamofire', '~> 4.7'
+   pod 'Charts'
  end

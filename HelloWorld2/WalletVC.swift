@@ -20,11 +20,6 @@ class WalletVC: UIViewController{
         {
             stockResultsFeed.alpha = 0
             pieChart.alpha = 1
-            let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Automotive"]
-            let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
-            
-            setChart(dataPoints:months, values: unitsSold)
-            
         }
     }
     
@@ -46,10 +41,12 @@ class WalletVC: UIViewController{
         stockResultsFeed.rowHeight = 80
         
         fetch_data()
-       
         
+        let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Automotive"]
+        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
         
-       
+        setChart(dataPoints:months, values: unitsSold)
+
         
 
         }

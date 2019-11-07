@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v47-1d-sdq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v47-1d-sdq">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -540,7 +540,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EDl-ZE-Y0G">
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EDl-ZE-Y0G">
                                 <rect key="frame" x="94.5" y="13" width="186" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="9oq-YM-3NT"/>
@@ -553,7 +553,7 @@
                                     <action selector="switchView:" destination="MBd-ih-Q4i" eventType="valueChanged" id="Hhl-Xe-fyI"/>
                                 </connections>
                             </segmentedControl>
-                            <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJe-CO-Tpn" customClass="PieChartView" customModule="Charts">
+                            <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJe-CO-Tpn" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="49" width="375" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -653,10 +653,10 @@
                             <constraint firstItem="RQo-CG-35T" firstAttribute="leading" secondItem="AKF-Fx-8wH" secondAttribute="leading" constant="15" id="0xR-FT-JnS"/>
                             <constraint firstItem="DJe-CO-Tpn" firstAttribute="leading" secondItem="AKF-Fx-8wH" secondAttribute="leading" id="FaZ-4I-dhe"/>
                             <constraint firstItem="EDl-ZE-Y0G" firstAttribute="centerX" secondItem="DRE-ia-Ctz" secondAttribute="centerX" id="Lk7-Ko-170"/>
+                            <constraint firstItem="DJe-CO-Tpn" firstAttribute="centerX" secondItem="DRE-ia-Ctz" secondAttribute="centerX" id="M5S-DV-qRI"/>
                             <constraint firstItem="RQo-CG-35T" firstAttribute="top" secondItem="EDl-ZE-Y0G" secondAttribute="bottom" constant="13" id="M95-IQ-bhV"/>
                             <constraint firstItem="EDl-ZE-Y0G" firstAttribute="top" secondItem="AKF-Fx-8wH" secondAttribute="top" constant="13" id="RvI-gS-vfT"/>
                             <constraint firstItem="RQo-CG-35T" firstAttribute="bottom" secondItem="AKF-Fx-8wH" secondAttribute="bottom" id="g0F-yV-8TT"/>
-                            <constraint firstItem="DJe-CO-Tpn" firstAttribute="centerY" secondItem="DRE-ia-Ctz" secondAttribute="centerY" id="hmR-Rg-EFv"/>
                             <constraint firstItem="AKF-Fx-8wH" firstAttribute="trailing" secondItem="DJe-CO-Tpn" secondAttribute="trailing" id="pTF-Ox-Pc1"/>
                             <constraint firstItem="AKF-Fx-8wH" firstAttribute="bottom" secondItem="DJe-CO-Tpn" secondAttribute="bottom" id="v8a-Wv-71f"/>
                             <constraint firstItem="DJe-CO-Tpn" firstAttribute="top" secondItem="EDl-ZE-Y0G" secondAttribute="bottom" constant="13" id="wcV-zz-ByI"/>
@@ -715,7 +715,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKD-Mw-9eb" id="yQ3-gU-6lV">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ahn-Y3-kdO">

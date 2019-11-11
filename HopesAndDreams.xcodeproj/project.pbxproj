@@ -17,6 +17,8 @@
 		07B2189E23562BD3009240C0 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189D23562BD3009240C0 /* OfferCell.swift */; };
 		07B218A023562D3D009240C0 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189F23562D3D009240C0 /* Offer.swift */; };
 		07D3E8D123312AA600890271 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E8D023312AA500890271 /* QuizVC.swift */; };
+		07F66D54237A077500B35714 /* DashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66D53237A077500B35714 /* DashVC.swift */; };
+		07F66D5F237A08CB00B35714 /* DashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66D5E237A08CB00B35714 /* DashModel.swift */; };
 		8402DB9C237265F10080107C /* BudgetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DB9B237265F10080107C /* BudgetsVC.swift */; };
 		8402DBAA23728FC90080107C /* DailyTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DBA923728FC90080107C /* DailyTipCell.swift */; };
 		8410808C2343E05B00799AEA /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410808B2343E05B00799AEA /* Quiz.swift */; };
@@ -139,6 +141,8 @@
 		07B2189D23562BD3009240C0 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		07B2189F23562D3D009240C0 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		07D3E8D023312AA500890271 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		07F66D53237A077500B35714 /* DashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashVC.swift; sourceTree = "<group>"; };
+		07F66D5E237A08CB00B35714 /* DashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashModel.swift; sourceTree = "<group>"; };
 		10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HopesAndDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7598E38A7B1F1D4A8F62F7 /* Pods-HopesAndDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.debug.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.debug.xcconfig"; sourceTree = "<group>"; };
 		8402DB9B237265F10080107C /* BudgetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetsVC.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				84DE1A51233B041C006A0D73 /* DashboardVC.swift */,
 				8410809B235246AA00799AEA /* NewUser2VC.swift */,
 				07A660982326D524004F2AD1 /* Main.storyboard */,
+				07F66D5E237A08CB00B35714 /* DashModel.swift */,
+				07F66D53237A077500B35714 /* DashVC.swift */,
 				8402DBA923728FC90080107C /* DailyTipCell.swift */,
 				8402DB9B237265F10080107C /* BudgetsVC.swift */,
 				84E7E300237151C500A38F4D /* HomeScreenVCViewController.swift */,
@@ -594,6 +600,7 @@
 				8410808C2343E05B00799AEA /* Quiz.swift in Sources */,
 				841443932355727900C8118A /* TransCell.swift in Sources */,
 				07A660972326D524004F2AD1 /* ViewController.swift in Sources */,
+				07F66D5F237A08CB00B35714 /* DashModel.swift in Sources */,
 				07B2189C23562A30009240C0 /* OfferVC.swift in Sources */,
 				84E015A22331D2AC00C97572 /* Question.swift in Sources */,
 				84D1FFF02356AAAC0044BABD /* NotificationVC.swift in Sources */,
@@ -602,6 +609,7 @@
 				84D1FFF82356BBB50044BABD /* NotificationCell.swift in Sources */,
 				84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */,
 				8437C8E623710A90008A3ACF /* Spinner.swift in Sources */,
+				07F66D54237A077500B35714 /* DashVC.swift in Sources */,
 				07D3E8D123312AA600890271 /* QuizVC.swift in Sources */,
 				84E7E301237151C500A38F4D /* HomeScreenVCViewController.swift in Sources */,
 				84E7E30B237286B800A38F4D /* AlexaVC.swift in Sources */,

@@ -13,5 +13,9 @@ class DailyTipCell: UITableViewCell {
   
     @IBOutlet weak var tip: UILabel!
     
-   // func setCell
+    func setCell(test: String)
+    {
+        tip.text = "Test"
+        
+    }
 }

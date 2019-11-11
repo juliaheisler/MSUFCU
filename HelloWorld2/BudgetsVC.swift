@@ -12,6 +12,7 @@ class BudgetsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var offerarray: [CircularProgressBar] = []
+    
          
          override func viewDidLoad() {
              super.viewDidLoad()
@@ -30,11 +31,9 @@ class BudgetsVC: UIViewController {
         tableView.reloadData()
         super.viewDidAppear(true)
     }
-         
+    
         
-    }
-
-
+}
 
 
 

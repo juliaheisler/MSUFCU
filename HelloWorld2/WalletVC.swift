@@ -10,6 +10,12 @@ class WalletVC: UIViewController{
     var transactions: [TransData] = []
     var refreshControl: UIRefreshControl?
     
+
+    @IBOutlet weak var balance: UILabel!
+    @IBOutlet weak var actualBalance: UILabel!
+    
+
+    
  
     @IBAction func switchView(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0
@@ -42,6 +48,8 @@ class WalletVC: UIViewController{
         stockResultsFeed.rowHeight = 80
         
         fetch_data()
+        
+        
         
         let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Automotive"]
         let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 16.00]
@@ -161,8 +169,9 @@ class WalletVC: UIViewController{
                 }
                 Spinner.stop()
                 self.stockResultsFeed.reloadData()
+                self.balance.text = "Available Balance: " + self.transactions[0].balance
+                self.actualBalance.text = "Actual Balance: " + self.transactions[0].balance
             }
-            
             
             
         }

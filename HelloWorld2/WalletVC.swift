@@ -44,7 +44,7 @@ class WalletVC: UIViewController{
         fetch_data()
         
         let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Automotive"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 16.00]
         
         setChart(dataPoints:months, values: unitsSold)
 
@@ -55,10 +55,18 @@ class WalletVC: UIViewController{
     func setChart(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [PieChartDataEntry] = []
+        var legendEntries: [LegendEntry] = []
+        var colors: [NSUIColor] = []
+        
+        colors.append(contentsOf: ChartColorTemplates.joyful())
+        colors.append(contentsOf: ChartColorTemplates.colorful())
+        
         
         for i in 0..<dataPoints.count {
             let dataEntry = PieChartDataEntry(value: Double(values[i]), label: dataPoints[i])
             dataEntries.append(dataEntry)
+            let legendEntry = LegendEntry(label: dataPoints[i]+": $"+String(values[i]), form: .circle, formSize: CGFloat.nan, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: colors[i])
+            legendEntries.append(legendEntry)
         }
         
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label:"")
@@ -68,18 +76,12 @@ class WalletVC: UIViewController{
         formatter.maximumFractionDigits = 1
         formatter.multiplier=1.0
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter:formatter))
-        
-        
-        var colors: [NSUIColor] = []
-        
-        colors.append(contentsOf: ChartColorTemplates.joyful())
-        colors.append(contentsOf: ChartColorTemplates.colorful())
         pieChartDataSet.colors = colors
+        
+        
         pieChart.legend.enabled = true
+        pieChart.legend.setCustom(entries: legendEntries)
         pieChart.legend.font = UIFont(name:"futura", size: 21)!
-        
-        pieChart.legend.form = .circle
-        
         pieChart.legend.orientation = .vertical
         
         pieChart.legend.verticalAlignment = .bottom

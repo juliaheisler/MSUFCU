@@ -334,19 +334,15 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iF4-di-zE9" customClass="CircularProgressBar" customModule="HopesAndDreams" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="103" width="365" height="275"/>
+                                        <rect key="frame" x="5" y="103" width="365" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="275" id="Thc-Mw-21a"/>
+                                            <constraint firstAttribute="height" constant="250" id="srd-Yk-zLT"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dI-fU-pYU">
-                                        <rect key="frame" x="0.0" y="381" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="356" width="375" height="138"/>
                                         <state key="normal" title="Transfer "/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZO-dE-P4X">
-                                        <rect key="frame" x="0.0" y="464" width="375" height="30"/>
-                                        <state key="normal" title="Add Budget"/>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z33-pO-QO4">
                                         <rect key="frame" x="0.0" y="497" width="375" height="121"/>
@@ -407,14 +403,12 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="iF4-di-zE9" firstAttribute="leading" secondItem="hd5-Rj-Ty8" secondAttribute="leading" constant="5" id="3db-Kr-am9"/>
-                                    <constraint firstItem="RZO-dE-P4X" firstAttribute="leading" secondItem="hd5-Rj-Ty8" secondAttribute="leading" id="C1k-0E-s1r"/>
                                     <constraint firstItem="90t-yo-yTB" firstAttribute="leading" secondItem="hd5-Rj-Ty8" secondAttribute="leading" id="F5T-G6-5Oc"/>
                                     <constraint firstItem="z33-pO-QO4" firstAttribute="leading" secondItem="hd5-Rj-Ty8" secondAttribute="leading" id="G56-tn-1Fr"/>
                                     <constraint firstAttribute="trailing" secondItem="90t-yo-yTB" secondAttribute="trailing" id="Me7-gJ-vEG"/>
                                     <constraint firstAttribute="trailing" secondItem="z33-pO-QO4" secondAttribute="trailing" id="aHt-be-c4I"/>
                                     <constraint firstAttribute="trailing" secondItem="1dI-fU-pYU" secondAttribute="trailing" id="jKr-ev-SG0"/>
                                     <constraint firstAttribute="trailing" secondItem="iF4-di-zE9" secondAttribute="trailing" constant="5" id="nMb-7t-QMo"/>
-                                    <constraint firstAttribute="trailing" secondItem="RZO-dE-P4X" secondAttribute="trailing" id="wPc-2r-jjX"/>
                                     <constraint firstItem="1dI-fU-pYU" firstAttribute="leading" secondItem="hd5-Rj-Ty8" secondAttribute="leading" id="yIQ-rI-kca"/>
                                 </constraints>
                             </stackView>

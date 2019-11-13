@@ -20,7 +20,7 @@ class BudgetCell: UITableViewCell {
         spent.text = budget.spent
         category.text = budget.category
         limit.text = budget.limit
-        budgetProg.setProgress(0.0, animated: true)
+        budgetProg.setProgress(budget.prog, animated: true)
     }
     
 

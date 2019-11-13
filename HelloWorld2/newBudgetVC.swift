@@ -47,6 +47,7 @@ class newBudgetVC: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSour
     @IBAction func onAddBudget(_ sender: Any) {
         
         //send the budget to the API
+        APIClient.setBudget(hash: UserDefaults.standard.string(forKey: "hashID")!, category: category.text!, amount: limit.text!)
                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     }
     /*

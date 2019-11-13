@@ -46,6 +46,9 @@ class WalletVC: UIViewController{
         
         
         stockResultsFeed.rowHeight = 80
+        stockResultsFeed.layoutMargins = UIEdgeInsets.zero
+        stockResultsFeed.separatorInset = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 10.0, right: 0.0)
+        stockResultsFeed.separatorColor=UIColor.black;
         
         fetch_data()
         

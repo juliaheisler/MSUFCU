@@ -44,7 +44,7 @@ class TransCell: UITableViewCell {
         
         if temp[temp.startIndex] == "-"
         {
-            pluButton.isHidden = true
+            pluButton.isHidden = false
             
             
         }

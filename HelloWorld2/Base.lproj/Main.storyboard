@@ -931,7 +931,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-fH-6vh">
-                                                    <rect key="frame" x="5" y="7.5" width="29" height="29"/>
+                                                    <rect key="frame" x="5" y="-7.5" width="58" height="58.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="icons8-money-box-30"/>
                                                     <connections>
@@ -939,14 +939,14 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh4-Gq-vAE">
-                                                    <rect key="frame" x="39" y="10" width="68" height="16"/>
+                                                    <rect key="frame" x="68" y="10" width="68" height="16"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRy-WO-xwf">
-                                                    <rect key="frame" x="44" y="13" width="62.5" height="20.5"/>
+                                                    <rect key="frame" x="73" y="13" width="62.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1254,6 +1254,7 @@
                     <tabBarItem key="tabBarItem" title="Account" image="icons8-account-30" id="3sR-5t-lMS">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="u5S-LU-RCQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENS-wx-sgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1323,6 +1324,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="buttonPressed:" destination="E56-aM-Bwh" eventType="touchUpInside" id="VvH-dR-Z6b"/>
+                                                    <segue destination="Qee-aJ-Vrg" kind="show" id="sYv-Aa-kz6"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1696,7 +1698,7 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fcy-l7-ecg"/>
+        <segue reference="sYv-Aa-kz6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

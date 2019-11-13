@@ -52,13 +52,13 @@ class DashVC: UIViewController {
             
             
             
-            
             APIClient.getBudget(hash: (UserDefaults.standard.string(forKey: "hashID")!)){result in
                        switch result {
                        case .failure(let error):
                            print(error)
                        case .success(let value):
                            //value is full array of dict from json
+                           self.tempBudgets = []
                            for item in value
                            {
                             let prog = item["progress"] ?? ""

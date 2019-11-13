@@ -15,7 +15,12 @@ class DashVC: UIViewController {
     @IBOutlet weak var goalProgress: CircularProgressBar!
     var tempBudgets = [Budget]()
    
-        func fetch_data()
+    @IBAction func addBudget(_ sender: Any)
+    {
+        
+        
+    }
+    func fetch_data()
         {
             
             APIClient.getGoalValues(account: "11134027"){result in
@@ -50,6 +55,7 @@ class DashVC: UIViewController {
         
         
         override func viewWillAppear(_ animated: Bool) {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
             
             tableView.delegate = self
             tableView.dataSource = self

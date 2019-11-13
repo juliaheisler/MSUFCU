@@ -41,6 +41,7 @@
 		84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E015A52331DFA700C97572 /* AnalyzingVC.swift */; };
 		84E7E301237151C500A38F4D /* HomeScreenVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E300237151C500A38F4D /* HomeScreenVCViewController.swift */; };
 		84E7E30B237286B800A38F4D /* AlexaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E30A237286B800A38F4D /* AlexaVC.swift */; };
+		84EEBDDB237B83EF008EED6E /* newBudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEBDDA237B83EF008EED6E /* newBudgetVC.swift */; };
 		94CABA1FEFE69BFB112E74CD /* Pods_HopesAndDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,7 @@
 		84E7E300237151C500A38F4D /* HomeScreenVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVCViewController.swift; sourceTree = "<group>"; };
 		84E7E30823726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-amazon-alexa-logo-30.png"; path = "../../../Downloads/icons8-amazon-alexa-logo-30.png"; sourceTree = "<group>"; };
 		84E7E30A237286B800A38F4D /* AlexaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlexaVC.swift; sourceTree = "<group>"; };
+		84EEBDDA237B83EF008EED6E /* newBudgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newBudgetVC.swift; sourceTree = "<group>"; };
 		EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.release.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +239,7 @@
 				84DE1A51233B041C006A0D73 /* DashboardVC.swift */,
 				8410809B235246AA00799AEA /* NewUser2VC.swift */,
 				07A660982326D524004F2AD1 /* Main.storyboard */,
+				84EEBDDA237B83EF008EED6E /* newBudgetVC.swift */,
 				84AB61FD237A4ED800171A26 /* BudgetCell.swift */,
 				07F66D53237A077500B35714 /* DashVC.swift */,
 				8402DBA923728FC90080107C /* DailyTipCell.swift */,
@@ -601,6 +604,7 @@
 				841443932355727900C8118A /* TransCell.swift in Sources */,
 				07A660972326D524004F2AD1 /* ViewController.swift in Sources */,
 				07B2189C23562A30009240C0 /* OfferVC.swift in Sources */,
+				84EEBDDB237B83EF008EED6E /* newBudgetVC.swift in Sources */,
 				84E015A22331D2AC00C97572 /* Question.swift in Sources */,
 				84D1FFF02356AAAC0044BABD /* NotificationVC.swift in Sources */,
 				84E015A62331DFA700C97572 /* AnalyzingVC.swift in Sources */,

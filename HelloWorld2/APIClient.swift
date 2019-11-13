@@ -38,33 +38,6 @@ class APIClient
     }
     
     
-    // call perform req, smthn about closures
-      // StackOverflow: How to return value from Alamofire
-    static func getHash(username: String, pass: String, completionHandler: @escaping (Result<String>) -> Void)
-      {
-          performingGetHash(user: username, password: pass, completion: completionHandler)
-      }
-      
-      
-    static func performingGetHash(user: String, password: String, completion: @escaping (Result<String>) -> Void)
-      {
-          let parameters: Parameters = ["user": user, "pass": password]
-          Alamofire.request("http://msufcu.meowtap.com:5000/login", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
-              switch response.result
-              {
-              case .success(let value as String):
-                  completion(.success(value))
-              case .failure(let error):
-                  completion(.failure(error))
-              default:
-                  fatalError("received non string json response")
-                  
-              }
-              
-              
-          }
-      }
-    
     
     // call perform req, smthn about closures
          // StackOverflow: How to return value from Alamofire
@@ -227,7 +200,57 @@ class APIClient
             
             
         }
+        
+        
     }
+    
+    
+    
+    static func setBudget( hash: String, category: String, amount: String)
+       {
+           
+        let parameters: Parameters = ["hash": hash, "cat": category, "amount": amount]
+           Alamofire.request("http://msufcu.meowtap.com:5000/SetBudget", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+               if let json = response.result.value as? String{
+                   
+                   print(json)
+               }
+               
+               
+           }
+           //if let hash_val = json["hash"]{
+           //  print("Hash is : \(hash_val)")
+           //}
+       }
+    
+    
+    
+    static func getBudget(hash: String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
+       {
+        performGetBudget(hashID: hash, completion: completionHandler)
+        
+       }
+       
+       
+    static func performGetBudget( hashID: String, completion: @escaping (Result<[[String:String]]>) -> Void)
+       {
+        let parameters: Parameters = ["hash": hashID]
+           Alamofire.request("http://msufcu.meowtap.com:5000/GetBudget", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+               switch response.result
+               {
+               case .success(let value as [[String:String]]):
+                   completion(.success(value))
+               case .failure(let error):
+                   completion(.failure(error))
+               default:
+                   fatalError("received non dict json response")
+                   
+                   
+               }
+               
+               
+           }
+       }
     
 
     

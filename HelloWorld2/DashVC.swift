@@ -50,6 +50,40 @@ class DashVC: UIViewController {
             }
             
             
+            
+            
+            
+            APIClient.getBudget(hash: (UserDefaults.standard.string(forKey: "hashID")!)){result in
+                       switch result {
+                       case .failure(let error):
+                           print(error)
+                       case .success(let value):
+                           //value is full array of dict from json
+                           for item in value
+                           {
+                            let prog = item["progress"] ?? ""
+                            
+                            let progress = Float(prog)
+                            let lim = item["limit"] ?? ""
+                            let limit = Float(lim)
+                            
+                               self.tempBudgets.append(Budget(progress: (progress!/limit!), cat: item["cat"]!, spent: item["progress"]!, limit: item["limit"]!))
+                              
+                               
+                              
+                               print(item)
+                               
+                               
+                           }
+                         
+                           self.tableView.reloadData()
+                       }
+                       
+                       
+                       
+                   }
+            
+            
         }
         
         
@@ -60,8 +94,8 @@ class DashVC: UIViewController {
             tableView.delegate = self
             tableView.dataSource = self
             
-            tempBudgets.append(Budget(progress: 0, cat: "Test", spent: "0", limit: "100"))
-            tempBudgets.append(Budget(progress: 0, cat: "Test", spent: "0", limit: "100"))
+           // tempBudgets.append(Budget(progress: 0, cat: "Test", spent: "0", limit: "100"))
+            //tempBudgets.append(Budget(progress: 0, cat: "Test", spent: "0", limit: "100"))
             self.tableView.reloadData()
             
             
@@ -87,7 +121,7 @@ extension DashVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 200//or whatever you need
+        return 120//or whatever you need
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->Int{

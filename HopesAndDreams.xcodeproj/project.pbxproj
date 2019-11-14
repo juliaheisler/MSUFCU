@@ -17,6 +17,7 @@
 		07B2189E23562BD3009240C0 /* OfferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189D23562BD3009240C0 /* OfferCell.swift */; };
 		07B218A023562D3D009240C0 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2189F23562D3D009240C0 /* Offer.swift */; };
 		07D3E8D123312AA600890271 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3E8D023312AA500890271 /* QuizVC.swift */; };
+		07F213A9237DE8AC00884A74 /* transferGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F213A8237DE8AC00884A74 /* transferGoalVC.swift */; };
 		07F66D54237A077500B35714 /* DashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F66D53237A077500B35714 /* DashVC.swift */; };
 		8402DB9C237265F10080107C /* BudgetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DB9B237265F10080107C /* BudgetsVC.swift */; };
 		8402DBAA23728FC90080107C /* DailyTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402DBA923728FC90080107C /* DailyTipCell.swift */; };
@@ -143,6 +144,7 @@
 		07B2189D23562BD3009240C0 /* OfferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCell.swift; sourceTree = "<group>"; };
 		07B2189F23562D3D009240C0 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		07D3E8D023312AA500890271 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		07F213A8237DE8AC00884A74 /* transferGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transferGoalVC.swift; sourceTree = "<group>"; };
 		07F66D53237A077500B35714 /* DashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashVC.swift; sourceTree = "<group>"; };
 		10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HopesAndDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7598E38A7B1F1D4A8F62F7 /* Pods-HopesAndDreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.debug.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		07A660882326D524004F2AD1 = {
 			isa = PBXGroup;
 			children = (
+				07F213A8237DE8AC00884A74 /* transferGoalVC.swift */,
 				07A660932326D524004F2AD1 /* HelloWorld2 */,
 				07A660A82326D527004F2AD1 /* HelloWorld2Tests */,
 				07A660B32326D527004F2AD1 /* HelloWorld2UITests */,
@@ -630,6 +633,7 @@
 				8402DB9C237265F10080107C /* BudgetsVC.swift in Sources */,
 				84C9731323736A7E00C039CA /* ProgCell.swift in Sources */,
 				843DFB36234AA9D800957F99 /* CircularProgressBar.swift in Sources */,
+				07F213A9237DE8AC00884A74 /* transferGoalVC.swift in Sources */,
 				8402DBAA23728FC90080107C /* DailyTipCell.swift in Sources */,
 				8410809C235246AA00799AEA /* NewUser2VC.swift in Sources */,
 				84108092234D572800799AEA /* WalletVC.swift in Sources */,

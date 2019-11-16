@@ -17,9 +17,13 @@ class BudgetCell: UITableViewCell {
     
     func setCell(budget: Budget)
     {
-        spent.text = budget.spent
+        var prog = budget.spent
+        var amt = Double(prog)
+        spent.text = String(format: "$%.02f", amt!)
         category.text = budget.category
-        limit.text = budget.limit
+        prog = budget.limit
+        amt = Double(prog)
+        limit.text = String(format: "$%.02f", amt!)
         budgetProg.setProgress(budget.prog, animated: true)
     }
     

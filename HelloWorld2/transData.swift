@@ -18,7 +18,13 @@ class TransData{
     init(trans_desc:String, trans_amount:String, trans_date:String, trans_balance:String)
     {
         self.desc = trans_desc
-        self.amount = trans_amount
+        if trans_amount.starts(with: "-"){
+            var temp = trans_amount
+            temp.remove(at: temp.startIndex)
+            self.amount = temp
+        } else{
+            self.amount = trans_amount
+        }
         self.date = trans_date
         self.balance = trans_balance
     }

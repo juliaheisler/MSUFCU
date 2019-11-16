@@ -8,13 +8,17 @@ class WalletVC: UIViewController{
     @IBOutlet weak var pieChart: PieChartView!
     
     var transactions: [TransData] = []
+    var categories: [String] = []
+    var amounts: [Double] = []
     var refreshControl: UIRefreshControl?
+    var bal: Double = 1.0
+    var dataEntries: [PieChartDataEntry] = []
     
 
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var actualBalance: UILabel!
     
-
+    
     
  
     @IBAction func switchView(_ sender: UISegmentedControl) {
@@ -27,6 +31,7 @@ class WalletVC: UIViewController{
         {
             stockResultsFeed.alpha = 0
             pieChart.alpha = 1
+            
         }
     }
     
@@ -50,37 +55,38 @@ class WalletVC: UIViewController{
         stockResultsFeed.separatorInset = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 10.0, right: 0.0)
         stockResultsFeed.separatorColor=UIColor.black;
         
-        fetch_data()
         
-        
-        
-        let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Automotive"]
-        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 16.00]
-        
+        let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
+        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 16.00, 1.0, 2.0, 3.0, 4.0]
         setChart(dataPoints:months, values: unitsSold)
-
+        fetch_data()
+        pieChart.gestureRecognizers?[0].addTarget(self, action: #selector(action))
         
-
         }
+    
+    
     
     func setChart(dataPoints: [String], values: [Double]) {
         
-        var dataEntries: [PieChartDataEntry] = []
+        dataEntries = []
         var legendEntries: [LegendEntry] = []
         var colors: [NSUIColor] = []
+        if #available(iOS 13.0, *) {
+            colors = [UIColor.systemGreen, UIColor.systemTeal, UIColor.systemBlue, UIColor.systemIndigo, UIColor.systemPurple, UIColor.systemPink.withAlphaComponent(0.8), UIColor.systemRed, UIColor.systemOrange, UIColor.systemYellow, UIColor.systemGray2]
+        } else {
+            // Fallback on earlier versions
+            colors = [UIColor.systemGreen, UIColor.systemTeal, UIColor.systemBlue, UIColor.systemPurple, UIColor.systemPink, UIColor.systemRed, UIColor.systemOrange, UIColor.systemYellow, UIColor.systemGray]
+        }
         
         
-        colors.append(UIColor.systemTeal)
         
-        
-        //colors.append(contentsOf: ChartColorTemplates.colorful())
-        colors.append(contentsOf: ChartColorTemplates.pastel())
-        
+        colors.append(contentsOf: ChartColorTemplates.joyful())
         
         for i in 0..<dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: Double(values[i]), label: dataPoints[i])
+            let dataEntry = PieChartDataEntry(value: Double(values[i]/bal), label: dataPoints[i])
+            
             dataEntries.append(dataEntry)
-            let legendEntry = LegendEntry(label: dataPoints[i]+": $"+String(values[i]), form: .circle, formSize: CGFloat.nan, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: colors[i])
+            let legendEntry = LegendEntry(label: dataPoints[i]+String(format: ": $%.02f", values[i]), form: .circle, formSize: CGFloat.nan, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: colors[i])
             legendEntries.append(legendEntry)
         }
         
@@ -89,7 +95,7 @@ class WalletVC: UIViewController{
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         formatter.maximumFractionDigits = 1
-        formatter.multiplier=1.0
+        formatter.multiplier=100.0
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter:formatter))
         pieChartDataSet.colors = colors
         
@@ -101,20 +107,24 @@ class WalletVC: UIViewController{
         
         pieChart.legend.verticalAlignment = .bottom
         pieChart.legend.horizontalAlignment = .center
+        pieChart.rotationEnabled = false
+        //pieChart.drawEntryLabelsEnabled = false
+        
         pieChart.data = pieChartData
         
         
     }
     
     func addRefreshControl()
-           {
-               refreshControl = UIRefreshControl()
-            refreshControl?.backgroundColor = UIColor.white
-               refreshControl?.tintColor = UIColor.red
-               refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
-               stockResultsFeed.addSubview(refreshControl!)
-               
-           }
+    {
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = UIColor.white
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        stockResultsFeed.addSubview(refreshControl!)
+        print(pieChart.highlighted)
+       
+    }
     
     @objc func refreshList()
     {
@@ -138,6 +148,11 @@ class WalletVC: UIViewController{
                 }
                 //sleep(1)
                 self.refreshControl?.endRefreshing()
+                self.balance.text = String(format: "Available Balance: $%.02f", self.transactions[0].balance)
+                self.actualBalance.text = String(format: "Available Balance: $%.02f", self.transactions[0].balance)
+                let tot = Double(self.transactions[0].balance)
+                self.bal = tot!
+                self.pieChart.notifyDataSetChanged()
                 self.stockResultsFeed.reloadData()
             }
             
@@ -145,6 +160,10 @@ class WalletVC: UIViewController{
             
         }
         
+    }
+    
+    @objc func action(){
+        print("TAP")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -167,17 +186,47 @@ class WalletVC: UIViewController{
                 for item in value
                 {
                     self.transactions.append(TransData(trans_desc: item["trans_desc"]!, trans_amount: item["trans_amount"]!, trans_date: item["trans_date"]!, trans_balance: item["trans_balance"]!))
-                   
-                    
+    
                    
                     print(item)
                     
                     
                 }
                 Spinner.stop()
+                let prog = self.transactions[0].balance
+                let amount = Double(prog)
+                self.balance.text = String(format: "Available Balance: $%.02f", amount!)
+                self.actualBalance.text = String(format: "Available Balance: $%.02f", amount!)
+                let tot = Double(self.transactions[0].balance)
+                self.bal = tot!
+                self.pieChart.notifyDataSetChanged()
                 self.stockResultsFeed.reloadData()
-                self.balance.text = "Available Balance: " + self.transactions[0].balance
-                self.actualBalance.text = "Actual Balance: " + self.transactions[0].balance
+                
+            }
+            
+            
+        }
+        
+        APIClient.getBudget(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
+            switch result {
+            case .failure(let error):
+               print(error)
+            case .success(let value):
+                //value is full array of dict from json
+                self.categories = []
+                self.amounts = []
+                for item in value
+                {
+                    self.categories.append(item["cat"]!)
+                    let prog = item["progress"] ?? ""
+                    let amount = Double(prog)
+                    self.amounts.append(amount!)
+                    print(item)
+
+                }
+                //self.setChart(dataPoints:self.categories, values: self.amounts)
+                
+
             }
             
             
@@ -188,7 +237,7 @@ class WalletVC: UIViewController{
     
         
         
-    }
+}
 
 
 extension WalletVC: UITableViewDataSource, UITableViewDelegate

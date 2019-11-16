@@ -35,10 +35,12 @@ class DashVC: UIViewController {
                     
                     self.goalProgress.goalName.text = value["1"]
                     let budget = value["3"] ?? ""
-                    self.goalProgress.label1.text = "saved out of $" + budget
-                    self.goalProgress.goalProg.text = value["2"]
-                    
-                    
+                    let amt = Double(budget)
+                    self.goalProgress.label1.text = String(format: "saved out of $%.02f", amt!)
+                    let prog = value["2"] ?? ""
+                    let amt2 = Double(prog)
+                    self.goalProgress.goalProg.text = String(format: "$%.02f", amt2!)
+    
                     let test = Double (budget)
                     
                     let amount = value["2"] ?? ""

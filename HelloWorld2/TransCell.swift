@@ -35,23 +35,29 @@ class TransCell: UITableViewCell {
     
     func setTrans(transaction: TransData)
     {
-        balance.text = "balance: "+transaction.balance
+        let prog = transaction.balance
+        let amt = Double(prog)
+        balance.text = String(format: "Balance: $%.02f", amt!)
         date.text = transaction.date
         desc.text = transaction.desc
-        amount.text = transaction.amount
+        let prog2 = transaction.amount
+        let amt2 = Double(prog2)
+        amount.text = String(format: "$%.02f", amt2!)
         
-        let temp: String = transaction.amount
+        pluButton.isHidden = false
         
-        if temp[temp.startIndex] == "-"
-        {
-            pluButton.isHidden = false
-            
-            
-        }
-        else
-        {
-            pluButton.isHidden = false
-        }
+//        let temp: String = transaction.amount
+//
+//        if temp[temp.startIndex] == "-"
+//        {
+//            pluButton.isHidden = false
+//
+//
+//        }
+//        else
+//        {
+//            pluButton.isHidden = false
+//        }
         
         
     }

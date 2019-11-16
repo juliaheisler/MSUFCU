@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     
-    var hashID:String = ""
+    let singleton = Singleton.shared
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,41 +26,75 @@ class ViewController: UIViewController {
         
         guard let username = email.text, let pw = password.text, username.count > 0, pw.count > 0 else {return}
         
-        APIClient.getHashValue(username: email.text!, password: password.text! )
-       // print(UserDefaults.standard.object(forKey: "hashID"))
+//        APIClient.getHashValue(username: email.text!, password: password.text! )
+//       // print(UserDefaults.standard.object(forKey: "hashID"))
+//
+//        //UserDefaults.standard.string(forKey: "hashID") != "error"
+//        if (singleton.hashID != "error")
+//        {
+//            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
+//            let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
+//            self.navigationController?.pushViewController(Dashboard, animated: true)
+//
+//        }
+        
+        handleLogin()
+        
+    }
+    //APIClient.getHashValue(username: email.text!, password: password.text!
+    func handleLogin(){
+        //APIClient.getHashValue(username: email.text!, password: password.text! )
+        
+        APIClient.getHash(username: email.text!, password: password.text! ){result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                UserDefaults.standard.set(value, forKey: "hashID")
+                //value is full array of dict from json
+                
+                
+                self.handleNoti()
+            }
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    func handleNoti(){
+        //APIClient.getHashValue(username: email.text!, password: password.text! )
+        APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!)
+        APIClient.getHash(username: email.text!, password: password.text! ){result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                UserDefaults.standard.set(value, forKey: "hashID")
+                //value is full array of dict from json
+                APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!)
+                
+                self.switchSB()
+            }
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    func switchSB(){
         if (UserDefaults.standard.string(forKey: "hashID") != "error")
         {
             let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
             let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
             self.navigationController?.pushViewController(Dashboard, animated: true)
-            
         }
-        
-//        APIClient.getHash(username: email.text!, pass: password.text! ){result in
-//        switch result {
-//        case .failure(let error):
-//            print(error)
-//        case .success(let value):
-//            //value is full array of dict from json
-//            self.hashID = value
-//            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-//            let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
-//            self.navigationController?.pushViewController(Dashboard, animated: true)
-//
-//            }
-//        }
-            
-////        APIClient.getHashValue(username: email.text!, password: password.text! )
-//        let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-//        let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
-//        self.navigationController?.pushViewController(Dashboard, animated: true)
-//        if (UserDefaults.standard.object(forKey: "hashID") != nil )
-//        {
-////            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-////            let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
-////            self.navigationController?.pushViewController(Dashboard, animated: true)
-//            
-//        }
     }
     
 }

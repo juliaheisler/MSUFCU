@@ -10,6 +10,8 @@ import UIKit
 
 class DashVC: UIViewController {
     
+    
+    
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var goalProgress: CircularProgressBar!
@@ -22,6 +24,7 @@ class DashVC: UIViewController {
     }
     func fetch_data()
         {
+            
             
             APIClient.getGoalValues(account: "11134027"){result in
                 switch result {
@@ -52,7 +55,7 @@ class DashVC: UIViewController {
             
             
             
-            APIClient.getBudget(hash: (UserDefaults.standard.string(forKey: "hashID")!)){result in
+            APIClient.getBudget(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
                        switch result {
                        case .failure(let error):
                            print(error)

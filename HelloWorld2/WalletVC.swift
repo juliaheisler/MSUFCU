@@ -69,8 +69,12 @@ class WalletVC: UIViewController{
         var legendEntries: [LegendEntry] = []
         var colors: [NSUIColor] = []
         
-        colors.append(contentsOf: ChartColorTemplates.joyful())
-        colors.append(contentsOf: ChartColorTemplates.colorful())
+        
+        colors.append(UIColor.systemTeal)
+        
+        
+        //colors.append(contentsOf: ChartColorTemplates.colorful())
+        colors.append(contentsOf: ChartColorTemplates.pastel())
         
         
         for i in 0..<dataPoints.count {
@@ -116,7 +120,7 @@ class WalletVC: UIViewController{
     {
         self.transactions = []
         
-        APIClient.getTransactions(acct: "11134027", rows: "20"){result in
+        APIClient.getTransactions(acct: UserDefaults.standard.string(forKey: "hashID")!, rows: "20"){result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -154,7 +158,7 @@ class WalletVC: UIViewController{
     {
         self.transactions = []
         
-        APIClient.getTransactions(acct: "11134027", rows: "20"){result in
+        APIClient.getTransactions(acct: UserDefaults.standard.string(forKey: "hashID")!, rows: "20"){result in
             switch result {
             case .failure(let error):
                 print(error)

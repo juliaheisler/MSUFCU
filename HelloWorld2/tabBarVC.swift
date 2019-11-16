@@ -14,51 +14,67 @@ class tabBarVC: UITabBarController {
         super.viewDidLoad()
 
         self.navigationItem.setHidesBackButton(true, animated: false)
-        //if there is a notification
-        self.addDotAtTabBarItemIndex(index: 3)
+        //if there is a notification -- need API method to check if there is a new notification
+        //APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!)
+        if (UserDefaults.standard.bool(forKey: "notificationStatus"))
+        {
+            self.addRedDotAtTabBarItemIndex(index: 5)
+            
+        }
+        
+        //if they clicked on button remove red dot
+      
 
         // Do any additional setup after loading the view.
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let tabBarIndex = self.selectedIndex
+        if tabBarIndex == 0 {
+            removeRedDotAtTabBarItemIndex(index: 5)
+        }
+    }
+    
+    
+    var Dots = [UIView](repeating: UIView(), count: 6)
+
+    func addRedDotAtTabBarItemIndex(index: Int) {
+
+        if  self.Dots[index].tag != index {
+
+            let RedDotRadius: CGFloat = 5
+            let RedDotDiameter = RedDotRadius*2
+            let yOffsetBase = CGFloat(3)
+
+
+            let tabSize = self.view.frame.width / CGFloat(5)
+
+            let  xPosition = tabSize * CGFloat(index - 1)
+
+            let tabHalfWidth: CGFloat = tabSize / 2
+
+           // self.Dots[index] =  UIView(frame: CGRect(x: xPosition + tabHalfWidth - 2 , y: TopMargin, width: RedDotDiameter, height: RedDotDiameter))
+            
+            self.Dots[index] =  UIView(frame: CGRect(x: xPosition + tabHalfWidth - 1, y: yOffsetBase, width: RedDotDiameter, height: RedDotDiameter))
+
+            self.Dots[index].tag = index
+            self.Dots[index].backgroundColor = UIColor.red
+            self.Dots[index].layer.cornerRadius = RedDotRadius
+
+            self.tabBar.addSubview(self.Dots[index])
+
+        }
+    }
+    
+    func removeRedDotAtTabBarItemIndex(index: Int) {
+
+        self.Dots[index].removeFromSuperview()
+        self.Dots[index].tag = 0
+    }
 
     
     
-    
-    
-    func addDotAtTabBarItemIndex(index: Int, radius: CGFloat = 5, color : UIColor = UIColor.red, text : String? = nil, xOffset: CGFloat = 0, yOffset: CGFloat = 0) {
-        let tag = index + 999
-        
-        removeDotAtTabBarItemIndex(index: index)
-        let dotDiameter = radius * 2
-        let xOffsetBase = CGFloat(21)
-        let yOffsetBase = CGFloat(3)
-        
-        if text == nil {
-            let dot = UIView(frame: CGRect(x: xOffsetBase + xOffset, y: yOffsetBase + yOffset, width: dotDiameter, height: dotDiameter))
-            dot.tag = tag
-            dot.backgroundColor = color
-            dot.layer.cornerRadius = radius
-            tabBar.subviews[index + 1].subviews.first?.insertSubview(dot, at: 1)
-        } else {
-            let label = UILabel(frame: CGRect(x: xOffsetBase + xOffset, y: yOffsetBase + yOffset, width: dotDiameter, height: dotDiameter))
-            label.tag = tag
-            label.numberOfLines = 1
-            label.adjustsFontSizeToFitWidth = true
-            label.minimumScaleFactor = 0.3
-            label.text = text!
-            tabBar.subviews[index + 1].subviews.first?.insertSubview(label, at: 1)
-        }
-    }
-    
-    func removeDotAtTabBarItemIndex(index: Int) {
-        let tag = index + 999
-        if let subviews = tabBar.subviews[index + 1].subviews.first?.subviews {
-            for subview in subviews where subview.tag == tag {
-                subview.removeFromSuperview()
-            }
-        }
-    }
-    
+
 
     /*
     // MARK: - Navigation

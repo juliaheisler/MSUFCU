@@ -40,7 +40,7 @@ class NotificationVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetch_data()
+        //fetch_data()
         print("refresh")
     }
     

@@ -55,7 +55,7 @@ class OfferVC: UIViewController {
                    //value is full array of dict from json
                    for item in value
                    {
-                       print(item)
+                      // print(item)
                     test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
                       // self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
                     
@@ -71,6 +71,11 @@ class OfferVC: UIViewController {
                 
                 //self.tableView.reloadData()
                 self.myOffersLoaded = true
+                if (self.myOffersLoaded && self.allOffersLoaded)
+                {
+                                       //Spinner.stop()
+                self.tableView.reloadData()
+                }
                 
                 
               
@@ -79,7 +84,7 @@ class OfferVC: UIViewController {
                
        }
         
-        APIClient.getOffers(hash: UserDefaults.standard.string(forKey: "hashID")! ){result in
+        APIClient.getAllOffers(hash: UserDefaults.standard.string(forKey: "hashID")! ){result in
                 switch result {
                 case .failure(let error):
                     print(error)

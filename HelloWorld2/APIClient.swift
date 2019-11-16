@@ -9,16 +9,24 @@ import Foundation
 import Alamofire
 class APIClient
     
+    
+    
 {
+    
+    static var hash:String = ""
     
     static func getHashValue( username: String, password: String)
     {
+        
+
 
         let parameters: Parameters = ["user": username, "pass": password]
         Alamofire.request("http://msufcu.meowtap.com:5000/login", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString{ response in
             if let json = response.result.value
             {
+                
                 print("logged in")
+            
                 UserDefaults.standard.set(json, forKey: "hashID")
                 
 //                if let hash = json
@@ -37,6 +45,31 @@ class APIClient
         //}
     }
     
+    // call perform req, smthn about closures
+            // StackOverflow: How to return value from Alamofire
+       static func getHash(username: String, password: String, completionHandler: @escaping (Result<String>) -> Void)
+            {
+               performingGetHash(username: username, password: password, completion: completionHandler)
+            }
+            
+            
+       static func performingGetHash(username: String, password: String, completion: @escaping (Result<String>) -> Void)
+            {
+                let parameters: Parameters = ["user": username, "pass": password]
+                Alamofire.request("http://msufcu.meowtap.com:5000/login", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString{ response in
+                        switch response.result
+                        {
+                        case .success(let value as String):
+                            completion(.success(value))
+                        case .failure(let error):
+                            completion(.failure(error))
+                        default:
+                            fatalError("received non dict json response")
+                            
+                       }
+                }
+            }
+    
     
     
     // call perform req, smthn about closures
@@ -51,6 +84,29 @@ class APIClient
          {
              let parameters: Parameters = ["hash": hashID]
              Alamofire.request("http://msufcu.meowtap.com:5000/offers", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                     switch response.result
+                     {
+                     case .success(let value as [[String:String]]):
+                         completion(.success(value))
+                     case .failure(let error):
+                         completion(.failure(error))
+                     default:
+                         fatalError("received non dict json response")
+                         
+                    }
+             }
+         }
+    
+    static func getAllOffers(hash:String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
+         {
+            performingGetAllOffers(hashID: hash, completion: completionHandler)
+         }
+         
+         
+    static func performingGetAllOffers(hashID: String, completion: @escaping (Result<[[String:String]]>) -> Void)
+         {
+             let parameters: Parameters = ["hash": hashID]
+             Alamofire.request("http://msufcu.meowtap.com:5000/alloffers", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
                      switch response.result
                      {
                      case .success(let value as [[String:String]]):
@@ -156,7 +212,7 @@ class APIClient
     
     static func performReq( acct: String, rows: String, completion: @escaping (Result<[[String:String]]>) -> Void)
     {
-        let parameters: Parameters = ["accnum": acct, "getrecent": rows]
+        let parameters: Parameters = ["hash": acct, "getrecent": rows]
         Alamofire.request("http://msufcu.meowtap.com:5000/getdata", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             switch response.result
             {
@@ -174,12 +230,53 @@ class APIClient
         }
     }
     
+    
+    
+    static func getNotificationStatus( hash: String)
+        {
+
+            let parameters: Parameters = ["hash": hash]
+            Alamofire.request("http://msufcu.meowtap.com:5000/isNewNoti", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString{ response in
+                if let json = response.result.value
+                {
+                    if json == "1"
+                    {
+                        UserDefaults.standard.set(true, forKey: "notificationStatus")
+                    }
+                    else
+                    {
+                        UserDefaults.standard.set(false, forKey: "notificationStatus")
+                    }
+                    
+    //                if let hash = json
+    //                {
+    //                    UserDefaults.standard.set(hash, forKey: "hashID")
+    //
+    //
+    //                }
+
+                }
+
+
+            }
+            //if let hash_val = json["hash"]{
+            //  print("Hash is : \(hash_val)")
+            //}
+        }
+    
     // call perform req, smthn about closures
     // StackOverflow: How to return value from Alamofire
     static func getNotifications(account:String, completionHandler: @escaping (Result<[String]>) -> Void)
     {
         performingNoti(acct: account, completion: completionHandler)
     }
+    
+    // call perform req, smthn about closures
+            // StackOverflow: How to return value from Alamofire
+       static func getNotificationStatus(hash:String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
+            {
+               performingGetOffers(hashID: hash, completion: completionHandler)
+            }
     
     
     static func performingNoti( acct: String, completion: @escaping (Result<[String]>) -> Void)

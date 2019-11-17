@@ -342,6 +342,35 @@ class APIClient{
         //}
     }
     
+  static func getUser(hash:String, completionHandler: @escaping (Result<String>) -> Void)
+            {
+               performingGetUser(hashID: hash, completion: completionHandler)
+            }
+    
+    static func performingGetUser( hashID: String, completion: @escaping (Result<String>) -> Void)
+       {
+           let parameters: Parameters = ["hash": hashID]
+           Alamofire.request("http://msufcu.meowtap.com:5000/GetUserName", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString{ response in
+               switch response.result
+               {
+               case .success(let value as String):
+                   completion(.success(value))
+               case .failure(let error):
+                   completion(.failure(error))
+               default:
+                   fatalError("received non dict json response")
+                   
+                   
+               }
+               
+               
+           }
+           
+           
+       }
+    
+    
+    
 
     
     

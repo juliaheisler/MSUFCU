@@ -60,12 +60,12 @@ class NotificationVC: UIViewController {
                     let notifs = item
                     var lines = notifs.split { $0.isNewline }
                     if lines.count > 1 {
-                        lines.remove(at: lines.endIndex)
+                        lines.remove(at: lines.count-1)
                         lines.remove(at: 0)
+                        print(lines)
+                        self.notifications.append(String(lines[0]))
                     }
                     
-                    print(lines)
-                    self.notifications.append(item)
                 }
             }
             self.tableView.reloadData()

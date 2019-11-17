@@ -163,8 +163,10 @@ class WalletVC: UIViewController{
                 }
                 //sleep(1)
                 self.refreshControl?.endRefreshing()
-                self.balance.text = String(format: "Available Balance: $%.02f", self.transactions[0].balance)
-                self.actualBalance.text = String(format: "Available Balance: $%.02f", self.transactions[0].balance)
+                let prog = self.transactions[0].balance
+                let amount = Double(prog)
+                self.balance.text = String(format: "Available Balance: $%.02f", amount!)
+                self.actualBalance.text = String(format: "Available Balance: $%.02f", amount!)
                 self.stockResultsFeed.reloadData()
             }
             

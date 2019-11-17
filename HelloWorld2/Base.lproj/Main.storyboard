@@ -910,8 +910,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="7Hp-pA-HDc">
                                                 <rect key="frame" x="0.0" y="135" width="345" height="34"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acount Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN9-kg-nZ8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="34"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN9-kg-nZ8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="134.5" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="03n-vy-UTy"/>
                                                         </constraints>
@@ -920,7 +920,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyl-iN-jmt">
-                                                        <rect key="frame" x="152" y="0.0" width="193" height="34"/>
+                                                        <rect key="frame" x="161.5" y="0.0" width="183.5" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="cc-number"/>
                                                     </textField>
@@ -938,6 +938,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="cont:" destination="KID-1x-SEl" eventType="touchUpInside" id="Mhz-Cz-Fa2"/>
                                             <segue destination="VWy-i4-jYN" kind="show" id="lw2-tF-vFh"/>
                                         </connections>
                                     </button>
@@ -960,7 +961,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Vt-jy-Mca"/>
                     <connections>
+                        <outlet property="acct" destination="hyl-iN-jmt" id="fLT-Rp-D2g"/>
                         <outlet property="birthdate" destination="jjH-JP-WEA" id="Yfp-1x-DWc"/>
+                        <outlet property="first" destination="UHQ-Zk-jan" id="I2Q-kw-T9i"/>
+                        <outlet property="last" destination="tGj-gx-iIa" id="xYn-vU-hDP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDR-Pa-sy9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1599,7 +1603,6 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FKm-uK-1c3"/>
         <segue reference="ioc-3a-fAo"/>
         <segue reference="rrd-2B-XTH"/>
     </inferredMetricsTieBreakers>

@@ -505,10 +505,11 @@
                                                     <rect key="frame" x="20" y="59.5" width="335" height="2"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-vn-H9t">
-                                                    <rect key="frame" x="20" y="94.5" width="10.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="20" y="50.5" width="335" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="1" height="-1"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrV-vz-rUR">
                                                     <rect key="frame" x="15" y="16" width="87" height="27.5"/>
@@ -516,36 +517,21 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yC-5s-GXY">
-                                                    <rect key="frame" x="312.5" y="95.5" width="37.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VYR-DB-1IT">
-                                                    <rect key="frame" x="20" y="63" width="335" height="2"/>
-                                                </progressView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VYR-DB-1IT" firstAttribute="top" secondItem="NW5-kh-Zw7" secondAttribute="bottom" constant="1.5" id="8dW-bB-6GQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="NW5-kh-Zw7" secondAttribute="trailing" constant="5" id="AdO-n7-R36"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="VYR-DB-1IT" secondAttribute="trailing" constant="5" id="ITW-X5-48D"/>
+                                                <constraint firstItem="gfd-vn-H9t" firstAttribute="centerX" secondItem="h8q-Bv-4al" secondAttribute="centerX" id="Dla-oo-UoY"/>
                                                 <constraint firstItem="CrV-vz-rUR" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" id="OXn-Rq-bBr"/>
                                                 <constraint firstItem="CrV-vz-rUR" firstAttribute="top" secondItem="h8q-Bv-4al" secondAttribute="topMargin" constant="5" id="R9w-fi-dEs"/>
-                                                <constraint firstAttribute="trailing" secondItem="8yC-5s-GXY" secondAttribute="trailing" constant="25" id="XR4-Yq-WrF"/>
                                                 <constraint firstItem="NW5-kh-Zw7" firstAttribute="centerY" secondItem="h8q-Bv-4al" secondAttribute="centerY" id="Xy8-dy-dq5"/>
-                                                <constraint firstAttribute="bottom" secondItem="8yC-5s-GXY" secondAttribute="bottom" constant="5" id="aGk-wx-jVX"/>
-                                                <constraint firstItem="VYR-DB-1IT" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="beQ-nj-dXk"/>
-                                                <constraint firstItem="gfd-vn-H9t" firstAttribute="bottom" secondItem="h8q-Bv-4al" secondAttribute="bottomMargin" constant="5" id="irv-0W-0ZQ"/>
-                                                <constraint firstItem="VYR-DB-1IT" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="jYu-Fw-9CI"/>
                                                 <constraint firstItem="gfd-vn-H9t" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="m1v-qf-TZk"/>
                                                 <constraint firstItem="NW5-kh-Zw7" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="sfW-6k-kLg"/>
+                                                <constraint firstItem="gfd-vn-H9t" firstAttribute="centerY" secondItem="h8q-Bv-4al" secondAttribute="centerY" id="uso-4V-Pht"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="budgetProg" destination="NW5-kh-Zw7" id="ACR-Le-s5j"/>
                                             <outlet property="category" destination="CrV-vz-rUR" id="AR8-ho-lmV"/>
-                                            <outlet property="limit" destination="8yC-5s-GXY" id="dy0-Ec-i3Q"/>
                                             <outlet property="spent" destination="gfd-vn-H9t" id="6O7-nL-IPc"/>
                                         </connections>
                                     </tableViewCell>
@@ -1619,6 +1605,7 @@
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FKm-uK-1c3"/>
         <segue reference="ubg-1x-qwg"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>

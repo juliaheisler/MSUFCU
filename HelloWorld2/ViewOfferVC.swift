@@ -21,6 +21,7 @@ class ViewOfferVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         name.text = nam
         image.image = img

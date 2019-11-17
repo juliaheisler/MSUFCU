@@ -84,10 +84,10 @@ class APIClient{
          }
     
     /*Send the Answers from the Quiz*/
-    static func sendAnswers( account: String, d0: [String], d1: [String], d2: [String], d3: [String], d4: [String], d5: [String], d6: [String], d7: [String], d8: [String], d9:[String])
+    static func sendAnswers( hash: String, d0: [String], d1: [String], d2: [String], d3: [String], d4: [String], d5: [String], d6: [String], d7: [String], d8: [String], d9:[String])
     {
         
-        let parameters: Parameters = ["account": "11134027", "data": [d0,d1,d2,d3,d4,d5,d6,d7,d8,d9] ]
+        let parameters: Parameters = ["hash": hash, "data": [d0,d1,d2,d3,d4,d5,d6,d7,d8,d9] ]
         Alamofire.request("http://msufcu.meowtap.com:5000/setQuiz", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             if let json = response.result.value as? String{
                 
@@ -98,10 +98,10 @@ class APIClient{
         }
     }
     
-    static func setProg( account: String, amount: String)
+    static func setProg( hash: String, amount: String)
     {
         
-        let parameters: Parameters = ["account": "11134027", "amount": amount]
+        let parameters: Parameters = ["hash": hash, "amount": amount]
         Alamofire.request("http://msufcu.meowtap.com:5000/addGoal", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             if let json = response.result.value as? String{
                 
@@ -117,10 +117,10 @@ class APIClient{
     
     
     
-    static func getQuiz(account: String)
+    static func getQuiz(hash: String)
     {
         
-        let parameters: Parameters = ["account": "11134027"]
+        let parameters: Parameters = ["hash": hash]
         Alamofire.request("http://msufcu.meowtap.com:5000/getQuiz", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             if let json = response.result.value as? [String : String]{
                 
@@ -133,15 +133,15 @@ class APIClient{
     
     // call perform req, smthn about closures
     // StackOverflow: How to return value from Alamofire
-    static func getGoalValues(account:String, completionHandler: @escaping (Result<[String:String]>) -> Void)
+    static func getGoalValues(hash: String, completionHandler: @escaping (Result<[String:String]>) -> Void)
     {
-        performgetGoal(acct: account, completion: completionHandler)
+        performgetGoal(hashID: hash, completion: completionHandler)
     }
     
     
-    static func performgetGoal( acct: String, completion: @escaping (Result<[String:String]>) -> Void)
+    static func performgetGoal( hashID: String, completion: @escaping (Result<[String:String]>) -> Void)
     {
-        let parameters: Parameters = ["account": acct]
+        let parameters: Parameters = ["hash": hashID]
         Alamofire.request("http://msufcu.meowtap.com:5000/getQuiz", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             switch response.result
             {
@@ -164,15 +164,15 @@ class APIClient{
     
     // call perform req, smthn about closures
     // StackOverflow: How to return value from Alamofire
-    static func getTransactions(acct: String, rows: String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
+    static func getTransactions(hash: String, rows: String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
     {
-        performReq(acct: acct, rows: rows, completion: completionHandler)
+        performReq(hashID: hash, rows: rows, completion: completionHandler)
     }
     
     
-    static func performReq( acct: String, rows: String, completion: @escaping (Result<[[String:String]]>) -> Void)
+    static func performReq( hashID: String, rows: String, completion: @escaping (Result<[[String:String]]>) -> Void)
     {
-        let parameters: Parameters = ["hash": acct, "getrecent": rows]
+        let parameters: Parameters = ["hash": hashID, "getrecent": rows]
         Alamofire.request("http://msufcu.meowtap.com:5000/getdata", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             switch response.result
             {
@@ -222,15 +222,15 @@ class APIClient{
     
     // call perform req, smthn about closures
     // StackOverflow: How to return value from Alamofire
-    static func getNotifications(account:String, completionHandler: @escaping (Result<[String]>) -> Void)
+    static func getNotifications(hash:String, completionHandler: @escaping (Result<[String]>) -> Void)
     {
-        performingNoti(acct: account, completion: completionHandler)
+        performingNoti(hashID: hash, completion: completionHandler)
     }
     
     
-    static func performingNoti( acct: String, completion: @escaping (Result<[String]>) -> Void)
+    static func performingNoti( hashID: String, completion: @escaping (Result<[String]>) -> Void)
     {
-        let parameters: Parameters = ["account": acct]
+        let parameters: Parameters = ["hash": hashID]
         Alamofire.request("http://msufcu.meowtap.com:5000/notify", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             switch response.result
             {

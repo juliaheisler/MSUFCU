@@ -47,7 +47,7 @@ class DashboardVC: UIViewController {
     func fetch_data()
     {
         
-        APIClient.getGoalValues(account: "11134027"){result in
+        APIClient.getGoalValues(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
             switch result {
             case .failure(let error):
                 print(error)

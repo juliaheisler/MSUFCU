@@ -288,7 +288,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         else {
             // Quiz end
             print(tempStorage)
-            APIClient.sendAnswers(account: "hi", d0: tempStorage[0]!, d1: tempStorage[1]!, d2: tempStorage[2]!, d3: tempStorage[3]!, d4: tempStorage[4]!, d5: tempStorage[5]!, d6: tempStorage[6]!, d7: tempStorage[7]!, d8: tempStorage[8]!, d9: tempStorage[9]!)
+            APIClient.sendAnswers(hash: UserDefaults.standard.string(forKey: "hashID")!, d0: tempStorage[0]!, d1: tempStorage[1]!, d2: tempStorage[2]!, d3: tempStorage[3]!, d4: tempStorage[4]!, d5: tempStorage[5]!, d6: tempStorage[6]!, d7: tempStorage[7]!, d8: tempStorage[8]!, d9: tempStorage[9]!)
             
            // APIClient.sendAnswers(account: "random", d0: tempStorage[0]!, d1: "0", d2: "0", d3: "0", d4: tempStorage[8]!, d5: "0", d6: tempStorage[10]!,d7: tempStorage[9]!)
             let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)

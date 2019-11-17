@@ -14,12 +14,12 @@ class TransferFundsVC: UIViewController {
 
     @IBOutlet weak var amount: UITextField!
     @IBAction func onTransfer(_ sender: Any) {
-        APIClient.setProg(account: "11134027", amount: amount.text!)
+        APIClient.setProg(hash: UserDefaults.standard.string(forKey: "hashID")!, amount: amount.text!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        APIClient.getTransactions(acct: UserDefaults.standard.string(forKey: "hashID")!, rows: "1"){result in
+        APIClient.getTransactions(hash: UserDefaults.standard.string(forKey: "hashID")!, rows: "1"){result in
         switch result {
         case .failure(let error):
             print(error)

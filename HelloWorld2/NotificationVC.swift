@@ -48,7 +48,7 @@ class NotificationVC: UIViewController {
     {
         self.notifications = []
 
-        APIClient.getNotifications(account: "11134027"){result in
+        APIClient.getNotifications(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
             switch result {
             case .failure(let error):
                 print(error)

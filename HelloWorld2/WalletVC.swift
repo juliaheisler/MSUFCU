@@ -146,7 +146,7 @@ class WalletVC: UIViewController{
     {
         self.transactions = []
         
-        APIClient.getTransactions(acct: UserDefaults.standard.string(forKey: "hashID")!, rows: "20"){result in
+        APIClient.getTransactions(hash: UserDefaults.standard.string(forKey: "hashID")!, rows: "20"){result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -202,7 +202,7 @@ class WalletVC: UIViewController{
     {
         self.transactions = []
         
-        APIClient.getTransactions(acct: UserDefaults.standard.string(forKey: "hashID")!, rows: "20"){result in
+        APIClient.getTransactions(hash: UserDefaults.standard.string(forKey: "hashID")!, rows: "20"){result in
             switch result {
             case .failure(let error):
                 print(error)

@@ -298,20 +298,20 @@ class APIClient{
            }
        }
     
-    static func getBreakdown(hash: String, completionHandler: @escaping (Result<[Int]>) -> Void)
+    static func getBreakdown(hash: String, completionHandler: @escaping (Result<[String]>) -> Void)
           {
            performGetBreakdown(hashID: hash, completion: completionHandler)
            
           }
           
           
-       static func performGetBreakdown( hashID: String, completion: @escaping (Result<[Int]>) -> Void)
+       static func performGetBreakdown( hashID: String, completion: @escaping (Result<[String]>) -> Void)
           {
            let parameters: Parameters = ["hash": hashID]
               Alamofire.request("http://msufcu.meowtap.com:5000/GetBreakdown", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
                   switch response.result
                   {
-                  case .success(let value as [Int]):
+                  case .success(let value as [String]):
                       completion(.success(value))
                   case .failure(let error):
                       completion(.failure(error))

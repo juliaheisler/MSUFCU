@@ -57,9 +57,9 @@ class WalletVC: UIViewController{
         stockResultsFeed.separatorColor=UIColor.black;
         
         
-        let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
-        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
-        setChart(dataPoints:months, values: unitsSold)
+//        let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
+//        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
+//        setChart(dataPoints:months, values: unitsSold)
         fetch_data()
         pieChart.gestureRecognizers?[0].addTarget(self, action: #selector(action))
         
@@ -88,7 +88,7 @@ class WalletVC: UIViewController{
         for i in 0..<dataPoints.count {
             if values[i] != 0{
                 chartColors.append(colors[i])
-                let dataEntry = PieChartDataEntry(value: Double(values[i]/52.0), label: dataPoints[i])
+                let dataEntry = PieChartDataEntry(value: Double(values[i]/bal), label: dataPoints[i])
                 dataEntries.append(dataEntry)
                 if highlighted {
                     if i == Int(highlight) {
@@ -109,7 +109,7 @@ class WalletVC: UIViewController{
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         formatter.maximumFractionDigits = 1
-        formatter.multiplier=1000.0
+        formatter.multiplier=100.0
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter:formatter))
         pieChartDataSet.colors = chartColors
         
@@ -166,9 +166,6 @@ class WalletVC: UIViewController{
                 self.refreshControl?.endRefreshing()
                 self.balance.text = String(format: "Available Balance: $%.02f", self.transactions[0].balance)
                 self.actualBalance.text = String(format: "Available Balance: $%.02f", self.transactions[0].balance)
-                let tot = Double(self.transactions[0].balance)
-                self.bal = tot!
-                self.pieChart.notifyDataSetChanged()
                 self.stockResultsFeed.reloadData()
             }
             
@@ -183,9 +180,10 @@ class WalletVC: UIViewController{
         if pieChart.highlighted != [] {
             highlighted = true
             highlight = pieChart.highlighted[0].x
-            let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
-            let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
-            setChart(dataPoints:months, values: unitsSold)
+            setChart(dataPoints:categories, values: amounts)
+//            let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
+//            let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
+//            setChart(dataPoints:months, values: unitsSold)
             
         }
         else{
@@ -224,9 +222,6 @@ class WalletVC: UIViewController{
                 let amount = Double(prog)
                 self.balance.text = String(format: "Available Balance: $%.02f", amount!)
                 self.actualBalance.text = String(format: "Available Balance: $%.02f", amount!)
-                let tot = Double(self.transactions[0].balance)
-                self.bal = tot!
-                self.pieChart.notifyDataSetChanged()
                 self.stockResultsFeed.reloadData()
                 
             }
@@ -243,15 +238,18 @@ class WalletVC: UIViewController{
                 self.categories = ["Travel", "Restaurants", "Shopping", "Groceries", "Transportation", "Entertainment", "Health", "Other"]
                 self.amounts = []
                 var total = 0.0
+                print(value)
                 for item in value
                 {
                     let amount = Double(item)
-                    total += amount
-                    self.amounts.append(amount)
-                    print(item)
+                    total += amount!
+                    self.amounts.append(amount!)
+                    
 
                 }
-                //self.setChart(dataPoints:self.categories, values: self.amounts)
+                print(total)
+                self.bal = total
+                self.setChart(dataPoints:self.categories, values: self.amounts)
                 
 
             }

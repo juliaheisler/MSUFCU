@@ -33,6 +33,30 @@ class APIClient{
                 }
             }
     
+    /* Get Hash Value of Account*/
+    static func getHashNewUser(firstname: String, lastname: String, account: String, password: String, completionHandler: @escaping (Result<String>) -> Void)
+         {
+            performingGetHashNewUser(first: firstname, last: lastname, username: account, password: password, completion: completionHandler)
+         }
+         
+         
+    static func performingGetHashNewUser(first: String, last: String, username: String, password: String, completion: @escaping (Result<String>) -> Void)
+         {
+            let parameters: Parameters = ["first": first, "last": last, "user": username, "pass": "msufcuAPIkey"]
+             Alamofire.request("http://msufcu.meowtap.com:5000/regwopass", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString{ response in
+                     switch response.result
+                     {
+                     case .success(let value as String):
+                         completion(.success(value))
+                     case .failure(let error):
+                         completion(.failure(error))
+                     default:
+                         fatalError("received non dict json response")
+                         
+                    }
+             }
+         }
+    
     
     
     
@@ -146,6 +170,32 @@ class APIClient{
             switch response.result
             {
             case .success(let value as [String:String]):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            default:
+                fatalError("received non dict json response")
+                
+                
+            }
+            
+            
+        }
+    }
+    
+    static func getGoalTip(hash: String, completionHandler: @escaping (Result<String>) -> Void)
+    {
+        performgetGoalTip(hashID: hash, completion: completionHandler)
+    }
+    
+    
+    static func performgetGoalTip( hashID: String, completion: @escaping (Result<String>) -> Void)
+    {
+        let parameters: Parameters = ["hash": hashID]
+        Alamofire.request("http://msufcu.meowtap.com:5000/GetGoalTip", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString{ response in
+            switch response.result
+            {
+            case .success(let value as String):
                 completion(.success(value))
             case .failure(let error):
                 completion(.failure(error))

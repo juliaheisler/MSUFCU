@@ -10,6 +10,30 @@ import UIKit
 
 class NewUser2VC: UIViewController {
 
+    
+    @IBAction func cont(_ sender: Any) {
+        
+        APIClient.getHashNewUser(firstname: first.text!, lastname: last.text!, account: acct.text!, password: "msufcuAPIkey"){result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                UserDefaults.standard.set(value, forKey: "hashID")
+                //value is full array of dict from json
+                
+                
+            }
+            
+            
+            
+        }
+        
+        
+    }
+    
+    @IBOutlet weak var acct: UITextField!
+    @IBOutlet weak var last: UITextField!
+    @IBOutlet weak var first: UITextField!
     @IBOutlet weak var birthdate: UITextField!
     
     private var datePicker: UIDatePicker?
@@ -24,6 +48,10 @@ class NewUser2VC: UIViewController {
         datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)),for: .valueChanged )
         _ = UITapGestureRecognizer(target: self, action: #selector(NewUser2VC.viewTapped(gestureRecognizer:)))
         // Do any additional setup after loading the view.
+        
+        
+        
+        
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)

@@ -29,7 +29,6 @@
 		8437C8E623710A90008A3ACF /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437C8E523710A90008A3ACF /* Spinner.swift */; };
 		8437E824237BA07B00379F13 /* TransferFundsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437E823237BA07B00379F13 /* TransferFundsVC.swift */; };
 		8437E83E237F523D00379F13 /* ViewOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437E83D237F523D00379F13 /* ViewOfferVC.swift */; };
-		8437E842237F859C00379F13 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437E841237F859B00379F13 /* File.swift */; };
 		843DFB36234AA9D800957F99 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DFB35234AA9D800957F99 /* CircularProgressBar.swift */; };
 		84602ED723539C2C00FB413C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84602ED623539C2C00FB413C /* APIClient.swift */; };
 		847EA6E623819DB600B33593 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847EA6E523819DB600B33593 /* AccountVC.swift */; };
@@ -162,7 +161,6 @@
 		8437C8E523710A90008A3ACF /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		8437E823237BA07B00379F13 /* TransferFundsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFundsVC.swift; sourceTree = "<group>"; };
 		8437E83D237F523D00379F13 /* ViewOfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOfferVC.swift; sourceTree = "<group>"; };
-		8437E841237F859B00379F13 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		843DFB35234AA9D800957F99 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		84602ED623539C2C00FB413C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		847EA6E523819DB600B33593 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 				07A660982326D524004F2AD1 /* Main.storyboard */,
 				847EA6E523819DB600B33593 /* AccountVC.swift */,
 				8437E83D237F523D00379F13 /* ViewOfferVC.swift */,
-				8437E841237F859B00379F13 /* File.swift */,
 				07A660942326D524004F2AD1 /* AppDelegate.swift */,
 				84DE1A51233B041C006A0D73 /* DashboardVC.swift */,
 				84AB61FD237A4ED800171A26 /* BudgetCell.swift */,
@@ -632,7 +629,6 @@
 				8410809E235251F300799AEA /* NewUserVC.swift in Sources */,
 				84144395235575F200C8118A /* transData.swift in Sources */,
 				84C9731323736A7E00C039CA /* ProgCell.swift in Sources */,
-				8437E842237F859C00379F13 /* File.swift in Sources */,
 				843DFB36234AA9D800957F99 /* CircularProgressBar.swift in Sources */,
 				07F213A9237DE8AC00884A74 /* transferGoalVC.swift in Sources */,
 				8410809C235246AA00799AEA /* NewUser2VC.swift in Sources */,

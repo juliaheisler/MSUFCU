@@ -11,13 +11,13 @@ import UIKit
 class DashVC: UIViewController {
     
     
+    @IBOutlet weak var GoalTip: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var goalProgress: CircularProgressBar!
     var tempBudgets = [Budget]()
    
-    @IBOutlet weak var goalReached: UIButton!
     
     @IBAction func addBudget(_ sender: Any)
     {
@@ -26,6 +26,22 @@ class DashVC: UIViewController {
     }
     func fetch_data()
         {
+            
+            APIClient.getGoalTip(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                        case .success(let value):
+                            self.GoalTip.text = value
+                            print(value)
+                            
+                            
+                        }
+                        
+                        
+                    }
+            
+            
             
             
             APIClient.getGoalValues(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
@@ -53,7 +69,7 @@ class DashVC: UIViewController {
                     
                     if (amt2! >= amt!)
                     {
-                       self.goalReached.isHidden = false
+                       print("Goal Reached!!!!")
                         
                     }
                     
@@ -75,12 +91,15 @@ class DashVC: UIViewController {
                            for item in value
                            {
                             let prog = item["progress"] ?? ""
+                            let ideal_prog = item["ideal"] ?? ""
+                            let ideal = Float(ideal_prog)
                             
                             let progress = Float(prog)
                             let lim = item["limit"] ?? ""
                             let limit = Float(lim)
                             
-                               self.tempBudgets.append(Budget(progress: (progress!/limit!), cat: item["cat"]!, spent: item["progress"]!, limit: item["limit"]!))
+                            
+                            self.tempBudgets.append(Budget(progress: (progress!/limit!), cat: item["cat"]!, spent: item["progress"]!, limit: item["limit"]!, ideal_progress: (ideal!/limit!)))
                               
                                
                               
@@ -104,7 +123,7 @@ class DashVC: UIViewController {
         
         override func viewWillAppear(_ animated: Bool) {
             self.navigationController?.setNavigationBarHidden(true, animated: false)
-            self.goalReached.isHidden = true
+          
             
             tableView.delegate = self
             tableView.dataSource = self
@@ -164,12 +183,14 @@ class Budget
     var category: String
     var spent: String
     var limit: String
+    var ideal_prog: Float
     
-    init(progress: Float, cat: String, spent: String, limit: String) {
+    init(progress: Float, cat: String, spent: String, limit: String, ideal_progress: Float) {
         self.category = cat
         self.prog = progress
         self.spent = spent
         self.limit = limit
+        self.ideal_prog = ideal_progress
     }
     
 }

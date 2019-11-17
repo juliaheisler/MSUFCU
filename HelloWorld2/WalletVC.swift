@@ -234,20 +234,20 @@ class WalletVC: UIViewController{
             
         }
         
-        APIClient.getBudget(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
+        APIClient.getBreakdown(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
             switch result {
             case .failure(let error):
                print(error)
             case .success(let value):
                 //value is full array of dict from json
-                self.categories = []
+                self.categories = ["Travel", "Restaurants", "Shopping", "Groceries", "Transportation", "Entertainment", "Health", "Other"]
                 self.amounts = []
+                var total = 0.0
                 for item in value
                 {
-                    self.categories.append(item["cat"]!)
-                    let prog = item["progress"] ?? ""
-                    let amount = Double(prog)
-                    self.amounts.append(amount!)
+                    let amount = Double(item)
+                    total += amount
+                    self.amounts.append(amount)
                     print(item)
 
                 }

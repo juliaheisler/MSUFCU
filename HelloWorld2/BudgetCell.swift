@@ -11,6 +11,7 @@ import UIKit
 class BudgetCell: UITableViewCell {
     @IBOutlet weak var spent: UILabel!
     
+    @IBOutlet weak var idealProg: UIProgressView!
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var budgetProg: UIProgressView!
     
@@ -44,7 +45,15 @@ class BudgetCell: UITableViewCell {
         }
         
         budgetProg.setProgress(budget.prog, animated: false)
+        
+        
+         idealProg.transform = CGAffineTransform(scaleX: 1, y: 10)
+        idealProg.setProgress(budget.ideal_prog, animated: false)
+        
+        
     }
+    
+    
     
 
 }

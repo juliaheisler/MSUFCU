@@ -159,6 +159,32 @@ class APIClient{
         }
     }
     
+    static func getGoalTip(hash: String, completionHandler: @escaping (Result<String>) -> Void)
+    {
+        performgetGoalTip(hashID: hash, completion: completionHandler)
+    }
+    
+    
+    static func performgetGoalTip( hashID: String, completion: @escaping (Result<String>) -> Void)
+    {
+        let parameters: Parameters = ["hash": hashID]
+        Alamofire.request("http://msufcu.meowtap.com:5000/GetGoalTip", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseString{ response in
+            switch response.result
+            {
+            case .success(let value as String):
+                completion(.success(value))
+            case .failure(let error):
+                completion(.failure(error))
+            default:
+                fatalError("received non dict json response")
+                
+                
+            }
+            
+            
+        }
+    }
+    
     
     
     

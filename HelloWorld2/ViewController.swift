@@ -5,7 +5,6 @@
 //  Created by Julia Heisler on 9/9/19.
 //  Copyright © 2019 Julia Heisler. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -66,16 +65,19 @@ class ViewController: UIViewController {
     }
     
     func handleNoti(){
-        //APIClient.getHashValue(username: email.text!, password: password.text! )
-        APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!)
-        APIClient.getHash(username: email.text!, password: password.text! ){result in
+                APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let value):
-                UserDefaults.standard.set(value, forKey: "hashID")
-                //value is full array of dict from json
-                APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!)
+                if value == "1"
+                   {
+                     UserDefaults.standard.set(true, forKey: "notificationStatus")
+                    
+                   }else
+                   {
+                     UserDefaults.standard.set(false, forKey: "notificationStatus")
+                    }
                 
                 self.switchSB()
             }
@@ -98,4 +100,3 @@ class ViewController: UIViewController {
     }
     
 }
-

@@ -21,12 +21,6 @@ class TransCell: UITableViewCell {
     
     @IBAction func addTrans(_ sender: Any)
     {
-        amountAdded = amount.text!
-        
-        APIClient.setProg(account: "11134027", amount: amountAdded)
-        print(amountAdded)
-        
-        pluButton.isHidden = true
         
         
     }

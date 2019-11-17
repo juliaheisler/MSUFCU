@@ -10,12 +10,32 @@ import UIKit
 
 class TransferFundsVC: UIViewController {
 
+    @IBOutlet weak var balance: UILabel!
+
+    @IBOutlet weak var amount: UITextField!
+    @IBAction func onTransfer(_ sender: Any) {
+        APIClient.setProg(account: "11134027", amount: amount.text!)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        APIClient.getTransactions(acct: UserDefaults.standard.string(forKey: "hashID")!, rows: "1"){result in
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let value):
+            //value is full array of dict from json
+            for item in value
+            {
+                self.balance.text = item["trans_balance"]!
+                
+            }
+            
+            }
+            
+        }
+        
     }
-    
     
 
     /*

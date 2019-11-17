@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     
-    let singleton = Singleton.shared
  
     
     override func viewDidLoad() {

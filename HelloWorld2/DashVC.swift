@@ -17,6 +17,8 @@ class DashVC: UIViewController {
     @IBOutlet weak var goalProgress: CircularProgressBar!
     var tempBudgets = [Budget]()
    
+    @IBOutlet weak var goalReached: UIButton!
+    
     @IBAction func addBudget(_ sender: Any)
     {
         
@@ -47,7 +49,13 @@ class DashVC: UIViewController {
                     let test2 = Double(amount)
                     let res = test2!/test!
                     print(res)
-                    self.goalProgress.setProgress(to: res, withAnimation: true)
+                    self.goalProgress.setProgress(to: res, withAnimation: false)
+                    
+                    if (amt2! >= amt!)
+                    {
+                       self.goalReached.isHidden = false
+                        
+                    }
                     
                 }
                 print( UserDefaults.standard.string(forKey: "hashID")!)
@@ -77,6 +85,7 @@ class DashVC: UIViewController {
                                
                               
                                print(item)
+                        
                                
                                
                            }
@@ -95,6 +104,7 @@ class DashVC: UIViewController {
         
         override func viewWillAppear(_ animated: Bool) {
             self.navigationController?.setNavigationBarHidden(true, animated: false)
+            self.goalReached.isHidden = true
             
             tableView.delegate = self
             tableView.dataSource = self
@@ -126,7 +136,7 @@ extension DashVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 100//or whatever you need
+        return 120//or whatever you need
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->Int{

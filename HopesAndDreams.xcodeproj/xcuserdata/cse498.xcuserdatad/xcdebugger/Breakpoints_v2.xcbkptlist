@@ -378,7 +378,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "461079D7-4DE9-4312-A64D-5FB365B915C2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/DashVC.swift"
@@ -391,7 +391,7 @@
             <Locations>
                <Location
                   uuid = "461079D7-4DE9-4312-A64D-5FB365B915C2 - 78a63db7fe88de8e"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "HopesAndDreams.DashVC.fetch_data() -&gt; ()"
@@ -406,7 +406,7 @@
                </Location>
                <Location
                   uuid = "461079D7-4DE9-4312-A64D-5FB365B915C2 - 7f6a12635db8d336"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.Result&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; () in HopesAndDreams.DashVC.fetch_data() -&gt; ()"
@@ -426,7 +426,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2E2E2FF8-257D-4E7F-BDB0-61EE12741627"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/DashVC.swift"
@@ -439,7 +439,7 @@
             <Locations>
                <Location
                   uuid = "2E2E2FF8-257D-4E7F-BDB0-61EE12741627 - 7f6a12635db8d336"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.Result&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; () in HopesAndDreams.DashVC.fetch_data() -&gt; ()"
@@ -454,7 +454,7 @@
                </Location>
                <Location
                   uuid = "2E2E2FF8-257D-4E7F-BDB0-61EE12741627 - 7f6a12635db8d336"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.Result&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;) -&gt; () in HopesAndDreams.DashVC.fetch_data() -&gt; ()"
@@ -474,7 +474,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "445C7F93-1BB2-44E8-A657-AAD7830C041A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/DashVC.swift"
@@ -490,7 +490,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D9C2BD0B-6C0B-4732-8F97-6D785E140E3D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/DashVC.swift"
@@ -506,7 +506,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7005C4CE-4685-412A-8281-E2D5F95A7537"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HelloWorld2/DashVC.swift"

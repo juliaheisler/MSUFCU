@@ -24,6 +24,7 @@ class AlexaVC: UIViewController {
             showToast(controller: self, message: "Not a valid email", seconds: 1.5)
         } else{
             //showToast(controller: self, message: "Valid email", seconds: 1.5)
+            APIClient.setAlexaPin(hash: UserDefaults.standard.string(forKey: "hashID")!, email: alexaEmail.text!, pin: pin.text!)
         }
         
         if validatePin(field: pin)==nil{

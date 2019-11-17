@@ -13,6 +13,8 @@ class WalletVC: UIViewController{
     var refreshControl: UIRefreshControl?
     var bal: Double = 1.0
     var dataEntries: [PieChartDataEntry] = []
+    var highlighted: Bool = false
+    var highlight: Double = 0.0
     
 
     @IBOutlet weak var balance: UILabel!
@@ -31,7 +33,6 @@ class WalletVC: UIViewController{
         {
             stockResultsFeed.alpha = 0
             pieChart.alpha = 1
-            
         }
     }
     
@@ -57,7 +58,7 @@ class WalletVC: UIViewController{
         
         
         let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
-        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 16.00, 1.0, 2.0, 3.0, 4.0]
+        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
         setChart(dataPoints:months, values: unitsSold)
         fetch_data()
         pieChart.gestureRecognizers?[0].addTarget(self, action: #selector(action))
@@ -75,19 +76,32 @@ class WalletVC: UIViewController{
             colors = [UIColor.systemGreen, UIColor.systemTeal, UIColor.systemBlue, UIColor.systemIndigo, UIColor.systemPurple, UIColor.systemPink.withAlphaComponent(0.8), UIColor.systemRed, UIColor.systemOrange, UIColor.systemYellow, UIColor.systemGray2]
         } else {
             // Fallback on earlier versions
-            colors = [UIColor.systemGreen, UIColor.systemTeal, UIColor.systemBlue, UIColor.systemPurple, UIColor.systemPink, UIColor.systemRed, UIColor.systemOrange, UIColor.systemYellow, UIColor.systemGray]
+            colors = [UIColor.systemGreen, UIColor.systemTeal, UIColor.systemBlue, UIColor.systemPurple, UIColor.systemPink.withAlphaComponent(0.8), UIColor.systemRed, UIColor.systemOrange, UIColor.systemYellow, UIColor.systemGray]
         }
         
         
         
         colors.append(contentsOf: ChartColorTemplates.joyful())
         
+        var chartColors: [NSUIColor] = []
+        
         for i in 0..<dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: Double(values[i]/bal), label: dataPoints[i])
-            
-            dataEntries.append(dataEntry)
-            let legendEntry = LegendEntry(label: dataPoints[i]+String(format: ": $%.02f", values[i]), form: .circle, formSize: CGFloat.nan, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: colors[i])
-            legendEntries.append(legendEntry)
+            if values[i] != 0{
+                chartColors.append(colors[i])
+                let dataEntry = PieChartDataEntry(value: Double(values[i]/52.0), label: dataPoints[i])
+                dataEntries.append(dataEntry)
+                if highlighted {
+                    if i == Int(highlight) {
+                        let legendEntry = LegendEntry(label: dataPoints[i]+String(format: ": $%.02f", values[i]), form: .circle, formSize: 25.0, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: colors[i])
+                        legendEntries.append(legendEntry)
+                    }
+                }
+                else {
+                    let legendEntry = LegendEntry(label: dataPoints[i]+String(format: ": $%.02f", values[i]), form: .circle, formSize: 25.0, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: colors[i])
+                    legendEntries.append(legendEntry)
+                }
+                
+            }
         }
         
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label:"")
@@ -95,19 +109,22 @@ class WalletVC: UIViewController{
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         formatter.maximumFractionDigits = 1
-        formatter.multiplier=100.0
+        formatter.multiplier=1000.0
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter:formatter))
-        pieChartDataSet.colors = colors
+        pieChartDataSet.colors = chartColors
         
         
         pieChart.legend.enabled = true
+        
         pieChart.legend.setCustom(entries: legendEntries)
         pieChart.legend.font = UIFont(name:"futura", size: 21)!
         pieChart.legend.orientation = .vertical
         
         pieChart.legend.verticalAlignment = .bottom
         pieChart.legend.horizontalAlignment = .center
+        
         pieChart.rotationEnabled = false
+        
         //pieChart.drawEntryLabelsEnabled = false
         
         pieChart.data = pieChartData
@@ -122,7 +139,6 @@ class WalletVC: UIViewController{
         refreshControl?.tintColor = UIColor.red
         refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
         stockResultsFeed.addSubview(refreshControl!)
-        print(pieChart.highlighted)
        
     }
     
@@ -164,6 +180,17 @@ class WalletVC: UIViewController{
     
     @objc func action(){
         print("TAP")
+        if pieChart.highlighted != [] {
+            highlighted = true
+            highlight = pieChart.highlighted[0].x
+            let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
+            let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
+            setChart(dataPoints:months, values: unitsSold)
+            
+        }
+        else{
+            highlighted = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

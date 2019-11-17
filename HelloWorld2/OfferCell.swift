@@ -14,9 +14,15 @@ class OfferCell: UITableViewCell {
     
     @IBOutlet weak var offerTitle: UILabel!
     
+    var details: String = ""
+    
+    var offer: Offer = Offer(image: UIImage.init(), title: "", details: "")
+    
     func setCell(offer : Offer) {
+        self.offer = offer
         offerImageView.image = offer.image
         offerTitle.text = offer.title
+        details = offer.details
     }
     
     

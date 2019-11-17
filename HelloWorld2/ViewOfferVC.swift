@@ -10,11 +10,26 @@ import UIKit
 
 class ViewOfferVC: UIViewController {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var desc: UILabel!
+    
+    var nam : String = ""
+    var img : UIImage = UIImage()
+    var det : String = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        name.text = nam
+        image.image = img
+        desc.text = det
 
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     /*

@@ -22,7 +22,7 @@ class OfferVC: UIViewController {
     
     var myOffersLoaded:Bool = false
     var allOffersLoaded:Bool = false
-       
+    
        override func viewDidLoad() {
            super.viewDidLoad()
         
@@ -37,7 +37,22 @@ class OfferVC: UIViewController {
         
            
        }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewOfferVC {
+            let vc = segue.destination as? ViewOfferVC
+            let off = sender as? OfferCell
+            
+            tableView.reloadData()
+            print(off?.offerTitle.text)
+            
+            vc?.nam = off?.offerTitle.text! ?? ""
+            vc?.img = off?.offerImageView.image! ?? UIImage()
+            vc?.det = off?.details ?? ""
+
+        }
+    }
+
     
     
        
@@ -55,8 +70,8 @@ class OfferVC: UIViewController {
                    //value is full array of dict from json
                    for item in value
                    {
-                      // print(item)
-                    test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
+                    print(item)
+                    test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!, details: item["details"]!))
                       // self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
                     
                     
@@ -77,7 +92,6 @@ class OfferVC: UIViewController {
                 self.tableView.reloadData()
                 }
                 
-                
               
                }
         
@@ -94,7 +108,7 @@ class OfferVC: UIViewController {
                     for item in value
                     {
                         print(item)
-                     test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
+                        test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!, details: item["details"]!))
                        // self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
                      
                      
@@ -162,6 +176,12 @@ class OfferVC: UIViewController {
            
            return cell
        }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+            let selected = alloffers[indexPath.section][indexPath.row]
+            print(selected)
+            
+        }
        
    }
 

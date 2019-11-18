@@ -59,12 +59,13 @@ class NotificationVC: UIViewController {
                     print(item)
                     let notifs = item
                     var lines = notifs.split { $0.isNewline }
-                    if lines.count > 1 {
-                        lines.remove(at: lines.count-1)
-                        lines.remove(at: 0)
-                        print(lines)
-                        self.notifications.append(String(lines[0]))
+                    lines.remove(at: lines.count-1)
+                    lines.remove(at: 0)
+                    print(lines)
+                    for l in lines {
+                        self.notifications.append(String(l))
                     }
+                    //self.notifications.append(contentsOf: String(lines))
                     
                 }
             }

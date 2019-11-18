@@ -423,9 +423,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90t-yo-yTB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You currently do not have any Saving Progress. Transfer funds to your goal to get started!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot8-U8-e3Y">
-                                                    <rect key="frame" x="10" y="19.5" width="355" height="61"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You currently do not have any Saving Progress. Transfer funds to your goal to get started!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot8-U8-e3Y">
+                                                    <rect key="frame" x="11" y="19.5" width="355" height="61"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -500,7 +500,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NW5-kh-Zw7">
+                                                <progressView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NW5-kh-Zw7">
                                                     <rect key="frame" x="20" y="59.5" width="335" height="2"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-vn-H9t">
@@ -516,12 +516,18 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s6m-bR-Fct">
-                                                    <rect key="frame" x="20" y="91.5" width="335" height="2"/>
+                                                <progressView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s6m-bR-Fct">
+                                                    <rect key="frame" x="20" y="88.5" width="335" height="2"/>
                                                 </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ideal Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yas-rf-cRn">
+                                                    <rect key="frame" x="25" y="79.5" width="325" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="s6m-bR-Fct" firstAttribute="top" secondItem="NW5-kh-Zw7" secondAttribute="bottom" constant="30" id="4F0-GM-OHy"/>
+                                                <constraint firstItem="s6m-bR-Fct" firstAttribute="top" secondItem="NW5-kh-Zw7" secondAttribute="bottom" constant="27" id="4F0-GM-OHy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="NW5-kh-Zw7" secondAttribute="trailing" constant="5" id="AdO-n7-R36"/>
                                                 <constraint firstItem="gfd-vn-H9t" firstAttribute="centerX" secondItem="h8q-Bv-4al" secondAttribute="centerX" id="Dla-oo-UoY"/>
                                                 <constraint firstItem="s6m-bR-Fct" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="L0E-df-mqQ"/>
@@ -530,8 +536,11 @@
                                                 <constraint firstItem="NW5-kh-Zw7" firstAttribute="centerY" secondItem="h8q-Bv-4al" secondAttribute="centerY" id="Xy8-dy-dq5"/>
                                                 <constraint firstItem="gfd-vn-H9t" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="m1v-qf-TZk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="s6m-bR-Fct" secondAttribute="trailing" constant="5" id="mHn-ee-oCI"/>
+                                                <constraint firstItem="yas-rf-cRn" firstAttribute="centerY" secondItem="s6m-bR-Fct" secondAttribute="centerY" id="nYs-9N-bcH"/>
+                                                <constraint firstItem="s6m-bR-Fct" firstAttribute="trailingMargin" secondItem="yas-rf-cRn" secondAttribute="trailingMargin" constant="5" id="qup-Fm-6cg"/>
                                                 <constraint firstItem="NW5-kh-Zw7" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="sfW-6k-kLg"/>
                                                 <constraint firstItem="gfd-vn-H9t" firstAttribute="centerY" secondItem="h8q-Bv-4al" secondAttribute="centerY" id="uso-4V-Pht"/>
+                                                <constraint firstItem="yas-rf-cRn" firstAttribute="leadingMargin" secondItem="s6m-bR-Fct" secondAttribute="leadingMargin" constant="5" id="zMh-Ty-jr4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1035,7 +1044,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XS-fH-6vh">
-                                                    <rect key="frame" x="5" y="7.5" width="29" height="29"/>
+                                                    <rect key="frame" x="5" y="-7.5" width="58" height="58.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="icons8-money-box-30"/>
                                                     <connections>
@@ -1043,14 +1052,14 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh4-Gq-vAE">
-                                                    <rect key="frame" x="39" y="10" width="68" height="16"/>
+                                                    <rect key="frame" x="68" y="10" width="68" height="16"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRy-WO-xwf">
-                                                    <rect key="frame" x="44" y="13" width="62.5" height="20.5"/>
+                                                    <rect key="frame" x="73" y="13" width="62.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1254,13 +1263,13 @@
                                         <rect key="frame" x="0.0" y="60.5" width="345" height="266"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="H5p-pw-R1s">
-                                                <rect key="frame" x="142.5" y="65.5" width="60" height="135"/>
+                                                <rect key="frame" x="112.5" y="35.5" width="120" height="195"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user-60" translatesAutoresizingMaskIntoConstraints="NO" id="Vyb-13-bUh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt8-DB-XCQ">
-                                                        <rect key="frame" x="5" y="85" width="50" height="50"/>
+                                                        <rect key="frame" x="35" y="145" width="50" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1608,7 +1617,7 @@
     </scenes>
     <resources>
         <image name="Icon-Bell" width="29" height="29"/>
-        <image name="arrow.up.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="arrow.up.circle.fill" catalog="system" width="64" height="62"/>
         <image name="icons8-account-30" width="29" height="29"/>
         <image name="icons8-amazon-alexa-logo-30.png" width="30" height="30"/>
         <image name="icons8-exit-30" width="30" height="30"/>
@@ -1616,11 +1625,12 @@
         <image name="icons8-money-box-30" width="29" height="29"/>
         <image name="icons8-star-30" width="29" height="29"/>
         <image name="icons8-user-60" width="60" height="60"/>
-        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="plus.circle.fill" catalog="system" width="64" height="62"/>
         <image name="settings" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ioc-3a-fAo"/>
+        <segue reference="Fcy-l7-ecg"/>
+        <segue reference="DWt-1v-Mif"/>
         <segue reference="rrd-2B-XTH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.30980392159999998" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>

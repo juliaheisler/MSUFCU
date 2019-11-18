@@ -182,7 +182,6 @@ class WalletVC: UIViewController{
             highlighted = true
             highlight = pieChart.highlighted[0].x
             setChart(dataPoints:categories, values: amounts)
-            pieChart.legend.verticalAlignment = .center
 //            let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
 //            let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
 //            setChart(dataPoints:months, values: unitsSold)

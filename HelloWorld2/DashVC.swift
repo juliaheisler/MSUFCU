@@ -32,7 +32,11 @@ class DashVC: UIViewController {
                         case .failure(let error):
                             print(error)
                         case .success(let value):
-                            self.GoalTip.text = value
+                            if value != "error"
+                            {
+                                self.GoalTip.text = value
+                                
+                            }
                             print(value)
                             
                             

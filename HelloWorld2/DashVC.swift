@@ -32,9 +32,11 @@ class DashVC: UIViewController {
                         case .failure(let error):
                             print(error)
                         case .success(let value):
-                           self.GoalTip.text = value
-                            
-//                            self.GoalTip.text = "Estimated Goal Completion Time: 13 days\nTIP: If you spend 20% less on Entertainment, you will reach your goal in 13 days"
+                            if value != "error"
+                            {
+                                self.GoalTip.text = value
+                                
+                            }
                             print(value)
                             
                             

@@ -146,9 +146,19 @@ class OfferVC: UIViewController {
 
    extension OfferVC: UITableViewDataSource, UITableViewDelegate{
        
-       func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-           return self.sectionTitlw[section]
-       }
+        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = UIView()
+            headerView.backgroundColor = UIColor(red: 156/255.0, green: 183/255.9, blue: 175/255.0, alpha: 1.0)
+            
+            let sectionLabel = UILabel(frame: CGRect(x: 5, y: 2, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            sectionLabel.font = UIFont(name: "Avenir-Heavy", size: 20)
+            sectionLabel.textColor = UIColor.white
+            sectionLabel.text = self.sectionTitlw[section]
+            sectionLabel.sizeToFit()
+            headerView.addSubview(sectionLabel)
+            
+            return headerView
+        }
        
        func numberOfSections(in tableView: UITableView) -> Int {
            return sectionTitlw.count

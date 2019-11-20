@@ -27,7 +27,7 @@ class BudgetCell: UITableViewCell {
     
         
         
-        budgetProg.transform = CGAffineTransform(scaleX: 1, y: 14)
+        budgetProg.transform = CGAffineTransform(scaleX: 1, y: 18)
         budgetProg.trackTintColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.6031678082)
         
         if (budget.prog >= 0.5 && budget.prog < 1)
@@ -46,10 +46,6 @@ class BudgetCell: UITableViewCell {
         
         budgetProg.setProgress(budget.prog, animated: false)
         
-        
-        idealProg.transform = CGAffineTransform(scaleX: 1, y: 14)
-        idealProg.trackTintColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 0.6031678082)
-        idealProg.setProgress(budget.ideal_prog, animated: false)
         
         
     }

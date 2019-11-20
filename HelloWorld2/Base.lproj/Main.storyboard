@@ -516,37 +516,21 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s6m-bR-Fct">
-                                                    <rect key="frame" x="20" y="88.5" width="335" height="2"/>
-                                                </progressView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ideal Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yas-rf-cRn">
-                                                    <rect key="frame" x="25" y="79.5" width="325" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="s6m-bR-Fct" firstAttribute="top" secondItem="NW5-kh-Zw7" secondAttribute="bottom" constant="27" id="4F0-GM-OHy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="NW5-kh-Zw7" secondAttribute="trailing" constant="5" id="AdO-n7-R36"/>
                                                 <constraint firstItem="gfd-vn-H9t" firstAttribute="centerX" secondItem="h8q-Bv-4al" secondAttribute="centerX" id="Dla-oo-UoY"/>
-                                                <constraint firstItem="s6m-bR-Fct" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="L0E-df-mqQ"/>
                                                 <constraint firstItem="CrV-vz-rUR" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" id="OXn-Rq-bBr"/>
                                                 <constraint firstItem="CrV-vz-rUR" firstAttribute="top" secondItem="h8q-Bv-4al" secondAttribute="topMargin" constant="5" id="R9w-fi-dEs"/>
                                                 <constraint firstItem="NW5-kh-Zw7" firstAttribute="centerY" secondItem="h8q-Bv-4al" secondAttribute="centerY" id="Xy8-dy-dq5"/>
                                                 <constraint firstItem="gfd-vn-H9t" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="m1v-qf-TZk"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="s6m-bR-Fct" secondAttribute="trailing" constant="5" id="mHn-ee-oCI"/>
-                                                <constraint firstItem="yas-rf-cRn" firstAttribute="centerY" secondItem="s6m-bR-Fct" secondAttribute="centerY" id="nYs-9N-bcH"/>
-                                                <constraint firstItem="s6m-bR-Fct" firstAttribute="trailingMargin" secondItem="yas-rf-cRn" secondAttribute="trailingMargin" constant="5" id="qup-Fm-6cg"/>
                                                 <constraint firstItem="NW5-kh-Zw7" firstAttribute="leading" secondItem="h8q-Bv-4al" secondAttribute="leadingMargin" constant="5" id="sfW-6k-kLg"/>
                                                 <constraint firstItem="gfd-vn-H9t" firstAttribute="centerY" secondItem="h8q-Bv-4al" secondAttribute="centerY" id="uso-4V-Pht"/>
-                                                <constraint firstItem="yas-rf-cRn" firstAttribute="leadingMargin" secondItem="s6m-bR-Fct" secondAttribute="leadingMargin" constant="5" id="zMh-Ty-jr4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="budgetProg" destination="NW5-kh-Zw7" id="ACR-Le-s5j"/>
                                             <outlet property="category" destination="CrV-vz-rUR" id="AR8-ho-lmV"/>
-                                            <outlet property="idealProg" destination="s6m-bR-Fct" id="MI7-eB-COf"/>
                                             <outlet property="spent" destination="gfd-vn-H9t" id="6O7-nL-IPc"/>
                                         </connections>
                                     </tableViewCell>

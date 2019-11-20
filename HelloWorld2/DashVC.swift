@@ -107,7 +107,7 @@ class DashVC: UIViewController {
                             let limit = Float(lim)
                             
                             
-                            self.tempBudgets.append(Budget(progress: (progress!/limit!), cat: item["cat"]!, spent: item["progress"]!, limit: item["limit"]!, ideal_progress: (ideal!/limit!)))
+                            self.tempBudgets.append(Budget(progress: (progress!/limit!), cat: item["cat"]!, spent: item["progress"]!, limit: item["limit"]!))
                               
                                
                               
@@ -163,7 +163,7 @@ extension DashVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 120//or whatever you need
+        return 115//or whatever you need
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->Int{
@@ -191,14 +191,12 @@ class Budget
     var category: String
     var spent: String
     var limit: String
-    var ideal_prog: Float
     
-    init(progress: Float, cat: String, spent: String, limit: String, ideal_progress: Float) {
+    init(progress: Float, cat: String, spent: String, limit: String){
         self.category = cat
         self.prog = progress
         self.spent = spent
         self.limit = limit
-        self.ideal_prog = ideal_progress
     }
     
 }

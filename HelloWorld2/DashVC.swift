@@ -11,6 +11,7 @@ import UIKit
 class DashVC: UIViewController {
     
     
+    @IBOutlet weak var GoalTipView: UIView!
     @IBOutlet weak var GoalTip: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -73,7 +74,10 @@ class DashVC: UIViewController {
                     
                     if (amt2! >= amt!)
                     {
-                       print("Goal Reached!!!!")
+                        
+                        // need backend logic for this 
+//                        self.GoalTipView.backgroundColor =  #colorLiteral(red: 0.7098039216, green: 0.5960784314, blue: 0.3529411765, alpha: 1)
+//                        self.GoalTip.text = "Congratulations, you have reached your goal!"
                         
                     }
                     

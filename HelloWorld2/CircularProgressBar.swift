@@ -15,8 +15,7 @@ class CircularProgressBar: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
-        goalName.text = "0"
-        goalProg.text = "0"
+    
     }
     
     

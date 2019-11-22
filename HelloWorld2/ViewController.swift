@@ -101,7 +101,16 @@ class ViewController: UIViewController {
             let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
             self.navigationController?.pushViewController(Dashboard, animated: true)
         }
-        removeAni()
+        if let viewWithTag = self.view.viewWithTag(233), let viewWithTag2 = self.view.viewWithTag(133){
+            UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+                          viewWithTag.alpha = 0.0
+                          viewWithTag2.alpha = 0.0
+                      }, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Change `2.0` to the desired number of seconds.
+                self.removeAni()
+            }
+        }
+
     }
     
     func addAni(){
@@ -116,23 +125,32 @@ class ViewController: UIViewController {
             blurEffectView.frame = self.view.bounds
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             blurEffectView.tag = 133
+            blurEffectView.alpha = 0.0
 
             view.addSubview(blurEffectView)
+            
+            //Create the actrual ani view using lottie
+            let animationView = AnimationView(name: "plane")
+            animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+            animationView.center = self.view.center
+            animationView.contentMode = .scaleAspectFill
+            animationView.loopMode = .loop
+            animationView.tag = 233
+            animationView.animationSpeed = 2.5
+            animationView.alpha = 0.0
+            
+            view.addSubview(animationView)
+            
+            //start it
+            animationView.play()
+            UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+                blurEffectView.alpha = 1.0
+                animationView.alpha = 1.0
+            }, completion: nil)
+            
         }
         
-        //Create the actrual ani view using lottie
-        let animationView = AnimationView(name: "plane")
-        animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-        animationView.center = self.view.center
-        animationView.contentMode = .scaleAspectFill
-        animationView.loopMode = .loop
-        animationView.tag = 233
-        animationView.animationSpeed = 2.5
         
-        view.addSubview(animationView)
-        
-        //start it
-        animationView.play()
     }
     
     func removeAni(){
@@ -151,10 +169,8 @@ class ViewController: UIViewController {
     //Force the animation to display for one second and then go though other logics.
     func forceAni(){
         if let viewWithTag = self.view.viewWithTag(233) as? AnimationView{
-            print(viewWithTag.currentTime)
             if viewWithTag.currentTime < 1 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
-                   print(viewWithTag.currentTime)
                     self.switchSB()
                 }
             }

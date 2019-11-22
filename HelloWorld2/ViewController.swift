@@ -95,13 +95,22 @@ class ViewController: UIViewController {
     }
     
     func switchSB(){
-        if (UserDefaults.standard.string(forKey: "hashID") != "error")
-        {
-            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-            let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
-            self.navigationController?.pushViewController(Dashboard, animated: true)
-        }
+        
         if let viewWithTag = self.view.viewWithTag(233), let viewWithTag2 = self.view.viewWithTag(133){
+            if (UserDefaults.standard.string(forKey: "hashID") != "error")
+            {
+                UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+                    viewWithTag.alpha = 0.0
+                }, completion: nil)
+                //force it to give animate time to fade out
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Change `2.0` to the desired number of seconds.
+                   //Previous Code
+                   let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
+                   let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
+                   self.navigationController?.pushViewController(Dashboard, animated: true)
+                }
+            }
+            
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                           viewWithTag.alpha = 0.0
                           viewWithTag2.alpha = 0.0

@@ -4,4 +4,5 @@
  target 'HopesAndDreams' do		
    pod 'Alamofire', '~> 4.7'
    pod 'Charts'
+   pod 'lottie-ios'
  end

@@ -44,6 +44,7 @@
 		84E7E30B237286B800A38F4D /* AlexaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E30A237286B800A38F4D /* AlexaVC.swift */; };
 		84EEBDDB237B83EF008EED6E /* newBudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEBDDA237B83EF008EED6E /* newBudgetVC.swift */; };
 		94CABA1FEFE69BFB112E74CD /* Pods_HopesAndDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */; };
+		E82355A723875340003F8DC8 /* plane.json in Resources */ = {isa = PBXBuildFile; fileRef = E823559423875340003F8DC8 /* plane.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,27 @@
 			remoteGlobalIDString = A1C1B977ED8804E8AEEC884E7359EE58;
 			remoteInfo = Charts;
 		};
+		E823559923875340003F8DC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 841443772355523A00C8118A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
+		E823559F23875340003F8DC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 841443802355524400C8118A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
+		E82355A523875340003F8DC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 841443892355524900C8118A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51BA97E8B5085EFFB47BC9C0B785CEA7;
+			remoteInfo = "lottie-ios";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +198,7 @@
 		84E7E30823726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-amazon-alexa-logo-30.png"; path = "../../../Downloads/icons8-amazon-alexa-logo-30.png"; sourceTree = "<group>"; };
 		84E7E30A237286B800A38F4D /* AlexaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlexaVC.swift; sourceTree = "<group>"; };
 		84EEBDDA237B83EF008EED6E /* newBudgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newBudgetVC.swift; sourceTree = "<group>"; };
+		E823559423875340003F8DC8 /* plane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = plane.json; path = ../../../Downloads/plane.json; sourceTree = "<group>"; };
 		EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.release.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +254,7 @@
 		07A660932326D524004F2AD1 /* HelloWorld2 */ = {
 			isa = PBXGroup;
 			children = (
+				E823559423875340003F8DC8 /* plane.json */,
 				07F213A8237DE8AC00884A74 /* transferGoalVC.swift */,
 				84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */,
 				07A660962326D524004F2AD1 /* ViewController.swift */,
@@ -303,6 +327,7 @@
 			children = (
 				8414437D2355523A00C8118A /* Alamofire.framework */,
 				84C9730523735AC100C039CA /* Charts.framework */,
+				E823559A23875340003F8DC8 /* Lottie.framework */,
 				8414437F2355523A00C8118A /* Pods_HopesAndDreams.framework */,
 			);
 			name = Products;
@@ -313,6 +338,7 @@
 			children = (
 				841443862355524400C8118A /* Alamofire.framework */,
 				84C9730A23735AC100C039CA /* Charts.framework */,
+				E82355A023875340003F8DC8 /* Lottie.framework */,
 				841443882355524400C8118A /* Pods_HopesAndDreams.framework */,
 			);
 			name = Products;
@@ -323,6 +349,7 @@
 			children = (
 				8414438F2355524900C8118A /* Alamofire.framework */,
 				84C9730F23735AC100C039CA /* Charts.framework */,
+				E82355A623875340003F8DC8 /* Lottie.framework */,
 				841443912355524900C8118A /* Pods_HopesAndDreams.framework */,
 			);
 			name = Products;
@@ -526,6 +553,27 @@
 			remoteRef = 84C9730E23735AC100C039CA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		E823559A23875340003F8DC8 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = E823559923875340003F8DC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E82355A023875340003F8DC8 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = E823559F23875340003F8DC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E82355A623875340003F8DC8 /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = E82355A523875340003F8DC8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -534,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A6609C2326D527004F2AD1 /* Assets.xcassets in Resources */,
+				E82355A723875340003F8DC8 /* plane.json in Resources */,
 				84DE1A502339B565006A0D73 /* Launch Screen.storyboard in Resources */,
 				07A6609A2326D524004F2AD1 /* Main.storyboard in Resources */,
 				84D029AD2357877E006873B4 /* msufcu_logo_white-1.png in Resources */,

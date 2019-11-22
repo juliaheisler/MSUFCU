@@ -6,6 +6,7 @@
 //  Copyright © 2019 Julia Heisler. All rights reserved.
 //
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
     
@@ -37,6 +38,8 @@ class ViewController: UIViewController {
 //
 //        }
         
+        
+        addAni()
         handleLogin()
         
     }
@@ -79,7 +82,8 @@ class ViewController: UIViewController {
                      UserDefaults.standard.set(false, forKey: "notificationStatus")
                     }
                 
-                self.switchSB()
+                //Force animation then run the verification of login.
+                self.forceAni()
             }
             
             
@@ -97,6 +101,65 @@ class ViewController: UIViewController {
             let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
             self.navigationController?.pushViewController(Dashboard, animated: true)
         }
+        removeAni()
     }
+    
+    func addAni(){
+        
+        //Create a blur blacground
+        if !UIAccessibility.isReduceTransparencyEnabled {
+
+
+            let blurEffect = UIBlurEffect(style: .light)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            blurEffectView.frame = self.view.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurEffectView.tag = 133
+
+            view.addSubview(blurEffectView)
+        }
+        
+        //Create the actrual ani view using lottie
+        let animationView = AnimationView(name: "plane")
+        animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+        animationView.center = self.view.center
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.tag = 233
+        animationView.animationSpeed = 2.5
+        
+        view.addSubview(animationView)
+        
+        //start it
+        animationView.play()
+    }
+    
+    func removeAni(){
+        if let viewWithTag = self.view.viewWithTag(233) {
+                viewWithTag.removeFromSuperview()
+            }else{
+                print("There is no ani view!")
+            }
+        if let viewWithTag = self.view.viewWithTag(133) {
+            viewWithTag.removeFromSuperview()
+        }else{
+            print("There is no blur view!")
+        }
+    }
+    
+    //Force the animation to display for one second and then go though other logics.
+    func forceAni(){
+        if let viewWithTag = self.view.viewWithTag(233) as? AnimationView{
+            print(viewWithTag.currentTime)
+            if viewWithTag.currentTime < 1 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
+                   print(viewWithTag.currentTime)
+                    self.switchSB()
+                }
+            }
+        }
+    }
+        
     
 }

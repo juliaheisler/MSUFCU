@@ -3,20 +3,24 @@ PODS:
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
+  - lottie-ios (3.1.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - Charts
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Charts
+    - lottie-ios
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
 
-PODFILE CHECKSUM: c5033ef9bd766f3763eaa60b8db30b4c2a217c40
+PODFILE CHECKSUM: 9e4d979939223ec29237489f8022b81810f0064b
 
 COCOAPODS: 1.8.3

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class OfferVC: UIViewController {
 
@@ -26,8 +27,9 @@ class OfferVC: UIViewController {
        override func viewDidLoad() {
            super.viewDidLoad()
         
+        
         //Spinner.start(style: .white, backColor: UIColor.white, baseColor: UIColor.darkGray)
-           
+        addAni()
         createArray()
         
         
@@ -64,11 +66,11 @@ class OfferVC: UIViewController {
            APIClient.getOffers(hash: UserDefaults.standard.string(forKey: "hashID")! ){result in
                switch result {
                case .failure(let error):
-                   print(error)
+                    print(error)
                case .success(let value):
-                var test = [Offer]()
-                   //value is full array of dict from json
-                   for item in value
+                    var test = [Offer]()
+                    //value is full array of dict from json
+                    for item in value
                    {
                     print(item)
                     test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!, details: item["details"]!))
@@ -84,13 +86,15 @@ class OfferVC: UIViewController {
                    self.alloffers[0] = test
                    //self.alloffers[1] = test
                 
-                //self.tableView.reloadData()
-                self.myOffersLoaded = true
-                if (self.myOffersLoaded && self.allOffersLoaded)
-                {
-                                       //Spinner.stop()
-                self.tableView.reloadData()
-                }
+                    //self.tableView.reloadData()
+                    self.myOffersLoaded = true
+                    if (self.myOffersLoaded && self.allOffersLoaded)
+                    {
+                        //Spinner.stop()
+                        self.tableView.reloadData()
+                    }
+                
+                    self.removeAni()
                 
               
                }
@@ -103,7 +107,7 @@ class OfferVC: UIViewController {
                 case .failure(let error):
                     print(error)
                 case .success(let value):
-                 var test = [Offer]()
+                    var test = [Offer]()
                     //value is full array of dict from json
                     for item in value
                     {
@@ -112,33 +116,93 @@ class OfferVC: UIViewController {
                        // self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
                      
                      
-                     
-                     
-                     //self.offerarray = []
+                        //self.offerarray = []
                         //tempOffer.append(offer)
                         
                     }
                     //self.alloffers[0] = test
                     self.alloffers[1] = test
                  
-                 self.allOffersLoaded = true
-                    
-                 if (self.myOffersLoaded && self.allOffersLoaded)
-                    {
-                        //Spinner.stop()
-                        self.tableView.reloadData()
-                    }
+                    self.allOffersLoaded = true
+                        
+                    if (self.myOffersLoaded && self.allOffersLoaded)
+                        {
+                            //Spinner.stop()
+                            
+                            self.tableView.reloadData()
+                        }
+                    self.removeAni()
                
                 }
+            
+            
          
                 
+            }
+       
+       
+
         }
-       
-       
-       
+    
+    
+    func addAni(){
+        
+        //Create a blur blacground
+        if !UIAccessibility.isReduceTransparencyEnabled {
 
 
-       }
+            let blurEffect = UIBlurEffect(style: .light)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            blurEffectView.frame = self.view.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurEffectView.tag = 133
+            blurEffectView.alpha = 0.0
+
+            view.addSubview(blurEffectView)
+            
+            //Create the actrual ani view using lottie
+            let animationView = AnimationView(name: "plane")
+            animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+            animationView.center = self.view.center
+            animationView.contentMode = .scaleAspectFill
+            animationView.loopMode = .loop
+            animationView.tag = 233
+            animationView.animationSpeed = 2.5
+            
+            //start it
+            animationView.play()
+            
+            UIView.animate(withDuration: 0.3, delay: 0.0, animations: {
+                blurEffectView.alpha = 1.0
+            }, completion: nil)
+            view.addSubview(animationView)
+            
+            
+            
+            
+        }
+        
+        
+    }
+    
+    func removeAni(){
+        if let viewWithTag = self.view.viewWithTag(233), let viewWithTag2 = self.view.viewWithTag(133) {
+            UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+                viewWithTag.alpha = 0.0
+                viewWithTag2.alpha = 0.0
+            }, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                viewWithTag.removeFromSuperview()
+                viewWithTag2.removeFromSuperview()
+            }
+            }else{
+                print("There is no animation views!")
+            }
+    }
+    
+    
+        
 
    }
 
@@ -192,6 +256,9 @@ class OfferVC: UIViewController {
             print(selected)
             
         }
+    
+    
+        
        
    }
 

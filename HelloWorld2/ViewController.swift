@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 //
 //        }
         
-        
+        view.endEditing(true)
         addAni()
         handleLogin()
         
@@ -102,20 +102,20 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                     viewWithTag.alpha = 0.0
                 }, completion: nil)
-                //force it to give animate time to fade out
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Change `2.0` to the desired number of seconds.
-                   //Previous Code
-                   let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-                   let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
-                   self.navigationController?.pushViewController(Dashboard, animated: true)
-                }
+
+               //Previous Code
+                let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
+                let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
+                self.removeAni()
+                self.navigationController?.pushViewController(Dashboard, animated: false)
+                
             }
             
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                           viewWithTag.alpha = 0.0
                           viewWithTag2.alpha = 0.0
                       }, completion: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // Change `2.0` to the desired number of seconds.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.removeAni()
             }
         }
@@ -139,22 +139,21 @@ class ViewController: UIViewController {
             view.addSubview(blurEffectView)
             
             //Create the actrual ani view using lottie
-            let animationView = AnimationView(name: "plane")
+            let animationView = AnimationView(name: "msg")
             animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
             animationView.center = self.view.center
             animationView.contentMode = .scaleAspectFill
             animationView.loopMode = .loop
             animationView.tag = 233
             animationView.animationSpeed = 2.5
-            animationView.alpha = 0.0
-            
-            view.addSubview(animationView)
             
             //start it
             animationView.play()
-            UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+            
+            view.addSubview(animationView)
+            
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
                 blurEffectView.alpha = 1.0
-                animationView.alpha = 1.0
             }, completion: nil)
             
         }
@@ -179,7 +178,7 @@ class ViewController: UIViewController {
     func forceAni(){
         if let viewWithTag = self.view.viewWithTag(233) as? AnimationView{
             if viewWithTag.currentTime < 1 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     self.switchSB()
                 }
             }

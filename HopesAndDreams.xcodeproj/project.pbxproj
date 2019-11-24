@@ -47,6 +47,7 @@
 		94CABA1FEFE69BFB112E74CD /* Pods_HopesAndDreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B5B3295C244A79F30925BB /* Pods_HopesAndDreams.framework */; };
 		E82355D0238A0DBF003F8DC8 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82355CF238A0DBF003F8DC8 /* Toast.swift */; };
 		E82355E2238A1005003F8DC8 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = E82355E1238A1005003F8DC8 /* list.json */; };
+		E82355E6238A1957003F8DC8 /* load.json in Resources */ = {isa = PBXBuildFile; fileRef = E82355E5238A1957003F8DC8 /* load.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		84EEBDDA237B83EF008EED6E /* newBudgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newBudgetVC.swift; sourceTree = "<group>"; };
 		E82355CF238A0DBF003F8DC8 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		E82355E1238A1005003F8DC8 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
+		E82355E5238A1957003F8DC8 /* load.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = load.json; sourceTree = "<group>"; };
 		EB5CA821A367A82D82EADE5C /* Pods-HopesAndDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HopesAndDreams.release.xcconfig"; path = "Target Support Files/Pods-HopesAndDreams/Pods-HopesAndDreams.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +262,7 @@
 			children = (
 				841E5C46238878450036D407 /* plane.json */,
 				E82355E1238A1005003F8DC8 /* list.json */,
+				E82355E5238A1957003F8DC8 /* load.json */,
 				07F213A8237DE8AC00884A74 /* transferGoalVC.swift */,
 				84DE1A4F2339B565006A0D73 /* Launch Screen.storyboard */,
 				07A660962326D524004F2AD1 /* ViewController.swift */,
@@ -587,6 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82355E6238A1957003F8DC8 /* load.json in Resources */,
 				E82355E2238A1005003F8DC8 /* list.json in Resources */,
 				07A6609C2326D527004F2AD1 /* Assets.xcassets in Resources */,
 				841E5C47238878450036D407 /* plane.json in Resources */,

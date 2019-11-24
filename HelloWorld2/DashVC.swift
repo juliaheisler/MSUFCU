@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class DashVC: UIViewController {
     
@@ -36,7 +37,7 @@ class DashVC: UIViewController {
                             if value != "error"
                             {
                                 self.GoalTip.text = value
-                                
+                                self.removeAni()
                             }
                             print(value)
                             
@@ -125,11 +126,13 @@ class DashVC: UIViewController {
                    }
             
             
+            
         }
         
         
         
         override func viewWillAppear(_ animated: Bool) {
+            addAni()
             self.navigationController?.setNavigationBarHidden(true, animated: false)
           
             
@@ -151,6 +154,63 @@ class DashVC: UIViewController {
             
             
             
+            
+        }
+    
+        func addAni(){
+            
+            //Create a blur blacground
+            if !UIAccessibility.isReduceTransparencyEnabled {
+
+
+                let blurEffect = UIBlurEffect(style: .light)
+                let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                //always fill the view
+                blurEffectView.frame = self.view.bounds
+                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                blurEffectView.tag = 133
+                blurEffectView.alpha = 0.0
+
+                view.addSubview(blurEffectView)
+                
+                //Create the actrual ani view using lottie
+                let animationView = AnimationView(name: "load")
+                animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+                animationView.center = self.view.center
+                animationView.contentMode = .scaleAspectFill
+                animationView.loopMode = .loop
+                animationView.tag = 233
+                animationView.animationSpeed = 1
+                
+                //start it
+                animationView.play()
+                
+                UIView.animate(withDuration: 0.3, delay: 0.0, animations: {
+                    blurEffectView.alpha = 1.0
+                }, completion: nil)
+                view.addSubview(animationView)
+                
+                
+                
+                
+            }
+            
+            
+        }
+        
+        func removeAni(){
+            if let viewWithTag = self.view.viewWithTag(233), let viewWithTag2 = self.view.viewWithTag(133) {
+                UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+                    viewWithTag.alpha = 0.0
+                    viewWithTag2.alpha = 0.0
+                }, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    viewWithTag.removeFromSuperview()
+                    viewWithTag2.removeFromSuperview()
+                }
+                }else{
+                    print("There is no animation views!")
+                }
         }
 
         

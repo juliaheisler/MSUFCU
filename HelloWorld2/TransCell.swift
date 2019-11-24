@@ -60,6 +60,7 @@ class TransCell: UITableViewCell {
         desc.text = temp
         
         
+        
         pluButton.isHidden = false
         
         

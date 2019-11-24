@@ -174,13 +174,13 @@ class DashVC: UIViewController {
                 view.addSubview(blurEffectView)
                 
                 //Create the actrual ani view using lottie
-                let animationView = AnimationView(name: "load")
+                let animationView = AnimationView(name: "load2")
                 animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
                 animationView.center = self.view.center
                 animationView.contentMode = .scaleAspectFill
                 animationView.loopMode = .loop
                 animationView.tag = 233
-                animationView.animationSpeed = 1
+                animationView.animationSpeed = 0.5
                 
                 //start it
                 animationView.play()

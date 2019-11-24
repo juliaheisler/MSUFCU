@@ -14,12 +14,15 @@ class TransData{
     var amount: String
     var date: String
     var balance: String
+    var cat: String
     
-    init(trans_desc:String, trans_amount:String, trans_date:String, trans_balance:String)
+    init(trans_desc:String, trans_amount:String, trans_date:String, trans_balance:String, trans_cat:String)
     {
         self.desc = trans_desc
         self.amount = trans_amount
         self.date = trans_date
         self.balance = trans_balance
+        self.cat = trans_cat
+        
     }
 }

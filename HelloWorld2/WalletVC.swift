@@ -8,6 +8,7 @@ class WalletVC: UIViewController{
     @IBOutlet weak var pieChart: PieChartView!
     
     var transactions: [TransData] = []
+    var tempTrans: [TransData] = []
     var categories: [String] = []
     var amounts: [Double] = []
     var refreshControl: UIRefreshControl?
@@ -20,19 +21,39 @@ class WalletVC: UIViewController{
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var actualBalance: UILabel!
     
+    @IBOutlet weak var tableTop: NSLayoutConstraint!
+    @IBOutlet weak var pieBottom: NSLayoutConstraint!
     
+    @IBOutlet weak var tableTitle: UILabel!
+    @IBOutlet weak var tableStack: UIStackView!
     
- 
     @IBAction func switchView(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0
         {
             stockResultsFeed.alpha = 1
             pieChart.alpha = 0
+            tableTop.constant = 13
+            tableTitle.text = "Balance"
+            tableStack.alpha = 1
+            if tempTrans.isEmpty == false {
+                transactions = tempTrans
+                tempTrans = []
+            }
+            tableStack.frame.size.height = 148
+            stockResultsFeed.layoutIfNeeded()
+            stockResultsFeed.reloadData()
+            refreshList()
         }
         else
         {
+            tableStack.frame.size.height = 13
             stockResultsFeed.alpha = 0
             pieChart.alpha = 1
+            highlighted = false
+            pieBottom.constant = 0
+            pieChart.highlightValues([])
+            setChart(dataPoints:categories, values: amounts)
+            stockResultsFeed.layoutIfNeeded()
         }
     }
     
@@ -153,7 +174,7 @@ class WalletVC: UIViewController{
                 //value is full array of dict from json
                 for item in value
                 {
-                    self.transactions.append(TransData(trans_desc: item["trans_desc"]!, trans_amount: item["trans_amount"]!, trans_date: item["trans_date"]!, trans_balance: item["trans_balance"]!))
+                    self.transactions.append(TransData(trans_desc: item["trans_desc"]!, trans_amount: item["trans_amount"]!, trans_date: item["trans_date"]!, trans_balance: item["trans_balance"]!, trans_cat: item["cata"]!))
                    
                     
                    
@@ -177,11 +198,36 @@ class WalletVC: UIViewController{
     }
     
     @objc func action(){
-        print("TAP")
         if pieChart.highlighted != [] {
+            if tempTrans.isEmpty==false {
+                transactions = tempTrans
+                tempTrans = []
+            }
             highlighted = true
             highlight = pieChart.highlighted[0].x
             setChart(dataPoints:categories, values: amounts)
+            pieBottom.constant = 179
+            stockResultsFeed.alpha = 1
+            tableTop.constant = 393
+            tableStack.alpha = 0
+            tempTrans = transactions
+            print(tempTrans)
+            transactions = []
+            let cata = categories[Int(highlight)].lowercased()
+            print(cata)
+            for t in tempTrans {
+                print(t.cat)
+                if t.cat == cata {
+                    if t.amount[t.amount.startIndex]=="-"{
+                        print(t)
+                        transactions.append(t)
+                    }
+                }
+                
+            }
+            stockResultsFeed.layoutIfNeeded()
+            stockResultsFeed.reloadData()
+            
 //            let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
 //            let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
 //            setChart(dataPoints:months, values: unitsSold)
@@ -189,6 +235,13 @@ class WalletVC: UIViewController{
         }
         else{
             highlighted = false
+            pieBottom.constant = 0
+            setChart(dataPoints:categories, values: amounts)
+            stockResultsFeed.alpha = 0
+            tableTop.constant = 13
+            stockResultsFeed.layoutIfNeeded()
+            refreshList()
+            
         }
     }
     
@@ -211,7 +264,7 @@ class WalletVC: UIViewController{
                 //value is full array of dict from json
                 for item in value
                 {
-                    self.transactions.append(TransData(trans_desc: item["trans_desc"]!, trans_amount: item["trans_amount"]!, trans_date: item["trans_date"]!, trans_balance: item["trans_balance"]!))
+                    self.transactions.append(TransData(trans_desc: item["trans_desc"]!, trans_amount: item["trans_amount"]!, trans_date: item["trans_date"]!, trans_balance: item["trans_balance"]!, trans_cat: item["cata"]!))
     
                    
                     print(item)
@@ -236,7 +289,7 @@ class WalletVC: UIViewController{
                print(error)
             case .success(let value):
                 //value is full array of dict from json
-                self.categories = ["Travel", "Restaurants", "Shopping", "Groceries", "Transportation", "Entertainment", "Health", "Other"]
+                self.categories = ["Travel", "Restaurant", "Shopping", "Groceries", "Transportation", "Entertainment", "Health", "Other"]
                 self.amounts = []
                 var total = 0.0
                 print(value)

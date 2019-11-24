@@ -110,6 +110,7 @@ class ViewController: UIViewController {
                 self.navigationController?.pushViewController(Dashboard, animated: false)
                 
             }
+            Toast.show(message: "Login failed, the email or password is incorrect.", controller: self)
             
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                           viewWithTag.alpha = 0.0
@@ -139,7 +140,7 @@ class ViewController: UIViewController {
             view.addSubview(blurEffectView)
             
             //Create the actrual ani view using lottie
-            let animationView = AnimationView(name: "msg")
+            let animationView = AnimationView(name: "plane")
             animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
             animationView.center = self.view.center
             animationView.contentMode = .scaleAspectFill
@@ -147,10 +148,11 @@ class ViewController: UIViewController {
             animationView.tag = 233
             animationView.animationSpeed = 2.5
             
-            //start it
-            animationView.play()
+            
             
             view.addSubview(animationView)
+            //start it
+            animationView.play()
             
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
                 blurEffectView.alpha = 1.0

@@ -16,6 +16,7 @@ class WalletVC: UIViewController{
     var dataEntries: [PieChartDataEntry] = []
     var highlighted: Bool = false
     var highlight: Double = 0.0
+    var goalAmt : Double = 0.0
     
 
     @IBOutlet weak var balance: UILabel!
@@ -187,11 +188,9 @@ class WalletVC: UIViewController{
                 let prog = self.transactions[0].balance
                 let amount = Double(prog)
                 self.balance.text = String(format: "Available Balance: $%.02f", amount!)
-                self.actualBalance.text = String(format: "Available Balance: $%.02f", amount!)
+                self.actualBalance.text = String(format: "Actual Balance: $%.02f", amount!)
                 self.stockResultsFeed.reloadData()
             }
-            
-            
             
         }
         
@@ -275,7 +274,7 @@ class WalletVC: UIViewController{
                 let prog = self.transactions[0].balance
                 let amount = Double(prog)
                 self.balance.text = String(format: "Available Balance: $%.02f", amount!)
-                self.actualBalance.text = String(format: "Available Balance: $%.02f", amount!)
+                self.actualBalance.text = String(format: "Actual Balance: $%.02f", amount!)
                 self.stockResultsFeed.reloadData()
                 
             }

@@ -37,8 +37,8 @@ class DashVC: UIViewController {
                             if value != "error"
                             {
                                 self.GoalTip.text = value
-                                self.removeAni()
                             }
+                            self.removeAni()
                             print(value)
                             
                             

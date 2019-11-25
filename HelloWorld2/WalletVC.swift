@@ -39,7 +39,7 @@ class WalletVC: UIViewController{
                 transactions = tempTrans
                 tempTrans = []
             }
-            tableStack.frame.size.height = 148
+            tableStack.frame.size.height = 115
             stockResultsFeed.layoutIfNeeded()
             stockResultsFeed.reloadData()
             refreshList()
@@ -206,9 +206,9 @@ class WalletVC: UIViewController{
             highlighted = true
             highlight = pieChart.highlighted[0].x
             setChart(dataPoints:categories, values: amounts)
-            pieBottom.constant = 179
+            pieBottom.constant = 300
             stockResultsFeed.alpha = 1
-            tableTop.constant = 393
+            tableTop.constant = 440
             tableStack.alpha = 0
             tempTrans = transactions
             print(tempTrans)

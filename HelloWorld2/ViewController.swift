@@ -68,27 +68,28 @@ class ViewController: UIViewController {
     }
     
     func handleNoti(){
-                APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let value):
-                if value == "1"
-                   {
-                     UserDefaults.standard.set(true, forKey: "notificationStatus")
-                    
-                   }else
-                   {
-                     UserDefaults.standard.set(false, forKey: "notificationStatus")
-                    }
-                
-                //Force animation then run the verification of login.
-                self.forceAni()
-            }
+//                APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let value):
+//                if value == "1"
+//                   {
+//                     UserDefaults.standard.set(true, forKey: "notificationStatus")
+//
+//                   }else
+//                   {
+//                     UserDefaults.standard.set(false, forKey: "notificationStatus")
+//                    }
+//
+//                //Force animation then run the verification of login.
+//                self.forceAni()
+//            }
+        self.forceAni()
             
             
             
-        }
+        //}
         
         
         

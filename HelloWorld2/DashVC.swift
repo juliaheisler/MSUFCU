@@ -125,6 +125,29 @@ class DashVC: UIViewController {
                        
                    }
             
+            APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
+                      switch result {
+                      case .failure(let error):
+                          print(error)
+                      case .success(let value):
+                          if value == "1"
+                             {
+                               UserDefaults.standard.set(true, forKey: "notificationStatus")
+                              
+                             }else
+                             {
+                               UserDefaults.standard.set(false, forKey: "notificationStatus")
+                              }
+                          
+                      }
+                      
+                      
+                      
+                  }
+            
+            
+            
+            
             
             
         }

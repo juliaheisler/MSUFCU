@@ -16,16 +16,26 @@ class tabBarVC: UITabBarController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         //if there is a notification -- need API method to check if there is a new notification
         //APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!)
-        if (UserDefaults.standard.bool(forKey: "notificationStatus"))
-        {
-            self.addRedDotAtTabBarItemIndex(index: 5)
-            
-        }
+//        if (UserDefaults.standard.bool(forKey: "notificationStatus"))
+//        {
+//            self.addRedDotAtTabBarItemIndex(index: 5)
+//
+//        }
         
         //if they clicked on button remove red dot
       
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+         if (UserDefaults.standard.bool(forKey: "notificationStatus"))
+               {
+                   self.addRedDotAtTabBarItemIndex(index: 5)
+                   
+               }
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

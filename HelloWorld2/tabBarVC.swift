@@ -12,6 +12,12 @@ class tabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (UserDefaults.standard.bool(forKey: "notificationStatus") == true)
+        {
+            self.addRedDotAtTabBarItemIndex(index: 5)
+            
+        }
+        
 
         self.navigationItem.setHidesBackButton(true, animated: false)
         //if there is a notification -- need API method to check if there is a new notification
@@ -31,11 +37,7 @@ class tabBarVC: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-         if (UserDefaults.standard.bool(forKey: "notificationStatus"))
-               {
-                   self.addRedDotAtTabBarItemIndex(index: 5)
-                   
-               }
+        
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

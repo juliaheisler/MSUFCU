@@ -128,8 +128,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "fetch_data()"
             landmarkType = "7">
          </BreakpointContent>
@@ -144,8 +144,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "fetch_data()"
             landmarkType = "7">
          </BreakpointContent>
@@ -160,8 +160,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "DashVC"
             landmarkType = "3">
          </BreakpointContent>
@@ -336,8 +336,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "fetch_data()"
             landmarkType = "7">
             <Locations>
@@ -384,8 +384,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "fetch_data()"
             landmarkType = "7">
             <Locations>
@@ -432,8 +432,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "fetch_data()"
             landmarkType = "7">
             <Locations>
@@ -480,8 +480,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "fetch_data()"
             landmarkType = "7">
          </BreakpointContent>
@@ -496,8 +496,8 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "fetch_data()"
             landmarkType = "7">
          </BreakpointContent>
@@ -512,8 +512,24 @@
             filePath = "HelloWorld2/DashVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fetch_data()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50B52D44-A7B7-4AA7-B4DD-C879F161DDA5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HelloWorld2/DashVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "fetch_data()"
             landmarkType = "7">
          </BreakpointContent>

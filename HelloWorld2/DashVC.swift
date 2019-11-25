@@ -26,6 +26,8 @@ class DashVC: UIViewController {
         
         
     }
+    
+    
     func fetch_data()
         {
             
@@ -138,6 +140,7 @@ class DashVC: UIViewController {
                              {
                                UserDefaults.standard.set(false, forKey: "notificationStatus")
                               }
+                        
                           
                       }
                       

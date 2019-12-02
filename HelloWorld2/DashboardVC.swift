@@ -54,15 +54,20 @@ class DashboardVC: UIViewController {
             case .success(let value):
                 //value is full array of dict from json
                 
+                let numberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = .decimal
+                
                 self.goalProgress.goalName.text = value["1"]
-                let budget = value["3"] ?? ""
+                let budget = numberFormatter.string(for: value["3"]) ?? ""
                 self.goalProgress.label1.text = "saved out of $" + budget
                 self.goalProgress.goalProg.text = value["2"]
                 
                 
                 let test = Double (budget)
                 
-                let amount = value["2"] ?? ""
+                
+                
+                let amount = numberFormatter.string(for: value["2"]) ?? ""
                 let test2 = Double(amount)
                 let res = test2!/test!
                 print(res)

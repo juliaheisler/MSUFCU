@@ -58,16 +58,18 @@ class DashVC: UIViewController {
                     print(error)
                 case .success(let value):
                     //value is full array of dict from json
-                    
+
                     self.goalProgress.goalName.text = value["1"]
+                    let amt = Double(value["3"]!)
                     let budget = value["3"] ?? ""
-                    let amt = Double(budget)
-                    self.goalProgress.label1.text = String(format: "saved out of $%.02f", amt!)
+                    self.goalProgress.label1.text = String("saved out of " + budget.currencyFormatting())
+                    let amt2 = Double(value["2"]!)
                     let prog = value["2"] ?? ""
-                    let amt2 = Double(prog)
-                    self.goalProgress.goalProg.text = String(format: "$%.02f", amt2!)
+                    self.goalProgress.goalProg.text = String(prog.currencyFormatting())
+
+                   
     
-                    let test = Double (budget)
+                    let test = Double (value["3"]!)
                     
                     let amount = value["2"] ?? ""
                     let test2 = Double(amount)
@@ -103,7 +105,7 @@ class DashVC: UIViewController {
                            {
                             let prog = item["progress"] ?? ""
                             let ideal_prog = item["ideal"] ?? ""
-                            let ideal = Float(ideal_prog)
+                            //let ideal = Float(ideal_prog)
                             
                             let progress = Float(prog)
                             let lim = item["limit"] ?? ""
@@ -285,4 +287,19 @@ class Budget
         self.limit = limit
     }
     
+}
+
+extension String {
+    // formatting text for currency textField
+    func currencyFormatting() -> String {
+        if let value = Double(self) {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            formatter.maximumFractionDigits = 2
+            if let str = formatter.string(for: value) {
+                return str
+            }
+        }
+        return ""
+    }
 }

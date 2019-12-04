@@ -162,6 +162,21 @@ class APIClient{
         performgetGoal(hashID: hash, completion: completionHandler)
     }
     
+    /*Set new goal*/
+    static func setNewGoal( hash: String, d0: String, d1: String)
+    {
+        
+        let parameters: Parameters = ["hash": hash, "data": [d0,d1] ]
+        Alamofire.request("http://msufcu.meowtap.com:5000/setGoal", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            if let json = response.result.value as? String{
+                
+                print(json)
+            }
+            
+            
+        }
+    }
+    
     
     static func performgetGoal( hashID: String, completion: @escaping (Result<[String:String]>) -> Void)
     {

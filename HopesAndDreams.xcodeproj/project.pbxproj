@@ -32,6 +32,7 @@
 		8437E83E237F523D00379F13 /* ViewOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437E83D237F523D00379F13 /* ViewOfferVC.swift */; };
 		843DFB36234AA9D800957F99 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DFB35234AA9D800957F99 /* CircularProgressBar.swift */; };
 		84602ED723539C2C00FB413C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84602ED623539C2C00FB413C /* APIClient.swift */; };
+		8479A6D723974B5000986DDD /* UpdateGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8479A6D623974B5000986DDD /* UpdateGoal.swift */; };
 		847EA6E623819DB600B33593 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847EA6E523819DB600B33593 /* AccountVC.swift */; };
 		84AB61FE237A4ED800171A26 /* BudgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB61FD237A4ED800171A26 /* BudgetCell.swift */; };
 		84C9731323736A7E00C039CA /* ProgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C9731223736A7E00C039CA /* ProgCell.swift */; };
@@ -190,6 +191,7 @@
 		8437E83D237F523D00379F13 /* ViewOfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOfferVC.swift; sourceTree = "<group>"; };
 		843DFB35234AA9D800957F99 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		84602ED623539C2C00FB413C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		8479A6D623974B5000986DDD /* UpdateGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGoal.swift; sourceTree = "<group>"; };
 		847EA6E523819DB600B33593 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		84AB61FD237A4ED800171A26 /* BudgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCell.swift; sourceTree = "<group>"; };
 		84C9731223736A7E00C039CA /* ProgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgCell.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				84E7E30823726BAD00A38F4D /* icons8-amazon-alexa-logo-30.png */,
 				07A6609B2326D527004F2AD1 /* Assets.xcassets */,
 				84C9731223736A7E00C039CA /* ProgCell.swift */,
+				8479A6D623974B5000986DDD /* UpdateGoal.swift */,
 			);
 			path = HelloWorld2;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				07B218A023562D3D009240C0 /* Offer.swift in Sources */,
 				84D1FFF82356BBB50044BABD /* NotificationCell.swift in Sources */,
 				84DE1A52233B041C006A0D73 /* DashboardVC.swift in Sources */,
+				8479A6D723974B5000986DDD /* UpdateGoal.swift in Sources */,
 				8437C8E623710A90008A3ACF /* Spinner.swift in Sources */,
 				07F66D54237A077500B35714 /* DashVC.swift in Sources */,
 				07D3E8D123312AA600890271 /* QuizVC.swift in Sources */,

@@ -10,6 +10,7 @@ class WalletVC: UIViewController{
     var transactions: [TransData] = []
     var tempTrans: [TransData] = []
     var categories: [String] = []
+    var cats: [String] = []
     var amounts: [Double] = []
     var refreshControl: UIRefreshControl?
     var bal: Double = 1.0
@@ -70,8 +71,6 @@ class WalletVC: UIViewController{
         stockResultsFeed.delegate = self
         stockResultsFeed.dataSource = self
         addRefreshControl()
-
-        
         
         stockResultsFeed.rowHeight = 80
         stockResultsFeed.layoutMargins = UIEdgeInsets.zero
@@ -110,10 +109,11 @@ class WalletVC: UIViewController{
         for i in 0..<dataPoints.count {
             if values[i] != 0{
                 chartColors.append(colors[i])
+                cats.append(dataPoints[i])
                 let dataEntry = PieChartDataEntry(value: Double(values[i]/bal), label: dataPoints[i])
                 dataEntries.append(dataEntry)
                 if highlighted {
-                    if i == Int(highlight) {
+                    if cats[Int(highlight)] == dataPoints[i] {
                         let legendEntry = LegendEntry(label: dataPoints[i]+String(format: ": $%.02f", values[i]), form: .circle, formSize: 25.0, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: colors[i])
                         legendEntries.append(legendEntry)
                     }
@@ -125,6 +125,7 @@ class WalletVC: UIViewController{
                 
             }
         }
+        print(categories)
         
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label:"")
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
@@ -163,6 +164,7 @@ class WalletVC: UIViewController{
        
     }
     
+    
     @objc func refreshList()
     {
         self.transactions = []
@@ -176,12 +178,7 @@ class WalletVC: UIViewController{
                 for item in value
                 {
                     self.transactions.append(TransData(trans_desc: item["trans_desc"]!, trans_amount: item["trans_amount"]!, trans_date: item["trans_date"]!, trans_balance: item["trans_balance"]!, trans_cat: item["cata"]!))
-                   
-                    
-                   
                     print(item)
-                    
-                    
                 }
                 //sleep(1)
                 self.refreshControl?.endRefreshing()
@@ -191,10 +188,9 @@ class WalletVC: UIViewController{
                 self.actualBalance.text = String(format: "Actual Balance: $%.02f", amount!)
                 self.stockResultsFeed.reloadData()
             }
-            
         }
-        
     }
+    
     
     @objc func action(){
         if pieChart.highlighted != [] {
@@ -212,7 +208,7 @@ class WalletVC: UIViewController{
             tempTrans = transactions
             print(tempTrans)
             transactions = []
-            let cata = categories[Int(highlight)].lowercased()
+            let cata = cats[Int(highlight)].lowercased()
             print(cata)
             for t in tempTrans {
                 print(t.cat)
@@ -222,14 +218,9 @@ class WalletVC: UIViewController{
                         transactions.append(t)
                     }
                 }
-                
             }
             stockResultsFeed.layoutIfNeeded()
             stockResultsFeed.reloadData()
-            
-//            let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
-//            let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
-//            setChart(dataPoints:months, values: unitsSold)
             
         }
         else{

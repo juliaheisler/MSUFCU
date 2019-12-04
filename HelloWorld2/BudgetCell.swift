@@ -8,6 +8,7 @@
 
 import UIKit
 
+// set up fot budget cell
 class BudgetCell: UITableViewCell {
     @IBOutlet weak var spent: UILabel!
     

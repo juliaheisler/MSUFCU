@@ -4,6 +4,7 @@
 //
 //  Created by Julia Heisler on 9/9/19.
 //  Copyright © 2019 Julia Heisler. All rights reserved.
+//  Main Login Page
 //
 import UIKit
 import Lottie
@@ -21,32 +22,20 @@ class ViewController: UIViewController {
          self.navigationController?.setNavigationBarHidden(true, animated: false)
         // Do any additional setup after loading the view.
     }
-
+// if login button pressed
     @IBAction func buttonPressed(_ sender: Any) {
         
         guard let username = email.text, let pw = password.text, username.count > 0, pw.count > 0 else {return}
         
-//        APIClient.getHashValue(username: email.text!, password: password.text! )
-//       // print(UserDefaults.standard.object(forKey: "hashID"))
-//
-//        //UserDefaults.standard.string(forKey: "hashID") != "error"
-//        if (singleton.hashID != "error")
-//        {
-//            let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
-//            let Dashboard = storyBoardHome.instantiateViewController(withIdentifier: "TabBar")
-//            self.navigationController?.pushViewController(Dashboard, animated: true)
-//
-//        }
-        
         view.endEditing(true)
+        //begin animation
         addAni()
         handleLogin()
         
     }
-    //APIClient.getHashValue(username: email.text!, password: password.text!
     func handleLogin(){
-        //APIClient.getHashValue(username: email.text!, password: password.text! )
         
+        //attempt to login user -- get hash value from user defaults
         APIClient.getHash(username: email.text!, password: password.text! ){result in
             switch result {
             case .failure(let error):
@@ -68,28 +57,9 @@ class ViewController: UIViewController {
     }
     
     func handleNoti(){
-//                APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
-//            switch result {
-//            case .failure(let error):
-//                print(error)
-//            case .success(let value):
-//                if value == "1"
-//                   {
-//                     UserDefaults.standard.set(true, forKey: "notificationStatus")
-//
-//                   }else
-//                   {
-//                     UserDefaults.standard.set(false, forKey: "notificationStatus")
-//                    }
-//
-//                //Force animation then run the verification of login.
-//                self.forceAni()
-//            }
+
         self.forceAni()
             
-            
-            
-        //}
         
         
         

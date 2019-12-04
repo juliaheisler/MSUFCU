@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// Quiz Question
 class Question{
     
     let question: String

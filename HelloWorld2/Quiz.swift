@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+// Class for actual quiz
 class Quiz{
     
     var questions = [Question]()

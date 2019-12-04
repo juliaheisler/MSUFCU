@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 
+// Application Dashboard
 class DashVC: UIViewController {
     
     
@@ -28,6 +29,7 @@ class DashVC: UIViewController {
     }
     
     
+    //fetch any data needed from database
     func fetch_data()
         {
             
@@ -51,7 +53,7 @@ class DashVC: UIViewController {
             
             
             
-            
+            // populate goal and progress
             APIClient.getGoalValues(hash: UserDefaults.standard.string(forKey: "hashID")!){result in
                 switch result {
                 case .failure(let error):
@@ -80,9 +82,7 @@ class DashVC: UIViewController {
                     if (amt2! >= amt!)
                     {
                         
-                        // need backend logic for this 
-//                        self.GoalTipView.backgroundColor =  #colorLiteral(red: 0.7098039216, green: 0.5960784314, blue: 0.3529411765, alpha: 1)
-//                        self.GoalTip.text = "Congratulations, you have reached your goal!"
+                     // if we want anything else to happen when we reach our goal do it here
                         
                     }
                     
@@ -167,8 +167,6 @@ class DashVC: UIViewController {
             tableView.delegate = self
             tableView.dataSource = self
             
-           // tempBudgets.append(Budget(progress: 0, cat: "Test", spent: "0", limit: "100"))
-            //tempBudgets.append(Budget(progress: 0, cat: "Test", spent: "0", limit: "100"))
             self.tableView.reloadData()
             
             
@@ -246,7 +244,7 @@ class DashVC: UIViewController {
         
     }
 
-
+// populate budgets
 extension DashVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

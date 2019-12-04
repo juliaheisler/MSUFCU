@@ -27,19 +27,14 @@ class OfferVC: UIViewController {
        override func viewDidLoad() {
            super.viewDidLoad()
         
-        
-        //Spinner.start(style: .white, backColor: UIColor.white, baseColor: UIColor.darkGray)
         addAni()
         createArray()
         
         
-        
-       // tableView.delegate = self
-        //tableView.dataSource = self
-        
            
        }
 
+    // specific offer page
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ViewOfferVC {
             let vc = segue.destination as? ViewOfferVC
@@ -74,23 +69,15 @@ class OfferVC: UIViewController {
                    {
                     print(item)
                     test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!, details: item["details"]!))
-                      // self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
+                
                     
-                    
-                    
-                    
-                    //self.offerarray = []
-                       //tempOffer.append(offer)
+    
                        
                    }
                    self.alloffers[0] = test
-                   //self.alloffers[1] = test
-                
-                    //self.tableView.reloadData()
                     self.myOffersLoaded = true
                     if (self.myOffersLoaded && self.allOffersLoaded)
                     {
-                        //Spinner.stop()
                         self.tableView.reloadData()
                     }
                 
@@ -101,7 +88,7 @@ class OfferVC: UIViewController {
         
                
        }
-        
+        // get all offers (besides tailored offers)
         APIClient.getAllOffers(hash: UserDefaults.standard.string(forKey: "hashID")! ){result in
                 switch result {
                 case .failure(let error):
@@ -113,21 +100,14 @@ class OfferVC: UIViewController {
                     {
                         print(item)
                         test.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!, details: item["details"]!))
-                       // self.offerarray.append(Offer(image: UIImage(named: item["image"]!)!, title: item["offer"]!))
-                     
-                     
-                        //self.offerarray = []
-                        //tempOffer.append(offer)
                         
                     }
-                    //self.alloffers[0] = test
                     self.alloffers[1] = test
                  
                     self.allOffersLoaded = true
                         
                     if (self.myOffersLoaded && self.allOffersLoaded)
                         {
-                            //Spinner.stop()
                             
                             self.tableView.reloadData()
                         }
@@ -145,6 +125,7 @@ class OfferVC: UIViewController {
         }
     
     
+    //adding an animation to the page for loading
     func addAni(){
         
         //Create a blur blacground
@@ -207,7 +188,7 @@ class OfferVC: UIViewController {
    }
 
 
-
+// populate offer table
    extension OfferVC: UITableViewDataSource, UITableViewDelegate{
        
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -229,12 +210,6 @@ class OfferVC: UIViewController {
        }
        
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) ->Int{
-        
-        //var counter = alloffers[section].count
-        
-        
-   
-
         return alloffers[section].count
        }
        

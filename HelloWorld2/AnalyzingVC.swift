@@ -8,6 +8,7 @@
 
 import UIKit
 
+// brief Analyzing VC
 class AnalyzingVC: UIViewController {
     
     

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// new budget page
 class newBudgetVC: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource{
     @IBOutlet weak var category: UITextField!
     
@@ -50,14 +51,4 @@ class newBudgetVC: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSour
         APIClient.setBudget(hash: UserDefaults.standard.string(forKey: "hashID")!, category: category.text!, amount: limit.text!)
                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

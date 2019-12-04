@@ -5,9 +5,11 @@
 //  Created by zhenqi liu on 11/23/19.
 //  Copyright © 2019 Julia Heisler. All rights reserved.
 //
+//
 
 import UIKit
 
+// class displays 
 class Toast {
     static func show(message: String, controller: UIViewController) {
         let toastContainer = UIView(frame: CGRect())

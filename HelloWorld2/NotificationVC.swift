@@ -8,24 +8,14 @@
 
 import UIKit
 
+//Notification page
+
 class NotificationVC: UIViewController {
     
     var notifications: [String] = []
 
 
-    
-
     @IBOutlet weak var tableView: UITableView!
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,8 +24,6 @@ class NotificationVC: UIViewController {
         tableView.rowHeight = 80
         
         fetch_data()
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +32,7 @@ class NotificationVC: UIViewController {
         print("refresh")
     }
     
+    // fetch notifications
     func fetch_data()
     {
         self.notifications = []
@@ -62,10 +51,10 @@ class NotificationVC: UIViewController {
                     lines.remove(at: lines.count-1)
                     lines.remove(at: 0)
                     print(lines)
-                    for l in lines {
+                    for l in lines
+                    {
                         self.notifications.append(String(l))
                     }
-                    //self.notifications.append(contentsOf: String(lines))
                     
                 }
             }
@@ -78,6 +67,7 @@ class NotificationVC: UIViewController {
     
 }
 
+//Populate Notification Table
 extension NotificationVC: UITableViewDataSource, UITableViewDelegate
 {
     

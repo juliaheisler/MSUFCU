@@ -12,6 +12,7 @@ class tabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //check notification status
         if (UserDefaults.standard.bool(forKey: "notificationStatus") == true)
         {
             self.addRedDotAtTabBarItemIndex(index: 5)
@@ -20,18 +21,6 @@ class tabBarVC: UITabBarController {
         
 
         self.navigationItem.setHidesBackButton(true, animated: false)
-        //if there is a notification -- need API method to check if there is a new notification
-        //APIClient.getNotificationStatus(hash: UserDefaults.standard.string(forKey: "hashID")!)
-//        if (UserDefaults.standard.bool(forKey: "notificationStatus"))
-//        {
-//            self.addRedDotAtTabBarItemIndex(index: 5)
-//
-//        }
-        
-        //if they clicked on button remove red dot
-      
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,8 +54,6 @@ class tabBarVC: UITabBarController {
 
             let tabHalfWidth: CGFloat = tabSize / 2
 
-           // self.Dots[index] =  UIView(frame: CGRect(x: xPosition + tabHalfWidth - 2 , y: TopMargin, width: RedDotDiameter, height: RedDotDiameter))
-            
             self.Dots[index] =  UIView(frame: CGRect(x: xPosition + tabHalfWidth - 1, y: yOffsetBase, width: RedDotDiameter, height: RedDotDiameter))
 
             self.Dots[index].tag = index
@@ -84,18 +71,5 @@ class tabBarVC: UITabBarController {
         self.Dots[index].tag = 0
     }
 
-    
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

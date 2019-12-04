@@ -6,8 +6,11 @@
 //  Copyright © 2019 Julia Heisler. All rights reserved.
 //
 
+//
+
 import UIKit
 
+//Actual Quiz View Controller that user fills out
 class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -23,6 +26,8 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
        @IBOutlet weak var NextQuestion: UIButton!
        @IBOutlet weak var category: UITextField!
     
+    
+    //picker for goal categories
     let myPickerData = ["Travel", "Education", "Event", "Home", "Automotive", "Family", "Other"]
     
     var thePicker = UIPickerView()
@@ -44,12 +49,8 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         self.view.endEditing(false)
     }
 
-  
-
-
     
-    
-    
+    // Quiz Initialization
     let allQuestions = Quiz()
     var currentQuestion: Int = 0
     var selectedAnswer: Int = 0
@@ -65,18 +66,18 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         category.inputView = thePicker
     
-        // Do any additional setup after loading the view.
+        //Next Question
         updateQuestion()
     }
     
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(true)
+        //hid navigation bar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
     }
 
     
-
     @IBAction func answerPressed(_ sender: UIButton) {
         
         nextButton.isEnabled = true
@@ -85,7 +86,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         
         
-        
+        //setting opacity for selected answer
         if allQuestions.questions[currentQuestion].questionType != "check"
         {
             if selectedAnswer == 1{
@@ -121,6 +122,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
                 checkAnswers.append(allQuestions.questions[currentQuestion].options[selectedAnswer-1])
             }
             else{
+                //remove a selected answer
                 sender.alpha = 1
                 let i = checkAnswers.firstIndex(of: allQuestions.questions[currentQuestion].options[selectedAnswer-1])
                 checkAnswers.remove(at: i!)
@@ -137,7 +139,7 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
-        //append to dictionary before going to next question
+        //append to dictionary before going to next question -- based on question type
         
         if allQuestions.questions[currentQuestion].questionType == "multiple choice"
         {
@@ -177,8 +179,9 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         updateQuestion()
     }
     
-    
+    //update question based on question type -- hides existing questions besides current one
     func updateQuestion() {
+        //if last question
         if currentQuestion == allQuestions.questions.count-1
         {
             NextQuestion.setTitle("Finish Quiz →", for: .normal)
@@ -288,27 +291,15 @@ class QuizVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         else {
             // Quiz end
             print(tempStorage)
+            // sending tags and goal information to database
             APIClient.sendAnswers(hash: UserDefaults.standard.string(forKey: "hashID")!, d0: tempStorage[0]!, d1: tempStorage[1]!, d2: tempStorage[2]!, d3: tempStorage[3]!, d4: tempStorage[4]!, d5: tempStorage[5]!, d6: tempStorage[6]!, d7: tempStorage[7]!, d8: tempStorage[8]!, d9: tempStorage[9]!)
             
-           // APIClient.sendAnswers(account: "random", d0: tempStorage[0]!, d1: "0", d2: "0", d3: "0", d4: tempStorage[8]!, d5: "0", d6: tempStorage[10]!,d7: tempStorage[9]!)
+            // go to "Analyzing Spending Habits" page briefly
             let storyBoardHome = UIStoryboard(name:"Main", bundle: nil)
             let Analyzing = storyBoardHome.instantiateViewController(withIdentifier: "AnalyzingVC")
             self.navigationController?.pushViewController(Analyzing, animated: true)
             
         }
     }
-    
-   
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

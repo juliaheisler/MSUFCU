@@ -13,12 +13,16 @@ class TransferFundsVC: UIViewController {
     @IBOutlet weak var balance: UILabel!
 
     @IBOutlet weak var amount: UITextField!
+    
+    //set the goal progress based on the transfer amount
     @IBAction func onTransfer(_ sender: Any) {
         APIClient.setProg(hash: UserDefaults.standard.string(forKey: "hashID")!, amount: amount.text!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        // get balance
         APIClient.getTransactions(hash: UserDefaults.standard.string(forKey: "hashID")!, rows: "1"){result in
         switch result {
         case .failure(let error):
@@ -38,14 +42,5 @@ class TransferFundsVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

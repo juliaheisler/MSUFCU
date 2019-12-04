@@ -1,6 +1,7 @@
 import UIKit
 import Charts
 
+// recent transactions and spending breakdown
 class WalletVC: UIViewController{
     
     @IBOutlet weak var stockResultsFeed: UITableView!
@@ -29,6 +30,7 @@ class WalletVC: UIViewController{
     @IBOutlet weak var tableTitle: UILabel!
     @IBOutlet weak var tableStack: UIStackView!
     
+    //function to switch between recent transactions and spending breakdown
     @IBAction func switchView(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0
         {
@@ -65,6 +67,7 @@ class WalletVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //spinner for loading data
         Spinner.start(style: .white, backColor: UIColor.white, baseColor: UIColor.darkGray)
         
         
@@ -77,10 +80,6 @@ class WalletVC: UIViewController{
         stockResultsFeed.separatorInset = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 10.0, right: 0.0)
         stockResultsFeed.separatorColor=UIColor.black;
         
-        
-//        let months = ["Housing", "Restaurants", "Entertainment", "Groceries", "Shopping", "Transportation", "Health", "Travel", "Services", "Other"]
-//        let unitsSold = [20.00, 4.00, 6.00, 3.00, 12.00, 0.00, 1.0, 2.0, 0.0, 4.0]
-//        setChart(dataPoints:months, values: unitsSold)
         fetch_data()
         pieChart.gestureRecognizers?[0].addTarget(self, action: #selector(action))
         
@@ -164,7 +163,7 @@ class WalletVC: UIViewController{
        
     }
     
-    
+    //pull to refresh
     @objc func refreshList()
     {
         self.transactions = []
@@ -241,7 +240,7 @@ class WalletVC: UIViewController{
         print("refresh")
     }
     
-    
+
     func fetch_data()
     {
         self.transactions = []
@@ -327,10 +326,7 @@ extension WalletVC: UITableViewDataSource, UITableViewDelegate
             
             return cell
         }
-//        let trans = transactions[indexPath.row]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "transCell") as! TransCell
-//
-//        cell.setTrans(transaction: trans)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "transCell") as! TransCell
         return cell
         

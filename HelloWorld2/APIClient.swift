@@ -134,13 +134,11 @@ class APIClient{
             
             
         }
-        //if let hash_val = json["hash"]{
-        //  print("Hash is : \(hash_val)")
-        //}
+       
     }
     
     
-    
+    /* Get Quiz Answers*/
     static func getQuiz(hash: String)
     {
         
@@ -155,8 +153,7 @@ class APIClient{
         }
     }
     
-    // call perform req, smthn about closures
-    // StackOverflow: How to return value from Alamofire
+    /*Get the Values for Goal -- name, progress*/
     static func getGoalValues(hash: String, completionHandler: @escaping (Result<[String:String]>) -> Void)
     {
         performgetGoal(hashID: hash, completion: completionHandler)
@@ -176,8 +173,6 @@ class APIClient{
             
         }
     }
-    
-    
     static func performgetGoal( hashID: String, completion: @escaping (Result<[String:String]>) -> Void)
     {
         let parameters: Parameters = ["hash": hashID]
@@ -198,6 +193,7 @@ class APIClient{
         }
     }
     
+    //get personalized goal tip
     static func getGoalTip(hash: String, completionHandler: @escaping (Result<String>) -> Void)
     {
         performgetGoalTip(hashID: hash, completion: completionHandler)
@@ -227,8 +223,7 @@ class APIClient{
     
     
     
-    // call perform req, smthn about closures
-    // StackOverflow: How to return value from Alamofire
+   /* Get most recent transactions*/
     static func getTransactions(hash: String, rows: String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
     {
         performReq(hashID: hash, rows: rows, completion: completionHandler)
@@ -256,7 +251,7 @@ class APIClient{
     }
     
     
-    
+    /* Get Status of new notification -- for display of red dot*/
        static func getNotificationStatus(hash:String, completionHandler: @escaping (Result<String>) -> Void)
             {
                performingGetNotiStatus(hashID: hash, completion: completionHandler)
@@ -285,8 +280,7 @@ class APIClient{
        }
     
     
-    // call perform req, smthn about closures
-    // StackOverflow: How to return value from Alamofire
+    /*Get Specific Notification*/
     static func getNotifications(hash:String, completionHandler: @escaping (Result<[String]>) -> Void)
     {
         performingNoti(hashID: hash, completion: completionHandler)
@@ -316,7 +310,7 @@ class APIClient{
     }
     
     
-    
+    /* Set new Budget*/
     static func setBudget( hash: String, category: String, amount: String)
        {
            
@@ -329,13 +323,10 @@ class APIClient{
                
                
            }
-           //if let hash_val = json["hash"]{
-           //  print("Hash is : \(hash_val)")
-           //}
        }
     
     
-    
+    /* Get Existing Budget*/
     static func getBudget(hash: String, completionHandler: @escaping (Result<[[String:String]]>) -> Void)
        {
         performGetBudget(hashID: hash, completion: completionHandler)
@@ -363,6 +354,7 @@ class APIClient{
            }
        }
     
+    /* Get Spending Breakdown*/
     static func getBreakdown(hash: String, completionHandler: @escaping (Result<[String]>) -> Void)
           {
            performGetBreakdown(hashID: hash, completion: completionHandler)
@@ -389,7 +381,7 @@ class APIClient{
                   
               }
           }
-    
+    /* Set Alexa Pin */
     static func setAlexaPin( hash: String, email: String, pin: String)
     {
         
@@ -402,11 +394,9 @@ class APIClient{
             
             
         }
-        //if let hash_val = json["hash"]{
-        //  print("Hash is : \(hash_val)")
-        //}
     }
-    
+   
+    /* Get User's First and Last Name for Account Page*/
   static func getUser(hash:String, completionHandler: @escaping (Result<String>) -> Void)
             {
                performingGetUser(hashID: hash, completion: completionHandler)

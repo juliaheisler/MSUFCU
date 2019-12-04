@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+//spinner for beofre pages load
 open class Spinner
 {
     internal static var spinner: UIActivityIndicatorView?

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// set up for a transaction cell
 class TransCell: UITableViewCell {
 
  
@@ -26,7 +27,7 @@ class TransCell: UITableViewCell {
     }
     
     
-    
+    // format transaction cell
     func setTrans(transaction: TransData)
     {
         let red = UIColor(red: 184/255.0, green: 79/255.0, blue: 78/255.0, alpha: 1.0)

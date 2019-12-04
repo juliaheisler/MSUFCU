@@ -8,11 +8,13 @@
 
 import UIKit
 
+//second new user page (account information)
 class NewUser2VC: UIViewController {
 
     
     @IBAction func cont(_ sender: Any) {
         
+        //method for getting hash value for the new user -- existing account hack
         APIClient.getHashNewUser(firstname: first.text!, lastname: last.text!, account: acct.text!, password: "msufcuAPIkey"){result in
             switch result {
             case .failure(let error):
@@ -70,15 +72,5 @@ class NewUser2VC: UIViewController {
     
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

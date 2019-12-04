@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class OfferCell: UITableViewCell {
     
     @IBOutlet weak var offerImageView: UIImageView!

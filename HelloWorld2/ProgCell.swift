@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// goal progress bar cell
 class ProgCell: UITableViewCell {
 
     @IBOutlet weak var progBar: CircularProgressBar!

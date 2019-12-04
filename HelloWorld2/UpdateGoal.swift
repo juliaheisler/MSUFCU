@@ -8,6 +8,7 @@
 
 import UIKit
 
+//update goal class
 class UpdateGoal: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var amount: UITextField!
@@ -41,6 +42,7 @@ class UpdateGoal: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         thePicker.delegate = self
         thePicker.dataSource = self
         category.inputView = thePicker
@@ -48,15 +50,5 @@ class UpdateGoal: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

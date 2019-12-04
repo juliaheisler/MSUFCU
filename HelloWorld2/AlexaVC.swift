@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Setting
 class AlexaVC: UIViewController {
 
     @IBOutlet weak var alexaEmail: UITextField!
@@ -17,7 +18,6 @@ class AlexaVC: UIViewController {
         super.viewDidLoad()
          self.navigationController?.setNavigationBarHidden(false, animated: false)
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
